@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@color/orange">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:src="@drawable/img_logo"/>
+        android:src="@drawable/img_logo_bgorange"/>
 
 </LinearLayout>
