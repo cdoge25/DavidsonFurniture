@@ -1,6 +1,8 @@
 package com.nhom6.davidsonfurniture.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -16,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private static int SPLASH_TIMER=2000;
 
     ActivityMainBinding binding;
-    ImageView imvLogoSplash;
     Animation fadeInAnim;
 
     @Override
@@ -31,5 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         fadeInAnim = AnimationUtils.loadAnimation(this,R.anim.fade_in_anim);
         binding.imvLogoSplash.setAnimation(fadeInAnim);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        },SPLASH_TIMER);
     }
 }
