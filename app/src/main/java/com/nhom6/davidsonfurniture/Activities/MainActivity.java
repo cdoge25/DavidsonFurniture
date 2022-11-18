@@ -1,8 +1,10 @@
 package com.nhom6.davidsonfurniture.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,10 +17,11 @@ import com.nhom6.davidsonfurniture.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIMER=2000;
+    private static int SPLASH_TIMER=1000;
 
     ActivityMainBinding binding;
     Animation fadeInAnim;
+    SharedPreferences onBoardingScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +39,23 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                onBoardingScreen = getSharedPreferences("onBoardingScreen", MODE_PRIVATE);
+                boolean isFirstTime = onBoardingScreen.getBoolean("firstTime",true);
+
+                if(isFirstTime){
+                    SharedPreferences.Editor editor = onBoardingScreen.edit();
+                    editor.putBoolean("firstTime", false);
+                    editor.commit();
+
+                    Intent intent = new Intent(getApplicationContext(), OnBoardingActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         },SPLASH_TIMER);
     }

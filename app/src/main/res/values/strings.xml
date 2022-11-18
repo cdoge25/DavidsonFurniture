@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Davidson Furniture</string>
 
+    <!-- Intro -->
+    <string name="intro_heading1">Truyền cảm hứng</string>
+    <string name="intro_description1">Chúng tôi tin rằng: Không gian sống đẹp có thể làm thay đổi chất lượng cuộc sống của bạn.</string>
+    <string name="intro_heading2">Định hướng thẩm mỹ</string>
+    <string name="intro_description2">Chúng tôi không chỉ cung cấp sản phẩm nội thất, chúng tôi mang cho bạn phong cách sống.</string>
+    <string name="intro_heading3">Xây dựng giá trị Việt</string>
+    <string name="intro_description3">Chúng tôi ứng dụng và phát triển những giá trị truyền thống vào không gian sống hiện đại. </string>
+    <string name="intro_skip"><u>Bỏ qua</u></string>
 </resources>
