@@ -7,35 +7,35 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.nhom6.davidsonfurniture.R;
-import com.nhom6.davidsonfurniture.databinding.ActivityForgetPasswordBinding;
+import com.nhom6.davidsonfurniture.databinding.ActivityRegister2Binding;
+import com.nhom6.davidsonfurniture.databinding.ActivityRegisterBinding;
 
-import java.util.Objects;
+public class RegisterActivity2 extends AppCompatActivity {
 
-public class ForgetPasswordActivity extends AppCompatActivity {
-
-    ActivityForgetPasswordBinding binding;
+    ActivityRegister2Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_forget_password);
+//        setContentView(R.layout.activity_register2);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        binding = ActivityForgetPasswordBinding.inflate(getLayoutInflater());
+        binding = ActivityRegister2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        toForgetPassword2();
+        toLogin();
     }
 
-    private void toForgetPassword2() {
-        binding.btnSendOtp.setOnClickListener(new View.OnClickListener() {
+    private void toLogin() {
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (ForgetPasswordActivity.this, ForgetPasswordActivity2.class);
+                Intent intent = new Intent (RegisterActivity2.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
     }
+
 }
