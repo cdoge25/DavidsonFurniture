@@ -36,7 +36,6 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/smoke"
                 android:fontFamily="@font/futura_book"
-
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -61,7 +60,6 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/smoke"
                 android:fontFamily="@font/futura_book"
-
                 android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -145,7 +143,6 @@
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:src="@drawable/img_login_facebook" />
-
             <ImageButton
                 android:id="@+id/btnGoogle"
                 android:layout_width="wrap_content"
@@ -169,7 +166,6 @@
                 android:text="@string/login_no_account"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
-
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
