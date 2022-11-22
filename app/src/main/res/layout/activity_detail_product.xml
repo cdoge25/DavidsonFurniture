@@ -1,219 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.DetailProductActivity"
+    android:orientation="vertical"
     android:padding="10dp"
-    android:orientation="vertical">
+    tools:context=".Activities.DetailProductActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarNewProduct"
+        android:id="@+id/toolbarProduct"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:navigationIcon="@drawable/ic_action_back"
-        app:contentInsetStartWithNavigation="0dp"
         android:layout_marginStart="-5dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
         android:elevation="2dp"
-        android:background="@color/white">
+        app:contentInsetStartWithNavigation="0dp"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ALICE"
-            android:textSize="28sp"
-            android:textColor="#FF6600"
-            android:textStyle="bold"
+            android:layout_marginEnd="46dp"
             android:gravity="center"
-            android:layout_marginEnd="46dp"/>
+            android:text="ALICE"
+            android:textColor="#FF6600"
+            android:textSize="28sp"
+            android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/svOrderDetails"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="120dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarProduct"
+        android:paddingHorizontal="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginVertical="6dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginEnd="4dp">
+
+            <ImageView
+                android:id="@+id/imvProductDetailThumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/img_sofabang_alice" />
+        </androidx.cardview.widget.CardView>
+
+            <!--Name-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALICE"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="34dp"
+                android:text="4.7"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_rating_star" />
+        </RelativeLayout>
+
+            <!--Category-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtProductCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Sofa bằng"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnSeeReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="#00000000"
+                android:text="Xem đánh giá"
+                android:textColor="#9E9E9E"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+            <!--Price-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.500.000"
+                android:textColor="#FF6600"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:text="đ"
+                android:textColor="#FF6600"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+            <!--Size-->
         <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ALICE"
-            android:textStyle="bold"
-            android:textSize="32sp" />
-
-        <TextView
-            android:id="@+id/txtRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="34dp"
-            android:text="4.7"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_rating_star"
-            android:layout_centerVertical="true"/>
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/txtProductCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sofa bằng"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"/>
-        <Button
-            android:id="@+id/btnSeeReview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Xem đánh giá"
-            android:textColor="#9E9E9E"
-            android:layout_alignParentEnd="true"
-            android:background="#00000000"
-            android:textSize="16sp" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4.500.000"
-            android:textSize="24sp"
-            android:textColor="#FF6600"/>
+            android:layout_marginTop="20dp"
+            android:text="Kích thước:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="đ"
-            android:textSize="24sp"
-            android:textColor="#FF6600"
-            android:layout_marginLeft="1dp" />
-    </LinearLayout>
+            android:text="D120 x R63 x C82 cm"
+            android:textSize="16sp" />
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kích thước:"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="D120 x R63 x C82 cm"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Chất liệu: "
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Vải Indonesia, khung gỗ tần bì"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Màu sắc: "
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
-
-    <RadioButton
-        android:id="@+id/radWhite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Trắng"
-        android:textSize="16sp"/>
-
-    <RadioButton
-        android:id="@+id/radGray"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Xám"
-        android:textSize="16sp"/>
-
-    <RadioButton
-        android:id="@+id/radBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Đen"
-        android:textSize="16sp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/imbSubtract"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_action_minus"
-            />
+            <!--Chất liệu-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Chất liệu: "
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtProductQuantity"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:gravity="center_vertical"
-            android:text="02"
-            android:textSize="22sp"
+            android:text="Vải Indonesia, khung gỗ tần bì"
+            android:textSize="16sp" />
+
+            <!--Color-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Màu sắc: "
+            android:textSize="18sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imbAdd"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_action_plus"
-            />
-    </LinearLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trắng"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radGray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xám"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đen"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingVertical="6dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-
-            android:id="@+id/btnAddToCart"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="#FF6600"
-            android:paddingHorizontal="5dp"
-            android:layout_weight="0.5"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:text="Thêm vào giỏ hàng"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:orientation="horizontal">
 
-</LinearLayout>
+            <ImageButton
+                android:id="@+id/imbSubtract"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_action_minus" />
+
+            <TextView
+                android:id="@+id/txtProductQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:text="02"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imbAdd"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_action_plus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAddToCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.5"
+                android:background="#FF6600"
+                android:paddingHorizontal="5dp"
+                android:text="Thêm vào giỏ hàng"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
