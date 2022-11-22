@@ -13,21 +13,7 @@
         android:theme="@style/Theme.DavidsonFurniture"
         tools:targetApi="31">
         <activity
-            android:name=".PersonalInfoActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SettingAccountActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activities.AccountActivity"
+            android:name=".Activities.PersonalInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -41,7 +27,21 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".Activities.SettingAccountActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.ForgetPasswordActivity3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.AccountActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
