@@ -46,4 +46,8 @@ dependencies {
 
     //OTP PIN View Design
     implementation 'io.github.chaosleung:pinview:1.4.4'
+
+
+    implementation 'de.hdodenhof:circleimageview:2.1.0'    // Ảnh tròn
+
 }
