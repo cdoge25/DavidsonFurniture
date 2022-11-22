@@ -200,7 +200,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Trắng"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                />
 
             <RadioButton
                 android:id="@+id/radGray"
@@ -240,25 +241,30 @@
 
             <ImageButton
                 android:id="@+id/imbSubtract"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_action_minus" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#FFFFFF"
+                android:src="@drawable/ic_action_minus"
+                android:contentDescription="Subtract"
+                />
 
             <TextView
                 android:id="@+id/txtProductQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:gravity="center_vertical"
                 android:text="02"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
 
             <ImageButton
                 android:id="@+id/imbAdd"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_action_plus" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#FFFFFF"
+                android:src="@drawable/ic_action_plus"
+                android:contentDescription="Add"/>
         </LinearLayout>
 
         <LinearLayout
@@ -267,7 +273,7 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/btnAddToCart"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -277,7 +283,6 @@
                 android:paddingHorizontal="5dp"
                 android:text="Thêm vào giỏ hàng"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

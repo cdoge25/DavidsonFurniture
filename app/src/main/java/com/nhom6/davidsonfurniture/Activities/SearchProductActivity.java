@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.nhom6.davidsonfurniture.R;
+
 public class SearchProductActivity extends AppCompatActivity {
 
     @Override
