@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="20dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCancelOrder"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="2dp"
+        android:background="@color/white"
+        android:theme="?attr/actionBarTheme"
+        >
+        <!-- app:menu="@menu/bottom_sheet_cancel_heading" -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chọn lý do hủy đơn"
+            android:textSize="16sp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/futura_bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RadioGroup
+        android:id="@+id/radGroupCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp">
+        <RadioButton
+            android:id="@+id/radReason1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:paddingLeft="8dp"
+            android:text="Muốn thay đổi địa chỉ giao hàng"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/futura_book"/>
+        <RadioButton
+            android:id="@+id/radReason2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:paddingLeft="8dp"
+            android:text="Muốn nhập/thay mã giảm giá"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/futura_book"/>
+        <RadioButton
+            android:id="@+id/radReason3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:paddingLeft="8dp"
+            android:text="Tìm thấy giá rẻ hơn ở chỗ khác"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/futura_book"/>
+        <RadioButton
+            android:id="@+id/radReason4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:paddingLeft="8dp"
+            android:text="Đổi ý, không muốn mua nữa"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/futura_book"/>
+        <RadioButton
+            android:id="@+id/radReason5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:paddingLeft="8dp"
+            android:text="Thủ tục thanh toán quá rắc rối"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/futura_book"/>
+        <RadioButton
+            android:id="@+id/radReason6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:paddingLeft="8dp"
+            android:text="Lý do khác"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/futura_book"
+            android:checked="true"/>
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancelConfirm"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_button_orange"
+        android:text="Xác nhận"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/futura_bold"/>
+</LinearLayout>
