@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_tablayout">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/futura_book</item>
+    </style>
+
+    <style name="RatingBar">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">#FFCE31</item>
+        <item name="android:minHeight">15dp</item>
+        <item name="android:maxHeight">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+</resources>

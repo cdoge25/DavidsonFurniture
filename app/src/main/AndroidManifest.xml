@@ -13,7 +13,14 @@
         android:theme="@style/Theme.DavidsonFurniture"
         tools:targetApi="31">
         <activity
-            android:name=".ChooseBankActivity"
+            android:name=".Activities.ChooseBankActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.ReviewActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -67,19 +74,144 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".Activities.ForgetPasswordActivity"
+            android:name=".Activities.ReturnOrderActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.RegisterActivity"
+            android:name=".Activities.OrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.FeedbackProductActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.SearchProductActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.PlacedOrderActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.DetailProductActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.PopularProductActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.NewProductActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.PersonalInfoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.SettingAccountActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.ForgetPasswordActivity3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.AccountActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.PhoneOtpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.ForgetPasswordActivity2"
+            android:exported="false"
+            android:label="@string/title_forget_password"
+            android:parentActivityName=".Activities.ForgetPasswordActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="com.nhom6.davidsonfurniture.Activities.ForgetPasswordActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.RegisterActivity2"
+            android:exported="false"
+            android:label="@string/title_register"
+            android:parentActivityName=".Activities.RegisterActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="com.nhom6.davidsonfurniture.Activities.RegisterActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.ForgetPasswordActivity"
+            android:exported="false"
+            android:label="@string/title_forget_password"
+            android:parentActivityName=".Activities.LoginActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="com.nhom6.davidsonfurniture.Activities.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.RegisterActivity"
+            android:exported="false"
+            android:label="@string/title_register"
+            android:parentActivityName=".Activities.LoginActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="com.nhom6.davidsonfurniture.Activities.LoginActivity" />
         </activity>
         <activity
             android:name=".Activities.OnBoardingActivity"
@@ -97,7 +229,7 @@
         </activity>
         <activity
             android:name=".Activities.MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"

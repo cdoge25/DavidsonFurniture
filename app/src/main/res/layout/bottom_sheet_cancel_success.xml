@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="20dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCancelOrder"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="2dp"
+        android:background="@color/white"
+        android:theme="?attr/actionBarTheme"
+        >
+        <!-- app:menu="@menu/bottom_sheet_cancel_heading" -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy đơn thành công"
+            android:textSize="16sp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/futura_bold"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đơn hàng của bạn đã được huỷ thành công! Nếu bạn thanh toán bằng phương thức online, vui lòng đợi để nhận lại tiền hoàn. Quá trình này có thể mất từ 10-15 phút."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal|center"
+        android:gravity="left"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/futura_book"
+        android:justificationMode="inter_word"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBackHome"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_button_orange"
+        android:fontFamily="@font/futura_bold"
+        android:gravity="center"
+        android:text="Trang chủ"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>
