@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.DeliveryAddressActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68sp"
+        android:orientation="horizontal"
+        android:paddingStart="20sp">
+
+        <ImageButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_back"
+            android:layout_gravity="center_vertical"
+            android:background="#FFFFFF"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ đặt hàng"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#FF6600"
+            android:layout_marginStart="90sp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/custom_view"
+        android:gravity="center_vertical"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_pick_location"
+            android:background="@drawable/custom_view"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="265sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginStart="5sp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nhà"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txt_homeaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phường Linh Xuân, TP.Thủ Đức"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/radio_home"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/custom_view"
+        android:gravity="center_vertical"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_pick_location"
+            android:background="@drawable/custom_view"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="265sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginStart="5sp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Văn phòng"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txt_officeaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quận 1, TPHCM"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/radio_office"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_confirmAddress"
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:text="Xác Nhận"
+        android:textSize="14sp"
+        android:background="@drawable/custom_button"
+        android:layout_marginTop="15sp"
+        android:layout_gravity="center_horizontal" />
+
+
+
+
+
+
+
+
+</LinearLayout>
