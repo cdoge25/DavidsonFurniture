@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    android:background="@drawable/custom_view_2">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20sp">
+
+        <ImageView
+            android:id="@+id/img_productOrder"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:src="@drawable/img_densan_logly"
+            android:background="#F5F5F5"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:paddingStart="5sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_ProNameOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LUKI"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txt_ProTypeOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bàn cafe"
+            android:textSize="12sp"
+            android:layout_marginTop="5sp"/>
+
+        <TextView
+            android:id="@+id/txt_ProColorOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đen"
+            android:textSize="12sp"
+            android:layout_marginTop="5sp"/>
+
+        <TextView
+            android:id="@+id/txt_ProPriceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1,350,000đ"
+            android:textSize="12sp"
+            android:textColor="#FF6600"
+            android:layout_marginTop="5sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số lượng:"
+                android:textSize="12sp"
+                android:layout_marginTop="5sp"/>
+
+            <TextView
+                android:id="@+id/txt_ProQuantityOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="12sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginStart="5sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
