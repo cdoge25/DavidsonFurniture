@@ -7,30 +7,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bạn muốn đăng xuất?"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="20dp"
             android:gravity="center">
             <Button
                 android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:text="Hủy"
-                android:backgroundTint="@color/black"/>
+                android:textSize="20dp"
+                android:backgroundTint="@color/black"
+                android:background="@drawable/bg_button_black"/>
             <Button
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:text="Xác nhận"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="20dp"
+                android:textSize="20dp"
+                android:background="@drawable/bg_button_orange"/>
         </LinearLayout>
 
 
