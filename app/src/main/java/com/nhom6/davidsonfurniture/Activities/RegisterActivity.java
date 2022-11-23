@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.nhom6.davidsonfurniture.R;
@@ -14,10 +16,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     TextInputLayout name, mail, phone, password;
     Button send;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        setContentView(R.layout.activity_on_boarding);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -28,7 +34,19 @@ public class RegisterActivity extends AppCompatActivity {
         phone = findViewById(R.id.edtPhone);
         password = findViewById(R.id.edtPassword);
         send = findViewById(R.id.btnSendOtp);
+        back = findViewById(R.id.btnBack);
 
+        backToLogin();
+    }
+
+    private void backToLogin() {
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean validateName() {
@@ -70,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
             phone.setError("Không được bỏ trống vùng này");
             return false;
         }else if(!val.matches(checkPhone)){
-            phone.setError("Số điện thoại phải gồm 9 chữ số, bắt đầu bằng số 0");
+            phone.setError("Số điện thoại phải gồm 9 chữ số");
             return false;
         }
         else{

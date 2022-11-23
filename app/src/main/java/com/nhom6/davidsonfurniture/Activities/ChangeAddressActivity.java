@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.nhom6.davidsonfurniture.R;
 
-public class ChooseBankActivity extends AppCompatActivity {
+public class ChangeAddressActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_bank);
+        setContentView(R.layout.activity_change_address);
     }
 }
