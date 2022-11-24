@@ -6,13 +6,11 @@ import android.os.Bundle;
 
 import com.nhom6.davidsonfurniture.R;
 
-public class DetailProductActivity extends AppCompatActivity {
+public class CategoriesProductActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_product);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();}
+        setContentView(R.layout.activity_categories_product);
     }
 }
