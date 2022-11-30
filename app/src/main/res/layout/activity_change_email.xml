@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ChangeEmailActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOrderDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_marginBottom="0dp"
+        android:elevation="5dp"
+        android:background="@color/white"
+        android:layout_gravity="top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đổi địa chỉ email"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/orange"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginEnd="50dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <!--END HEADER-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email của bạn: "
+            android:layout_gravity="left"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_otp_mail"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="abc@gmail.com"
+                android:textColor="@color/orange"
+                android:fontFamily="@font/futura_book"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập email mới"
+            android:textSize="20dp"
+            android:fontFamily="@font/futura_book"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xác nhận"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_button_orange"/>
+
+    </LinearLayout>
+
+</LinearLayout>

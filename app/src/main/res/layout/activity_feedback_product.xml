@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.FeedbackProductActivity"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarReviewProduct"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="2dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Khách hàng đánh giá"
+            android:textSize="28sp"
+            android:textColor="#FF6600"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginEnd="46dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="340dp"
+            android:text="/5"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtAverageRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.7"
+            android:textSize="20sp"
+            android:textColor="#FF6600"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="300dp"
+            android:src="@drawable/ic_rating_star" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="270dp"
+            android:src="@drawable/ic_rating_star" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="240dp"
+            android:src="@drawable/ic_rating_star" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="210dp"
+            android:src="@drawable/ic_rating_star" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="180dp"
+            android:src="@drawable/ic_rating_star" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

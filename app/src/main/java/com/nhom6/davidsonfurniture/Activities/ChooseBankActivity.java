@@ -18,6 +18,8 @@ import com.nhom6.davidsonfurniture.databinding.ActivityChooseBankBinding;
 
 import java.util.ArrayList;
 
+import com.nhom6.davidsonfurniture.R;
+
 public class ChooseBankActivity extends AppCompatActivity {
     ActivityChooseBankBinding binding;
     BankAdapter adapter;
