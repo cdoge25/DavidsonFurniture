@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.DetailVoucherActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOrderDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_marginBottom="0dp"
+        android:elevation="5dp"
+        android:background="@color/white"
+        android:layout_gravity="top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chi tiết voucher"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/orange"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginEnd="50dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <!--END HEADER-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/custom_view"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:backgroundTint="#F5F5F5">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_pick_voucher"
+            android:layout_weight="0.5"
+            android:layout_gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="90sp"
+            android:layout_weight="2.5"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Miễn phí vận chuyển"
+                android:textSize="16sp"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đơn tối thiêu 1tr, miễn phí tối đa 50k"
+                android:textSize="10sp"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HSD: 1/12/2022"
+                android:textSize="10sp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_light"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hiệu lực:"
+            android:textSize="20sp"
+            android:layout_gravity="left"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="08/11/2022 10:00 - 1/12/2022 11:00"
+            android:textSize="14sp"
+            android:layout_gravity="left"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sản phẩm:"
+            android:textSize="20sp"
+            android:layout_gravity="left"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sofa"
+            android:textSize="14sp"
+            android:layout_gravity="left"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phương tiện thanh toán:"
+            android:textSize="20sp"
+            android:layout_gravity="left"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ví điện tử Momo"
+            android:textSize="14sp"
+            android:layout_gravity="left"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Điều kiện:"
+                android:textSize="20sp"
+                android:layout_gravity="left"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Miễn phí vận chuyển (tối đa 150K) cho đơn hàng có giá từ 2tr trở lên. Số lượng có hạn, chương trình và mã có thể kết thúc khi hết lượt ưu đãi hoặc khi hết hạn ưu đãi."
+                android:textSize="14sp"
+                android:layout_gravity="left"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
