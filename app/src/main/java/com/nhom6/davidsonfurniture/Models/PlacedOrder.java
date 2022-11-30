@@ -1,7 +1,7 @@
 package com.nhom6.davidsonfurniture.Models;
 
 public class PlacedOrder {
-    int orderThumb; //hình ảnh
+    int orderThumb;
     String orderName;
     String orderType;
     String orderColor;
@@ -64,4 +64,6 @@ public class PlacedOrder {
     public void setOrderQuantity(String orderQuantity) {
         this.orderQuantity = orderQuantity;
     }
+
+
 }

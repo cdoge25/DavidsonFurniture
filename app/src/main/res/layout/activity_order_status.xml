@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.PlacedOrderActivity"
+    tools:context=".Activities.OrderStatusActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -36,48 +36,16 @@
         android:layout_width="match_parent"
         app:tabBackground="@color/white"
         app:tabTextColor="@color/grey"
+        app:tabSelectedTextColor="@color/black"
         app:tabIndicatorColor="@color/black"
         app:tabGravity="start"
-        app:tabSelectedTextColor="@color/black"
         app:tabRippleColor="@color/orange"
         app:tabMode="scrollable"
         app:tabTextAppearance="@style/text_tablayout">
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tabWaitConfirmTab"-->
-<!--            android:text="Chờ xác nhận"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_width="match_parent"/>-->
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tabPreparingTab"-->
-<!--            android:text="Đang chuẩn bị"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_width="match_parent"/>-->
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tabDeliveringTab"-->
-<!--            android:text="Đang giao"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_width="match_parent"/>-->
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tabDeliveredTab"-->
-<!--            android:text="Đã giao"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_width="match_parent"/>-->
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tabHistoryTab"-->
-<!--            android:text="Lịch sử"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_width="match_parent"/>-->
     </com.google.android.material.tabs.TabLayout>
 
-    <ListView
-        android:id="@+id/lv_Order"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:id="@+id/view_pager"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
-
 </LinearLayout>
