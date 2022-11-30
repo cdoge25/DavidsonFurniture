@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ChooseBankActivity">
+    tools:context=".Activities.ChooseBankActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68sp"
+        android:orientation="horizontal"
+        android:paddingStart="20sp">
+
+        <ImageButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_back"
+            android:layout_gravity="center_vertical"
+            android:background="#FFFFFF"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ngân hàng"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#FF6600"
+            android:layout_marginStart="90sp"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview_bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:queryHint="Nhập tên ngân hàng"
+        app:iconifiedByDefault="false"
+        />
+
+    <ListView
+        android:id="@+id/lv_bank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5sp"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="5sp">
+
+    </ListView>
+
+</LinearLayout>
