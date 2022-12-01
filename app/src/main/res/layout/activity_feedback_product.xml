@@ -6,45 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".Activities.FeedbackProductActivity"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="20dp">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarReviewProduct"
+        android:id="@+id/toolbarFeedbackProduct"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:navigationIcon="@drawable/ic_action_back"
         app:contentInsetStartWithNavigation="0dp"
-        android:layout_marginStart="-5dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="2dp"
+        android:layout_marginBottom="0dp"
+        android:elevation="5dp"
         android:background="@color/white">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Khách hàng đánh giá"
-            android:textSize="28sp"
-            android:textColor="#FF6600"
-            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/orange"
+            android:fontFamily="@font/futura_bold"
             android:gravity="center"
-            android:layout_marginEnd="46dp"/>
+            android:layout_marginEnd="50dp"/>
     </androidx.appcompat.widget.Toolbar>
 
-    <RelativeLayout
+    <!--SumRate-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="340dp"
-            android:text="/5"
-            android:textSize="20sp" />
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
 
         <TextView
             android:id="@+id/txtAverageRate"
@@ -52,58 +44,198 @@
             android:layout_height="wrap_content"
             android:text="4.7"
             android:textSize="20sp"
-            android:textColor="#FF6600"
-            android:layout_centerVertical="true"/>
+            android:textColor="@color/orange"
+            android:layout_weight="0.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="/5"
+            android:textSize="20sp" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="300dp"
-            android:src="@drawable/ic_rating_star" />
+            android:src="@drawable/ic_rating_star"
+            android:layout_weight="0.5" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="270dp"
-            android:src="@drawable/ic_rating_star" />
+            android:src="@drawable/ic_rating_star"
+            android:layout_weight="0.5"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="240dp"
-            android:src="@drawable/ic_rating_star" />
+            android:src="@drawable/ic_rating_star"
+            android:layout_weight="0.5"/>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
             android:layout_gravity="center"
-            android:layout_marginEnd="210dp"
-            android:src="@drawable/ic_rating_star" />
-
+            android:src="@drawable/ic_rating_star"
+            android:layout_weight="0.5" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="180dp"
+            android:layout_weight="0.5"
             android:src="@drawable/ic_rating_star" />
-    </RelativeLayout>
+    </LinearLayout>
 
-    <ListView
-        android:id="@+id/lvFeedback"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+    <!--Feedback 1-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--avatar-->
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/img_avatar_feedback_1"/>
+
+            <!--Infor-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <!--Name-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Doge"
+                    android:textSize="16sp"/>
+
+                <!--Rate-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_rating_star"
+                        android:layout_weight="0.5"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_rating_star"
+                        android:layout_weight="0.5"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_rating_star"
+                        android:layout_weight="0.5" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/ic_rating_star" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/ic_rating_star" />
+                </LinearLayout>
+
+                <!--Comment-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sản phẩm rẻ mà chất lượng, khi nào có tiền nhất định sẽ mua tiếp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/futura_book"/>
+
+                <!--Image feedback-->
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/img_feedback_1"
+                    android:layout_gravity="left"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--feedback 2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+                <!--avatar-->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/img_avatar_feedback_2"/>
+                <!--info-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+                    <!--Name-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Doge"
+                        android:textSize="16sp"/>
+
+                    <!--Rate-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_rating_star"
+                            android:layout_weight="0.5"/>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_rating_star"
+                            android:layout_weight="0.5"/>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_rating_star"
+                            android:layout_weight="0.5" />
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/ic_rating_star" />
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/ic_rating_star" />
+                    </LinearLayout>
+
+                    <!--Comment-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sản phẩm rẻ mà chất lượng, khi nào có tiền nhất định sẽ mua tiếp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/futura_book"/>
+
+                    <!--Image feedback-->
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/img_feedback_2"
+                        android:layout_gravity="left"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
 </LinearLayout>
