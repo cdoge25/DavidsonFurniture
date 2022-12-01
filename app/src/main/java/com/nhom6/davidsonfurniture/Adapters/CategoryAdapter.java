@@ -61,7 +61,7 @@ public class CategoryAdapter extends BaseAdapter {
             holder= (ViewHolder) convertView.getTag();
         }
         CategoryProduct data= dataList.get(position);
-//        Picasso.get().load(data.getProductThumb()).into(holder.imvImage);
+        //Picasso.get().load(data.getProductThumb()).into(holder.imvImage);
         holder.txtName.setText(data.getProductName());
         return convertView;
     }
