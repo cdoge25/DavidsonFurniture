@@ -291,4 +291,23 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/layoutContainerMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navigationMain" />
+
+    <!--    Bottom Navigation-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/white"
+        android:foreground="?attr/selectableItemBackground"
+        app:menu="@menu/bottom_navigation"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"/>
+
 </LinearLayout>
