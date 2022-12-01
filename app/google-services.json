@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "716716386397",
+    "project_id": "davidson-furniture",
+    "storage_bucket": "davidson-furniture.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716716386397:android:10d0b3e4618d0f62c845b4",
+        "android_client_info": {
+          "package_name": "com.nhom6.davidsonfurniture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716716386397-9md3n7aiegt4jgbub0kdkdj4ea5fhu2l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nhom6.davidsonfurniture",
+            "certificate_hash": "5e28979e5975b4257b2e48ee3e9b4381d2c82aeb"
+          }
+        },
+        {
+          "client_id": "716716386397-98n850hao0236ponpe0n0enhv8ku2ep7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCglMvcAdjWdt2f0qIEZJVMVSI3Mju7Lo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716716386397-98n850hao0236ponpe0n0enhv8ku2ep7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -46,35 +46,38 @@
             android:layout_height="30sp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingStart="30sp">
-
+            android:paddingStart="30sp"
+            android:weightSum="5">
 
             <CheckBox
-                android:layout_width="15sp"
-                android:layout_height="15sp" />
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10sp"
                 android:text="Tất cả"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50sp"
                 android:text="Tổng số tiền:"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_weight="1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15sp"
-                android:text="13,000,000đ"
+
+                android:text="13,000,000"
                 android:textSize="16sp"
                 android:textColor="#FF6600"
-                android:layout_marginEnd="20sp"/>
+                android:layout_weight="3" />
 
         </LinearLayout>
 
@@ -87,7 +90,8 @@
             android:layout_marginBottom="5sp"
             android:text="Đặt hàng"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_bold"
             android:background="@drawable/custom_button"/>
     </LinearLayout>
 
