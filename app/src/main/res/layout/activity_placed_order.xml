@@ -31,6 +31,7 @@
     <!--END HEADER-->
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:tabBackground="@color/white"
@@ -42,36 +43,41 @@
         app:tabMode="scrollable"
         app:tabTextAppearance="@style/text_tablayout">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabWaitConfirmTab"
-            android:text="Chờ xác nhận"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabPreparingTab"
-            android:text="Đang chuẩn bị"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabDeliveringTab"
-            android:text="Đang giao"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabDeliveredTab"
-            android:text="Đã giao"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabHistoryTab"
-            android:text="Lịch sử"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabWaitConfirmTab"-->
+<!--            android:text="Chờ xác nhận"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"/>-->
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabPreparingTab"-->
+<!--            android:text="Đang chuẩn bị"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"/>-->
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabDeliveringTab"-->
+<!--            android:text="Đang giao"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"/>-->
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabDeliveredTab"-->
+<!--            android:text="Đã giao"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"/>-->
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/tabHistoryTab"-->
+<!--            android:text="Lịch sử"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent"/>-->
     </com.google.android.material.tabs.TabLayout>
 
     <ListView
         android:id="@+id/lv_Order"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/view_pager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
 
 </LinearLayout>

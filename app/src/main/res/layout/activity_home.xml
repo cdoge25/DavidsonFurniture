@@ -31,17 +31,17 @@
     <RelativeLayout
         android:id="@+id/rlSearch"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@color/smoke"
-        android:elevation="5dp">
+        android:elevation="5dp"
+        android:padding="10dp">
         <ImageView
             android:id="@+id/imvSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_action_search"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp" />
+            android:layout_centerVertical="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +62,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="top">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,6 +72,7 @@
                 android:gravity="fill">
 
                 <LinearLayout
+                    android:id="@+id/llSofa"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -230,7 +232,7 @@
                         android:textSize="18sp"
                         android:layout_centerVertical="true"/>
                     <Button
-                        android:id="@+id/btnNewProductViewAll"
+                        android:id="@+id/btnViewAllNewProduct"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Xem tất cả"
@@ -242,12 +244,50 @@
                         android:background="#00000000"
                         android:textColor="@color/grey"/>
                 </RelativeLayout>
-                <androidx.recyclerview.widget.RecyclerView
+                <com.devsmart.android.ui.HorizontalListView
+                    android:id="@+id/lvNewProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp">
+
+                </com.devsmart.android.ui.HorizontalListView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phổ biến"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:layout_centerVertical="true"/>
+                    <Button
+                        android:id="@+id/btnViewAllPopularProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Xem tất cả"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/futura_book"
+                        android:textSize="16sp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="#00000000"
+                        android:textColor="@color/grey"/>
+                </RelativeLayout>
+                <com.devsmart.android.ui.HorizontalListView
+                    android:id="@+id/lvPopularProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp">
 
-                </androidx.recyclerview.widget.RecyclerView>
+                </com.devsmart.android.ui.HorizontalListView>
             </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>

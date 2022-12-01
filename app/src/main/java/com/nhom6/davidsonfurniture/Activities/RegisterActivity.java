@@ -24,9 +24,17 @@ public class RegisterActivity extends AppCompatActivity {
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        setContentView(R.layout.activity_on_boarding);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+//        if (getSupportActionBar() != null) {
+//            getSupportActionBar().hide();
+//        }
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = findViewById(R.id.edtName);
@@ -83,14 +91,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean validatePhone() {
         String val = phone.getEditText().getText().toString().trim();
-        String checkPhone = "[0-9]{9}";
+        String checkPhone = "[0-9]{10}";
         if(val.isEmpty()){
             phone.setError("Không được bỏ trống vùng này");
             return false;
-        }else if(!val.matches(checkPhone)){
-            phone.setError("Số điện thoại phải gồm 9 chữ số");
-            return false;
         }
+//        else if(!val.matches(checkPhone)){
+//            phone.setError("Số điện thoại phải gồm 10 chữ số");
+//            return false;
+//        }
         else{
             phone.setError(null);
             phone.setErrorEnabled(false);
@@ -111,11 +120,15 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void toRegister2(View view) {
+    public void toPhoneOtp(View view) {
         if (!validateName() | !validateMail() | !validatePhone() | !validatePassword()) {
             return;
         }
-        Intent intent = new Intent(getApplicationContext(), RegisterActivity2.class);
+        String _phoneNo = phone.getEditText().getText().toString().trim();
+
+        Intent intent = new Intent(getApplicationContext(), PhoneOtpActivity.class);
+
+        intent.putExtra("phoneNo", _phoneNo);
         startActivity(intent);
     }
 }

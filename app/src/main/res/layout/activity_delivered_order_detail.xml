@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activities.DeliveredOrderDetailActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -33,7 +35,8 @@
         android:layout_height="wrap_content"
         android:text="Mã đơn hàng: DF987654321"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_gravity="left"
         android:textColor="@color/orange"
         android:textSize="16sp"
         android:fontFamily="@font/futura_book"/>
@@ -42,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="25dp"
+        android:layout_marginHorizontal="20dp"
         app:cardCornerRadius="20dp"
         android:elevation="15dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,9 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="0dp"
+                android:layout_marginVertical="10dp"
                 android:layout_toEndOf="@+id/cardViewDetail"
                 android:orientation="vertical"
                 android:gravity="center_vertical">
@@ -87,7 +88,8 @@
                     android:text="ALICE"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:fontFamily="@font/futura_bold"/>
+                    android:fontFamily="@font/futura_bold"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtType"
@@ -97,7 +99,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/grey"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtColor"
@@ -107,7 +110,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtOrderDetailPrice"
@@ -117,7 +121,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/orange"
                     android:textSize="14sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtQuantity"
@@ -127,7 +132,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
             </LinearLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -142,48 +148,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp">
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_status_pending"
+                android:src="@drawable/ic_status_pending2"
                 android:layout_gravity="center"
-                android:layout_weight="2"/>
+                android:layout_weight="0"/>
             <TextView
                 android:layout_width="78dp"
                 android:layout_height="wrap_content"
                 android:text="Chờ xác nhận"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:layout_weight="4"/>
+                android:layout_weight="10"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04/11/2022 09:00"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="80dp"
-                android:layout_weight="4"/>
+                android:layout_weight="0"/>
         </LinearLayout>
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_action_back"
-            android:layout_marginStart="25dp"
-            android:layout_marginVertical="5dp"/>
+            android:src="@drawable/ic_status_progress"
+            android:layout_marginVertical="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="left"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="25dp">
+            android:layout_marginHorizontal="20dp">
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -193,7 +200,7 @@
                 android:layout_width="78dp"
                 android:layout_height="wrap_content"
                 android:text="Đang chuẩn bị"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
                 android:layout_gravity="center_vertical"
@@ -202,7 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04/11/2022 10:00"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
                 android:layout_gravity="center_vertical"
@@ -212,15 +219,16 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_action_back"
-            android:layout_marginStart="25dp"
-            android:layout_marginVertical="5dp"/>
+            android:src="@drawable/ic_status_progress"
+            android:layout_marginVertical="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="left"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="25dp">
+            android:layout_marginHorizontal="20dp">
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -230,7 +238,7 @@
                 android:layout_width="78dp"
                 android:layout_height="wrap_content"
                 android:text="Đang giao"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
                 android:layout_gravity="center_vertical"
@@ -239,7 +247,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04/11/2022 11:00"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
                 android:layout_gravity="center_vertical"
@@ -249,15 +257,16 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_action_back"
-            android:layout_marginStart="25dp"
-            android:layout_marginVertical="5dp"/>
+            android:src="@drawable/ic_status_progress"
+            android:layout_marginVertical="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="left"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginHorizontal="25dp">
+            android:layout_marginHorizontal="20dp">
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"

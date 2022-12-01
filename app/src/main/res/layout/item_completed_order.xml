@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="15dp">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="25dp"
+        android:layout_marginHorizontal="20dp"
         app:cardCornerRadius="20dp"
         android:elevation="15dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="0dp"
+                android:layout_marginVertical="10dp"
                 android:layout_toEndOf="@+id/cardViewDetail"
                 android:orientation="vertical"
                 android:gravity="center_vertical">
@@ -50,7 +48,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:fontFamily="@font/futura_bold"/>
+                    android:fontFamily="@font/futura_bold"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtCompletedType"
@@ -59,7 +58,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/grey"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtCompletedColor"
@@ -68,7 +68,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtCompletedPrice"
@@ -77,7 +78,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/orange"
                     android:textSize="14sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtCompletedQuantity"
@@ -86,7 +88,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
             </LinearLayout>
 
             <Button
@@ -96,8 +99,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="110dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="105dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="Đánh giá"
                 android:textColor="@color/white"

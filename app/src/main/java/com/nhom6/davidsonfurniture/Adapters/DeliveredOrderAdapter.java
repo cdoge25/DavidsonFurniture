@@ -1,78 +1,68 @@
 package com.nhom6.davidsonfurniture.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom6.davidsonfurniture.Models.DeliveredOrder;
 import com.nhom6.davidsonfurniture.R;
 
 import java.util.List;
 
-public class DeliveredOrderAdapter extends BaseAdapter {
-    Activity activity;
-    int item_layout;
-    List<DeliveredOrder> deliveredorders;
+public class DeliveredOrderAdapter extends RecyclerView.Adapter<DeliveredOrderAdapter.DeliveredViewHolder> {
 
-    public DeliveredOrderAdapter(Activity activity, int item_layout, List<DeliveredOrder> orders) {
-        this.activity = activity;
-        this.item_layout = item_layout;
-        this.deliveredorders = orders;
+    List<DeliveredOrder> deliveredOrderList;
+    Context context;
+
+    public DeliveredOrderAdapter(Context context, List<DeliveredOrder> deliveredOrderList) {
+        this.deliveredOrderList = deliveredOrderList;
+        this.context = context;
+    }
+
+    @NonNull
+    @Override
+    public DeliveredOrderAdapter.DeliveredViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_delivered_order,parent,false);
+        return new DeliveredOrderAdapter.DeliveredViewHolder(view);
     }
 
     @Override
-    public int getCount() {
-        return deliveredorders.size();
+    public void onBindViewHolder(@NonNull DeliveredOrderAdapter.DeliveredViewHolder holder, int position) {
+            DeliveredOrder b = deliveredOrderList.get(position);
+            holder.imvThumb.setImageResource(b.getDeliveredThumb());
+            holder.txtName.setText(b.getDeliveredName());
+            holder.txtType.setText(b.getDeliveredType());
+            holder.txtColor.setText(b.getDeliveredColor());
+            holder.txtPrice.setText(b.getDeliveredPrice());
+            holder.txtQuantity.setText(b.getDeliveredQuantity());
     }
 
     @Override
-    public Object getItem(int i) {
-        return deliveredorders.get(i);
+    public int getItemCount() {
+           return deliveredOrderList.size();
     }
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
+    public void release() {
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        //link views and binding data: ánh xạ textview
-        DeliveredOrderAdapter.ViewHolder holder;
-        if (view == null){
-            holder = new DeliveredOrderAdapter.ViewHolder();
-            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(item_layout, null);
-            holder.imvDeliveredThumb = view.findViewById(R.id.imvDeliveredThumb);
-            holder.txtDeliveredName = view.findViewById(R.id.txtDeliveredName);
-            holder.txtDeliveredType = view.findViewById(R.id.txtDeliveredType);
-            holder.txtDeliveredColor = view.findViewById(R.id.txtDeliveredColor);
-            holder.txtDeliveredPrice = view.findViewById(R.id.txtDeliveredPrice);
-            holder.txtDeliveredQuantity = view.findViewById(R.id.txtDeliveredQuantity);
+    public class DeliveredViewHolder extends RecyclerView.ViewHolder {
+        ImageView imvThumb;
+        TextView txtName, txtType, txtColor, txtPrice, txtQuantity;
 
-            view.setTag(holder);
+        public DeliveredViewHolder(View view) {
+            super(view);
+            imvThumb = view.findViewById(R.id.imvDeliveredThumb);
+            txtName = view.findViewById(R.id.txtDeliveredName);
+            txtType = view.findViewById(R.id.txtDeliveredType);
+            txtColor = view.findViewById(R.id.txtDeliveredColor);
+            txtPrice = view.findViewById(R.id.txtDeliveredPrice);
+            txtQuantity = view.findViewById(R.id.txtDeliveredQuantity);
         }
-        else{
-            holder = (DeliveredOrderAdapter.ViewHolder) view.getTag();
-        }
-        //binding data: nạp dữ liệu
-        DeliveredOrder b = deliveredorders.get(i);
-        holder.imvDeliveredThumb.setImageResource(b.getDeliveredThumb());
-        holder.txtDeliveredName.setText(b.getDeliveredName());
-        holder.txtDeliveredType.setText(b.getDeliveredType());
-        holder.txtDeliveredColor.setText(b.getDeliveredColor());
-        holder.txtDeliveredPrice.setText(b.getDeliveredPrice());
-        holder.txtDeliveredQuantity.setText(b.getDeliveredQuantity());
-        return view;
-    }
-
-    public static class ViewHolder{
-        ImageView imvDeliveredThumb;
-        TextView txtDeliveredName, txtDeliveredType, txtDeliveredColor, txtDeliveredPrice, txtDeliveredQuantity;
     }
 }
