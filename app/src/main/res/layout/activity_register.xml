@@ -124,7 +124,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:text="@string/register_send_otp"
-            android:onClick="toRegister2"
+            android:onClick="toPhoneOtp"
             android:textAllCaps="false"
             android:textSize="20sp" />
     </LinearLayout>
