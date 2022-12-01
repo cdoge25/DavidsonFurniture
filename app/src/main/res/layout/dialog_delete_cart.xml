@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận xóa !"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/futura_bold"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="Bạn muốn xóa sản phẩm khỏi giỏ hàng ?"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="150sp"
+            android:layout_height="44sp"
+            android:text="Hủy"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_bold"
+            android:background="@drawable/custom_button"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:layout_width="150sp"
+            android:layout_height="44sp"
+            android:text="Xác nhận"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_bold"
+            android:background="@drawable/custom_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20sp"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

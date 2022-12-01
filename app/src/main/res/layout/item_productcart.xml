@@ -9,13 +9,13 @@
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="140dp"
         android:background="@drawable/custom_view_2">
 
         <CheckBox
             android:id="@+id/chk_select"
-            android:layout_width="15sp"
-            android:layout_height="15sp"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
             android:layout_marginTop="60sp"
             />
 
@@ -23,7 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5sp"
-            app:cardCornerRadius="20sp">
+            app:cardCornerRadius="20sp"
+            android:layout_gravity="center">
 
             <ImageView
                 android:id="@+id/img_product"
@@ -38,9 +39,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120sp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="10sp">
+            android:layout_marginStart="10sp"
+            android:layout_gravity="center">
 
             <TextView
                 android:id="@+id/txt_ProductName"
@@ -49,6 +51,8 @@
                 android:text="ALICE"
                 android:textStyle="bold"
                 android:textSize="14sp"
+                android:fontFamily="@font/futura_bold"
+                android:textColor="@color/black"
                 />
 
             <TextView
@@ -56,8 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sofa băng"
-                android:textStyle="bold"
                 android:textSize="12sp"
+                android:fontFamily="@font/futura_book"
 
                 />
             <Spinner
@@ -71,11 +75,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9,000,000đ"
-                android:textStyle="bold"
+                android:fontFamily="@font/futura_book"
                 android:textSize="14sp"
                 android:layout_marginTop="5sp"
-                android:textColor="#FF6600"
-                />
+                android:textColor="#FF6600" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,6 +99,7 @@
                     android:text="02"
                     android:layout_margin="10sp"
                     android:textSize="14sp"
+                    android:fontFamily="@font/futura_book"
                     />
 
                 <ImageButton

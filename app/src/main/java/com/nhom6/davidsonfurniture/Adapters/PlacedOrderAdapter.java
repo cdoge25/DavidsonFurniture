@@ -1,79 +1,70 @@
 package com.nhom6.davidsonfurniture.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom6.davidsonfurniture.Models.PlacedOrder;
 import com.nhom6.davidsonfurniture.R;
 
 import java.util.List;
 
-public class PlacedOrderAdapter extends BaseAdapter {
-    Activity activity;
-    int item_layout;
-    List<PlacedOrder> orders;
+public class PlacedOrderAdapter extends RecyclerView.Adapter<PlacedOrderAdapter.PlacedViewHolder>{
 
-    public PlacedOrderAdapter(Activity activity, int item_layout, List<PlacedOrder> orders) {
-        this.activity = activity;
-        this.item_layout = item_layout;
-        this.orders = orders;
+    List<PlacedOrder> placedOrderList;
+    Context context;
+
+    public PlacedOrderAdapter(Context context, List<PlacedOrder> placedOrderList) {
+        this.placedOrderList = placedOrderList;
+        this.context = context;
+    }
+
+    @NonNull
+    @Override
+    public PlacedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_placed_order,parent,false);
+        return new PlacedViewHolder(view);
     }
 
     @Override
-    public int getCount() {
-        return orders.size();
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return orders.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        //link views and binding data: ánh xạ textview
-        ViewHolder holder;
-        if (view == null){
-            holder = new ViewHolder();
-            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(item_layout, null);
-            holder.imvThumb = view.findViewById(R.id.imvOrderDetailThumb);
-            holder.txtName = view.findViewById(R.id.txtOrderDetailName);
-            holder.txtType = view.findViewById(R.id.txtType);
-            holder.txtColor = view.findViewById(R.id.txtColor);
-            holder.txtOrderDetailPrice = view.findViewById(R.id.txtOrderDetailPrice);
-            holder.txtQuantity = view.findViewById(R.id.txtQuantity);
-
-            view.setTag(holder);
-        }
-        else{
-            holder = (ViewHolder) view.getTag();
-        }
-        //binding data: nạp dữ liệu
-        PlacedOrder b = orders.get(i);
+    public void onBindViewHolder(@NonNull PlacedOrderAdapter.PlacedViewHolder holder, int position) {
+        PlacedOrder b = placedOrderList.get(position);
         holder.imvThumb.setImageResource(b.getOrderThumb());
         holder.txtName.setText(b.getOrderName());
         holder.txtType.setText(b.getOrderType());
         holder.txtColor.setText(b.getOrderColor());
-        holder.txtOrderDetailPrice.setText(b.getOrderPrice());
+        holder.txtPrice.setText(b.getOrderPrice());
         holder.txtQuantity.setText(b.getOrderQuantity());
-        return view;
     }
 
-    public static class ViewHolder{
+    public void release(){
+        context = null;
+    }
+
+    @Override
+    public int getItemCount() {
+        return placedOrderList.size();
+    }
+
+    public class PlacedViewHolder extends RecyclerView.ViewHolder {
         ImageView imvThumb;
-        TextView txtName, txtType, txtOrderDetailPrice, txtColor, txtQuantity;
+        TextView txtName, txtType, txtPrice, txtColor, txtQuantity;
+
+        public PlacedViewHolder(View view) {
+            super(view);
+            imvThumb = view.findViewById(R.id.imvOrderThumb);
+            txtName = view.findViewById(R.id.txtOrderName);
+            txtType = view.findViewById(R.id.txtType);
+            txtColor = view.findViewById(R.id.txtColor);
+            txtPrice = view.findViewById(R.id.txtOrderDetailPrice);
+            txtQuantity = view.findViewById(R.id.txtQuantity);
+        }
     }
 }
 

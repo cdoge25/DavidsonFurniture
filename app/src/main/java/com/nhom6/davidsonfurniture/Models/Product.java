@@ -2,11 +2,6 @@ package com.nhom6.davidsonfurniture.Models;
 
 public class Product {
 
-    int productThumb;
-    String productName, productCategory, productRate;
-    double productPrice;
-
-
     public Product(int productThumb, String productName, String productCategory, String productRate, double productPrice) {
         this.productThumb = productThumb;
         this.productName = productName;
@@ -14,6 +9,10 @@ public class Product {
         this.productRate = productRate;
         this.productPrice = productPrice;
     }
+
+    int productThumb;
+    String productName, productCategory, productRate;
+    double productPrice;
 
     public int getProductThumb() {
         return productThumb;
@@ -54,7 +53,4 @@ public class Product {
     public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
-
-
-
 }

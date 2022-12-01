@@ -5,17 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="20dp"
     tools:context=".Activities.DetailProductActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarProduct"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginStart="-5dp"
-        android:layout_marginBottom="20dp"
         android:background="@color/white"
-        android:elevation="2dp"
+        android:elevation="5dp"
         app:contentInsetStartWithNavigation="0dp"
         app:navigationIcon="@drawable/ic_action_back"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -24,201 +22,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/txtDetailProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="46dp"
+            android:layout_marginEnd="50dp"
             android:gravity="center"
             android:text="ALICE"
-            android:textColor="#FF6600"
+            android:textColor="@color/orange"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/futura_bold"/>
     </androidx.appcompat.widget.Toolbar>
+    <!--END HEADER-->
 
     <ScrollView
         android:id="@+id/svOrderDetails"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="100dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarProduct"
-        android:paddingHorizontal="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="6dp"
-            android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginVertical="6dp"
-            app:cardCornerRadius="20dp"
-            android:layout_marginEnd="4dp">
-
-            <ImageView
-                android:id="@+id/imvProductDetailThumb"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/img_sofabang_alice" />
-        </androidx.cardview.widget.CardView>
-
-            <!--Name-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ALICE"
-                android:textSize="32sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtRate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="34dp"
-                android:text="4.7"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/ic_rating_star" />
-        </RelativeLayout>
-
-            <!--Category-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtProductCategory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Sofa bằng"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btnSeeReview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:background="#00000000"
-                android:text="Xem đánh giá"
-                android:textColor="#9E9E9E"
-                android:textSize="16sp" />
-        </RelativeLayout>
-
-
-            <!--Price-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/txtPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4.500.000"
-                android:textColor="#FF6600"
-                android:textSize="24sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
-                android:text="đ"
-                android:textColor="#FF6600"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-
-            <!--Size-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Kích thước:"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="D120 x R63 x C82 cm"
-            android:textSize="16sp" />
-
-            <!--Chất liệu-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Chất liệu: "
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vải Indonesia, khung gỗ tần bì"
-            android:textSize="16sp" />
-
-            <!--Color-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Màu sắc: "
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/radWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Trắng"
-                android:textSize="16sp"
-                />
-
-            <RadioButton
-                android:id="@+id/radGray"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Xám"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/radBlack"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Đen"
-                android:textSize="16sp" />
-        </RadioGroup>
-
-        </LinearLayout>
+        android:paddingHorizontal="10dp">
     </ScrollView>
 
     <LinearLayout
@@ -245,8 +72,7 @@
                 android:layout_height="50dp"
                 android:backgroundTint="#FFFFFF"
                 android:src="@drawable/ic_action_minus"
-                android:contentDescription="Subtract"
-                />
+                android:contentDescription="Subtract" />
 
             <TextView
                 android:id="@+id/txtProductQuantity"
@@ -255,7 +81,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:text="02"
                 android:textSize="22sp"
-                android:textStyle="bold"
+                android:fontFamily="@font/futura_book"
                 android:layout_gravity="center"/>
 
             <ImageButton
@@ -273,18 +99,19 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAddToCart"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.5"
-                android:background="#FF6600"
+                android:background="@drawable/bg_button_orange"
                 android:paddingHorizontal="5dp"
                 android:text="Thêm vào giỏ hàng"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/futura_bold" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

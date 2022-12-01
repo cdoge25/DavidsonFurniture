@@ -71,9 +71,7 @@ public class ProductAdapter extends BaseAdapter {
         holder.txtProductCategory.setText(p.getProductCategory());
         holder.txtPrice.setText(String.valueOf(p.getProductPrice()));
 
-
         return view;
-
 
     }
     public static class ViewHolder {

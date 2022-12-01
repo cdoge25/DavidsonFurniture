@@ -25,8 +25,14 @@
             android:queryBackground="@null"
             android:queryHint="Tìm kiếm"
             android:searchIcon="@drawable/ic_action_search"
-            android:background="#ECECEC"/>
+            android:background="@color/lightgrey"/>
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/lnRecent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,30 +40,39 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtProductCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="Tìm kiếm gần đây"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/btnSeeReview"
+            android:id="@+id/btnDeleteAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:background="#00000000"
             android:text="Xoá tất cả"
-            android:textColor="#9E9E9E"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/grey"
             android:textSize="16sp" />
     </RelativeLayout>
 
-    <ListView
+    <GridView
+        android:layout_marginTop="10dp"
         android:id="@+id/gvNearlySearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:numColumns="2"
         />
+    </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
 </LinearLayout>

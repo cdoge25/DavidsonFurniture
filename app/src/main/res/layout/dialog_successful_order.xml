@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20sp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="30sp">
+
+
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/ic_notifications_readall"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đặt hàng thành công!"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:fontFamily="@font/futura_bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã đơn hàng của bạn là #1"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="5sp"
+        android:fontFamily="@font/futura_book"/>
+
+    <Button
+        android:id="@+id/btn_showHomePage"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="Trang chủ"
+        android:textStyle="bold"
+        android:layout_marginTop="15sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/futura_bold"
+        android:background="@drawable/custom_button"/>
+
+    <Button
+        android:id="@+id/btn_showOrder"
+        android:layout_width="170sp"
+        android:layout_height="wrap_content"
+        android:text="Xem đơn hàng"
+        android:textStyle="bold"
+        android:background="@drawable/custom_button"
+        android:layout_marginTop="15sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/futura_bold" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

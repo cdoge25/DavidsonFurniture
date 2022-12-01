@@ -27,7 +27,7 @@
         android:textStyle="bold"
         android:layout_gravity="center_horizontal|center"
         android:gravity="center"
-        android:layout_marginHorizontal="25dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
         android:fontFamily="@font/futura_book"/>
 
