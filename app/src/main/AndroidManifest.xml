@@ -37,7 +37,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".DetailVoucherActivity"
+            android:name=".Activities.DetailVoucherActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -59,13 +59,6 @@
         </activity>
         <activity
             android:name=".Activities.NotificationDetailsActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activities.NotificationsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -206,13 +199,6 @@
         </activity>
         <activity
             android:name=".Activities.SearchProductActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activities.PlacedOrderActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
