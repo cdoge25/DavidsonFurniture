@@ -13,6 +13,20 @@
         android:theme="@style/Theme.DavidsonFurniture"
         tools:targetApi="31">
         <activity
+            android:name=".DetailVoucherActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.NotificationsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.ChooseBankActivity"
             android:exported="false">
             <meta-data
