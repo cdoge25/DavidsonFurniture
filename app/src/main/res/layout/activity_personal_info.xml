@@ -7,31 +7,41 @@
     android:weightSum="10"
     tools:context=".Activities.PersonalInfoActivity">
 
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="fill"
         android:orientation="vertical"
-        android:padding="20dp">
+        >
 
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarOrderDetail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_action_back"
-                android:backgroundTint="@color/white"/>
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIcon="@drawable/ic_action_back"
+            app:contentInsetStartWithNavigation="0dp"
+            android:layout_marginBottom="0dp"
+            android:elevation="5dp"
+            android:background="@color/white"
+            android:layout_gravity="top">
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:text="Thông tin cá nhân"
+                android:layout_height="wrap_content"
+                android:text="Tài khoản"
+                android:fontFamily="@font/futura_bold"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
                 android:gravity="center"
-                android:textSize="26sp"
-                android:textColor="@color/orange"/>
-        </LinearLayout>
+                android:layout_marginEnd="50dp"/>
+        </androidx.appcompat.widget.Toolbar>
+        <!--END HEADER-->
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,6 +59,12 @@
                 android:padding="10dp"
                 android:backgroundTint="@color/white"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,7 +86,7 @@
             >
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="Doge"
             android:textSize="20sp"
             android:layout_weight="10"
@@ -101,21 +117,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="10">
-            <EditText
+<!--            <EditText-->
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Thiết lập"
-                android:textSize="20sp"
-                android:layout_weight="10"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Thiết lập"-->
+<!--                android:textSize="20sp"-->
+<!--                android:layout_weight="10"-->
+<!--                android:fontFamily="@font/futura_book"-->
+<!--                android:textColor="@color/black"/>-->
 
             <Spinner
                 android:id="@+id/spinner_sex"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_height="50dp"
+                android:layout_weight="10" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,26 +152,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-
+                android:id="@+id/edt_TextDateOfBirth"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:hint="Chọn ngày"
                 android:textSize="20sp"
                 android:layout_weight="10"
                 android:fontFamily="@font/futura_book"
                 android:textColor="@color/black"/>
             <ImageButton
+                android:id="@+id/btn_DateOfBirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_action_see_more"
                 android:backgroundTint="@color/white"/>
         </LinearLayout>
-
-
-
-
-
-
+        </LinearLayout>
 
 
     </LinearLayout>
