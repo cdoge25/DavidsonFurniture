@@ -128,9 +128,9 @@ public class SearchProductActivity extends AppCompatActivity implements SearchPr
 
     @Override
     public void selectedProduct(Product product) {
-        Intent intent = new Intent(SearchProductActivity.this, DetailProductActivity.class);
-        intent.putExtra("isSearch", true);
-    //  intent.putExtra (Constant.ID_PRODUCT, product);
-        startActivity(intent);
-    }
+      Intent intent = new Intent(SearchProductActivity.this, DetailProductActivity.class);
+//        intent.putExtra("isSearch", true);
+//      intent.putExtra (Constant.ID_PRODUCT, product);
+//        startActivity(intent);
+   }
 }
