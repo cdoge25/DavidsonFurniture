@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.nhom6.davidsonfurniture.Adapters.ProductAdapter;
@@ -24,10 +25,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_home);
-//        if (getSupportActionBar() != null) {
-//            getSupportActionBar().hide();
-//        }
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -39,6 +39,9 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.navApp.setSelectedItemId(R.id.navHome);
+        navigationClick();
+
         toNotification();
         toNewProduct();
         toPopularProduct();
@@ -47,6 +50,27 @@ public class HomeActivity extends AppCompatActivity {
         loadNewProduct();
     }
 
+    private void navigationClick() {
+        binding.navApp.setOnItemSelectedListener(item ->{
+            switch (item.getItemId()){
+                case R.id.navHome:
+                    return true;
+                case R.id.navCart:
+                    startActivity(new Intent(getApplicationContext(),CartActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.navOrder:
+                    startActivity(new Intent(getApplicationContext(),OrderStatusActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.navAccount:
+                    startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+            }
+            return false;
+        });
+    }
 
     private void toNotification() {
         binding.btnNotification.setOnClickListener(new View.OnClickListener() {
