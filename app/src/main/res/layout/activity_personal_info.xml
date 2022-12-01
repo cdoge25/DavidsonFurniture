@@ -39,9 +39,9 @@
             android:orientation="vertical"
             android:layout_marginTop="20dp">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/img_website"/>
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img"/>
             <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -60,7 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tên người dùng: "
-                android:layout_weight="10"/>
+                android:layout_weight="10"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
         <LinearLayout
@@ -68,12 +69,13 @@
             android:layout_height="wrap_content"
             >
         <EditText
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Doge"
             android:textSize="20sp"
-            android:layout_weight="10"/>
+            android:layout_weight="10"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,25 +93,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Giới tính: "
-                android:layout_weight="10"/>
+                android:layout_weight="10"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:weightSum="10">
             <EditText
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Thiết lập"
                 android:textSize="20sp"
-                android:layout_weight="10"/>
-            <ImageButton
+                android:layout_weight="10"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:id="@+id/spinner_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_action_see_more"
-                android:backgroundTint="@color/white" />
+                android:layout_weight="1"/>
         </LinearLayout>
 
         <LinearLayout
@@ -122,25 +128,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ngày sinh: "
-                android:layout_weight="10"/>
+                android:layout_weight="10"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
             <EditText
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Chọn ngày"
                 android:textSize="20sp"
-                android:layout_weight="10"/>
+                android:layout_weight="10"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_action_see_more"
-                android:backgroundTint="@color/white" />
+                android:backgroundTint="@color/white"/>
         </LinearLayout>
 
 

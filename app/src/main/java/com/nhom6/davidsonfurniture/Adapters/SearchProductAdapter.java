@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom6.davidsonfurniture.Models.Product;
 import com.nhom6.davidsonfurniture.R;
-import com.squareup.picasso.Picasso;
+//import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -47,7 +47,7 @@ public class SearchProductAdapter extends RecyclerView.Adapter<SearchProductAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Picasso.get().load(products.get(position).getProductThumb()).into(holder.imvThumb);
+        //Picasso.get().load(products.get(position).getProductThumb()).into(holder.imvThumb);
         holder.txtName.setText(products.get(position).getProductName());
         holder.txtPrice.setText(String.format("%.0f",products.get(position).getProductPrice()) + "đ");
         holder.txtRate.setText(String.valueOf(products.get(position).getProductRate()));
