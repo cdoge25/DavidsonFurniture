@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+//import com.squareup.picasso.Picasso;
 import com.nhom6.davidsonfurniture.Models.CategoryProduct;
 import com.nhom6.davidsonfurniture.R;
 
@@ -61,7 +61,7 @@ public class CategoryAdapter extends BaseAdapter {
             holder= (ViewHolder) convertView.getTag();
         }
         CategoryProduct data= dataList.get(position);
-        Picasso.get().load(data.getProductThumb()).into(holder.imvImage);
+//        Picasso.get().load(data.getProductThumb()).into(holder.imvImage);
         holder.txtName.setText(data.getProductName());
         return convertView;
     }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.arch.core.executor.TaskExecutor;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
 
     PinView pinFromUser;
     String codeBySystem;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
     }
 
     private void sendVerificationCodeToUser(String phoneNo) {
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 //        mAuth.getFirebaseAuthSettings().setAppVerificationDisabledForTesting(true);
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
@@ -71,7 +73,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
 //                mCallbacks);
     }
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
+    private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                 @Override
                 public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
@@ -108,13 +110,15 @@ public class PhoneOtpActivity extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(PhoneOtpActivity.this, "Xác nhận thành công", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(), RegisterActivity2.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
                         } else {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(PhoneOtpActivity.this, "Không thành công! Xin hãy thử lại", Toast.LENGTH_LONG).show();
