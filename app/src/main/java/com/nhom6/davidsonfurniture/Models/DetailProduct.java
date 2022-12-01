@@ -1,18 +1,6 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class Product {
-
-    public Product(int productThumb, String productName, String productCategory, String productRate, double productPrice) {
-        this.productThumb = productThumb;
-        this.productName = productName;
-        this.productCategory = productCategory;
-        this.productRate = productRate;
-        this.productPrice = productPrice;
-    }
-
-    int productThumb;
-    String productName, productCategory, productRate;
-    double productPrice;
+public class DetailProduct {
 
     public int getProductThumb() {
         return productThumb;
@@ -46,6 +34,30 @@ public class Product {
         this.productRate = productRate;
     }
 
+    public String getProductSize() {
+        return productSize;
+    }
+
+    public void setProductSize(String productSize) {
+        this.productSize = productSize;
+    }
+
+    public String getProductMaterial() {
+        return productMaterial;
+    }
+
+    public void setProductMaterial(String productMaterial) {
+        this.productMaterial = productMaterial;
+    }
+
+    public String getProductColor() {
+        return productColor;
+    }
+
+    public void setProductColor(String productColor) {
+        this.productColor = productColor;
+    }
+
     public double getProductPrice() {
         return productPrice;
     }
@@ -53,4 +65,17 @@ public class Product {
     public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
+
+    public int getChecked() {
+        return checked;
+    }
+
+    public void setChecked(int checked) {
+        this.checked = checked;
+    }
+
+    int productThumb;
+    String productName, productCategory, productRate, productSize,productMaterial,productColor;
+    double productPrice;
+    int checked;
 }
