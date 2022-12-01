@@ -35,16 +35,17 @@
         android:layout_height="wrap_content"
         android:text="Mã đơn hàng: DF123456789"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/orange"
         android:textSize="16sp"
-        android:fontFamily="@font/futura_book"/>
+        android:fontFamily="@font/futura_book"
+        android:layout_gravity="left"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="25dp"
+        android:layout_marginHorizontal="20dp"
         app:cardCornerRadius="20dp"
         android:elevation="15dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,9 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="0dp"
+                android:layout_marginVertical="10dp"
                 android:layout_toEndOf="@+id/cardViewDetail"
                 android:orientation="vertical"
                 android:gravity="center_vertical">
@@ -89,7 +88,8 @@
                     android:text="LUKI"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:fontFamily="@font/futura_bold"/>
+                    android:fontFamily="@font/futura_bold"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtType"
@@ -99,7 +99,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/grey"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtColor"
@@ -109,7 +110,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtOrderDetailPrice"
@@ -119,7 +121,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/orange"
                     android:textSize="14sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
 
                 <TextView
                     android:id="@+id/txtQuantity"
@@ -129,7 +132,8 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:layout_gravity="left"/>
             </LinearLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -138,8 +142,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="left">
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -164,7 +169,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="@font/futura_bold"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="330dp"
         android:textAllCaps="false"
         android:paddingHorizontal="30dp"
         android:paddingVertical="10dp"

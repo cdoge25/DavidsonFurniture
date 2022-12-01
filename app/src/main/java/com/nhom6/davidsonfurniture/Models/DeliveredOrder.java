@@ -8,6 +8,15 @@ public class DeliveredOrder {
     String deliveredPrice;
     String deliveredQuantity;
 
+    public DeliveredOrder(int deliveredThumb, String deliveredName, String deliveredType, String deliveredColor, String deliveredPrice, String deliveredQuantity) {
+        this.deliveredThumb = deliveredThumb;
+        this.deliveredName = deliveredName;
+        this.deliveredType = deliveredType;
+        this.deliveredColor = deliveredColor;
+        this.deliveredPrice = deliveredPrice;
+        this.deliveredQuantity = deliveredQuantity;
+    }
+
     public int getDeliveredThumb() {
         return deliveredThumb;
     }
@@ -53,15 +62,6 @@ public class DeliveredOrder {
     }
 
     public void setDeliveredQuantity(String deliveredQuantity) {
-        this.deliveredQuantity = deliveredQuantity;
-    }
-
-    public DeliveredOrder(int deliveredThumb, String deliveredName, String deliveredType, String deliveredColor, String deliveredPrice, String deliveredQuantity) {
-        this.deliveredThumb = deliveredThumb;
-        this.deliveredName = deliveredName;
-        this.deliveredType = deliveredType;
-        this.deliveredColor = deliveredColor;
-        this.deliveredPrice = deliveredPrice;
         this.deliveredQuantity = deliveredQuantity;
     }
 }
