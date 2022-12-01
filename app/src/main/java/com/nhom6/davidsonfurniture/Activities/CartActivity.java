@@ -3,6 +3,7 @@ package com.nhom6.davidsonfurniture.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
 
 import com.nhom6.davidsonfurniture.Adapters.ProductCartAdapter;
@@ -27,6 +28,13 @@ public class CartActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadData();
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     private void loadData() {
@@ -38,19 +46,15 @@ public class CartActivity extends AppCompatActivity {
 //        productList.add(new ProductInfor(R.drawable.img_ghean_noven,"NOVEN",
 //                "ghế ăn",300000,0,false));
         productList.add(new ProductInfor(R.drawable.img_ghean_noven,"NOVEN",
-                "bàn trang điểm",9000000));
+                "Bàn trang điểm",9000000));
         productList.add(new ProductInfor(R.drawable.img_bancafe_luki,"LUKI",
-                "bàn cafe",10000000));
+                "Bàn cafe",10000000));
         productList.add(new ProductInfor(R.drawable.img_banan_honey,"HONEY",
-                "bàn ăn",10000000));
+                "Bàn ăn",10000000));
         productList.add(new ProductInfor(R.drawable.img_bancafe_mushroom,"MUSHROOM",
-                "bàn cafe",500000));
+                "Bàn cafe",500000));
 
         adapter = new ProductCartAdapter(this,R.layout.item_productcart,productList);
         binding.lvProductCart.setAdapter(adapter);
     }
-
-
-
-
 }

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="68sp"
+            android:text="Màu sắc"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#FF6600"
+            android:fontFamily="@font/futura_bold"/>
+
+        <ImageButton
+            android:layout_width="24sp"
+            android:layout_height="24sp"/>
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp">
+        
+        <RadioButton
+            android:id="@+id/radio_black"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đen"
+            android:textSize="16sp"
+            android:layout_marginStart="10sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp">
+
+        <RadioButton
+            android:id="@+id/radio_white"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trắng"
+            android:textSize="16sp"
+            android:layout_marginStart="10sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp">
+
+        <RadioButton
+            android:id="@+id/radio_grey"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xám"
+            android:textSize="16sp"
+            android:layout_marginStart="10sp"/>
+    </LinearLayout>
+    
+    <Button
+        android:layout_width="150sp"
+        android:layout_height="44sp"
+        android:text="Xác nhận"
+        android:textAllCaps="false"
+        android:fontFamily="@font/futura_bold"
+        android:background="@drawable/custom_button"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+</LinearLayout>
