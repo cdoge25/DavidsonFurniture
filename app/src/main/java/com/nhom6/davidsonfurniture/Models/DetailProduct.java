@@ -58,11 +58,11 @@ public class DetailProduct {
         this.productColor = productColor;
     }
 
-    public double getProductPrice() {
+    public int getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(int productPrice) {
         this.productPrice = productPrice;
     }
 
@@ -76,6 +76,6 @@ public class DetailProduct {
 
     int productThumb;
     String productName, productCategory, productRate, productSize,productMaterial,productColor;
-    double productPrice;
+    int productPrice;
     int checked;
 }

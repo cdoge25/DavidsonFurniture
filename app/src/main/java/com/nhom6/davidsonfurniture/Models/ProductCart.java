@@ -1,22 +1,25 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class ProductInfor {
+public class ProductCart {
     int productImage;
     String productName;
     String productType;
-    double productPrice;
+    String productPrice;
+    String productColor;
+    String productQuantity;
 
     //Constructor
 
-    public ProductInfor(int productImage, String productName, String productType, double productPrice) {
+    public ProductCart(int productImage, String productName, String productType, String productPrice, String productColor, String productQuantity) {
         this.productImage = productImage;
         this.productName = productName;
         this.productType = productType;
         this.productPrice = productPrice;
+        this.productColor = productColor;
+        this.productQuantity = productQuantity;
     }
 
-    //Getter and Setter
-
+    //Getter and setter
     public int getProductImage() {
         return productImage;
     }
@@ -41,11 +44,27 @@ public class ProductInfor {
         this.productType = productType;
     }
 
-    public double getProductPrice() {
+    public String getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(String productPrice) {
         this.productPrice = productPrice;
+    }
+
+    public String getProductColor() {
+        return productColor;
+    }
+
+    public void setProductColor(String productColor) {
+        this.productColor = productColor;
+    }
+
+    public String getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(String productQuantity) {
+        this.productQuantity = productQuantity;
     }
 }

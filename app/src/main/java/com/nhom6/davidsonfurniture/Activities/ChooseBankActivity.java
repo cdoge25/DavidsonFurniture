@@ -66,6 +66,11 @@ public class ChooseBankActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent a = new Intent(ChooseBankActivity.this, PaymentMethodActivity.class);
+                Bank bank = bankList.get(i);
+                String name = bank.getBankName();
+                int image = bank.getImageBank();
+                a.putExtra("name",name);
+                a.putExtra("image",image);
                 startActivity(a);
             }
         });
