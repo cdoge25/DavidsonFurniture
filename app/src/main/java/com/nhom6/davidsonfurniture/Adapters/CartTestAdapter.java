@@ -1,57 +1,46 @@
 package com.nhom6.davidsonfurniture.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.nhom6.davidsonfurniture.Activities.CartActivity;
 import com.nhom6.davidsonfurniture.Models.ProductCart;
 import com.nhom6.davidsonfurniture.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CartAdapter extends BaseAdapter {
-    CartActivity activity;
+public class CartTestAdapter extends ArrayAdapter<ProductCart> {
+    CartActivity context;
+    ArrayList<ProductCart> arrayList;
     int item_layout;
-    List<ProductCart> product;
 
-    //Constructor
-    public CartAdapter(CartActivity activity, int item_layout, List<ProductCart> product) {
-        this.activity = activity;
-        this.item_layout = item_layout;
-        this.product = product;
+    public CartTestAdapter( Context context, int resource,ArrayList<ProductCart>objects) {
+        super(context, resource, objects);
+        this.context = (CartActivity) context;
+        this.arrayList = objects;
+        this.item_layout = resource;
     }
-
+    @NonNull
     @Override
-    public int getCount() {
-        return product.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent){
         CartAdapter.ViewHolder holder;
         if(convertView ==null){
             //Link View
             holder = new CartAdapter.ViewHolder();
 
-            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(item_layout,null);
             //Ánh xạ
             holder.imgProduct = convertView.findViewById(R.id.img_product);
@@ -71,7 +60,7 @@ public class CartAdapter extends BaseAdapter {
         }
 
         //Gán giá trị
-        ProductCart p = product.get(position);
+        ProductCart p = arrayList.get(position);
         holder.imgProduct.setImageResource(p.getProductImage());
         holder.proName.setText(p.getProductName());
         holder.proType.setText(p.getProductType());
@@ -82,7 +71,7 @@ public class CartAdapter extends BaseAdapter {
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.DialogDelete(p);
+                context.DialogDelete(p);
 
             }
         });
@@ -108,18 +97,13 @@ public class CartAdapter extends BaseAdapter {
         holder.proColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.DialogColor();
+                context.DialogColor();
             }
         });
         //Intent
 
         return convertView;
-
     }
-
-
-
-
     public static class ViewHolder {
         ImageView imgProduct;
         TextView proName, proType, proPrice, proColor, proNumber;
@@ -127,3 +111,4 @@ public class CartAdapter extends BaseAdapter {
         CheckBox chkSelect;
     }
 }
+
