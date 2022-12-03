@@ -20,9 +20,12 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_account);
 
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        this.getWindow().getDecorView().setSystemUiVisibility(
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }        this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -30,11 +33,80 @@ public class AccountActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
+
+
         binding = ActivityAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.navApp.setSelectedItemId(R.id.navAccount);
         navigationClick();
+
+        toSettingAccount();
+        toVoucher();
+        toChangeLanguage();
+        toCustomerService();
+        toContact();
+
+        goback();
+    }
+
+    private void toContact() {
+        binding.llContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, CustomerServiceActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toCustomerService() {
+        binding.llCustomerService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, CustomerServiceActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toChangeLanguage() {
+        binding.llChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, ChangeLanguageActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toVoucher() {
+        binding.llVoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, VoucherActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void goback() {
+        binding.toolbarAccount.getChildAt(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    private void toSettingAccount() {
+        binding.llSettingAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, SettingAccountActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void navigationClick() {
