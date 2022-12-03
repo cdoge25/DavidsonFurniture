@@ -181,7 +181,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Đèn"                            android:fontFamily="@font/futura_book"
+                                android:text="Đèn"                            
+                                android:fontFamily="@font/futura_book"
                                 android:textSize="14sp"/>
                         </LinearLayout>
                         <LinearLayout
