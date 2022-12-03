@@ -54,4 +54,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--AutocompleteText-->
+    <string name="select">Lọc giá</string>
+
+    <!--Detail Product-->
+    <string name="review"><u>Xem đánh giá</u></string>
 </resources>

@@ -30,7 +30,7 @@
                 android:id="@+id/img_product"
                 android:layout_width="120sp"
                 android:layout_height="120sp"
-                android:src="@drawable/img_sofagiuong_elena"/>
+                android:src="@drawable/img_sofabang_elena"/>
 
 
         </androidx.cardview.widget.CardView>

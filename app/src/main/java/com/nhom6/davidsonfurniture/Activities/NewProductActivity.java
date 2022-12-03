@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 
 import com.nhom6.davidsonfurniture.Adapters.ProductAdapter;
@@ -25,6 +26,8 @@ public class NewProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_new_product);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -46,7 +49,7 @@ public class NewProductActivity extends AppCompatActivity {
         binding.gvNewProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(NewProductActivity.this, MainActivity.class);
+                Intent intent = new Intent(NewProductActivity.this, DetailProductActivity.class);
                 intent.putExtra("Name", productList.get(i).getProductName());
                 intent.putExtra("Image", productList.get(i).getProductThumb());
                 intent.putExtra("Price", productList.get(i).getProductPrice());

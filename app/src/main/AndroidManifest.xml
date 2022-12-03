@@ -24,7 +24,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.CategoryProductActivity"
+            android:name=".Activities.CategoriesProductActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -235,12 +235,7 @@
         </activity>
         <activity
             android:name=".Activities.PersonalInfoActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -332,9 +327,13 @@
         </activity>
         <activity
             android:name=".Activities.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
