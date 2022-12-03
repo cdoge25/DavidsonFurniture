@@ -88,7 +88,8 @@ public class HomeActivity extends AppCompatActivity {
         productList.add(new Product(R.drawable.img_bancafe_luki, "LUKI", "Bàn Cafe", "4.7", 1350000));
         productList.add(new Product(R.drawable.img_banan_honey,"HONEY", "Bàn ăn", "4.7", 2250000));
 
-        adapter = new ProductAdapter(HomeActivity.this, R.layout.item_new_product,  productList);
+        adapter = new ProductAdapter(HomeActivity.this, R.layout.item_product,  productList);
         binding.lvNewProduct.setAdapter(adapter);
+        
     }
 }

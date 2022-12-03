@@ -244,6 +244,7 @@
                         android:background="#00000000"
                         android:textColor="@color/grey"/>
                 </RelativeLayout>
+
                 <com.devsmart.android.ui.HorizontalListView
                     android:id="@+id/lvNewProduct"
                     android:layout_width="match_parent"
