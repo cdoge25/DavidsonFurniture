@@ -11,6 +11,7 @@ import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ public class CartActivity extends AppCompatActivity {
     ActivityCartBinding binding;
     CartAdapter adapter;
     ArrayList<ProductCart> productList;
+    ArrayAdapter<CartAdapter> adp;
 
 
     @Override
@@ -53,8 +55,13 @@ public class CartActivity extends AppCompatActivity {
         binding.navApp.setSelectedItemId(R.id.navCart);
         navigationClick();
 
+        //Adapter
+        productList = new ArrayList<>();
+        adapter = new CartAdapter(this,R.layout.item_productcart, productList);
+        binding.lvProductCart.setAdapter(adapter);
 
         loadData();
+
     }
 
     private void navigationClick() {
@@ -80,7 +87,6 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-          productList = new ArrayList<>();
 //        productList.add(new ProductInfor(R.drawable.img_bantrangdiem_mbinas,"MBINAS",
 //                "bàn trang điểm",5000000,1,false));
 //        productList.add(new ProductInfor(R.drawable.img_bancafe_luki,"LUKI",
@@ -88,16 +94,21 @@ public class CartActivity extends AppCompatActivity {
 //        productList.add(new ProductInfor(R.drawable.img_ghean_noven,"NOVEN",
 //                "ghế ăn",300000,0,false));
 
-        productList.add(new ProductCart(R.drawable.img_ghean_noven,"Noven","Ghế ăn"
-        ,"1000000","Đỏ","5"));
-        productList.add(new ProductCart(R.drawable.img_bancafe_mushroom,"Mushroom","Bàn cafe"
-                ,"3000000","Xám","3"));
-        productList.add(new ProductCart(R.drawable.img_banan_honey,"Honey","Bàn ăn"
-                ,"300000","Trắng","10"));
+        // Chuẩn
+//        productList.add(new ProductCart(R.drawable.img_ghean_noven,"Noven","Ghế ăn"
+//        ,"1000000","Đỏ","5"));
+//        productList.add(new ProductCart(R.drawable.img_bancafe_mushroom,"Mushroom","Bàn cafe"
+//                ,"3000000","Xám","3"));
+//        productList.add(new ProductCart(R.drawable.img_banan_honey,"Honey","Bàn ăn"
+//                ,"300000","Trắng","10"));
 
-        adapter = new CartAdapter(this,R.layout.item_productcart, productList);
-        binding.lvProductCart.setAdapter(adapter);
 
+        Intent intent = getIntent();
+        productList.add(new ProductCart(intent.getIntExtra("image",0),
+                intent.getStringExtra("name"), intent.getStringExtra("type"),
+                intent.getStringExtra("price"),null,null));
+
+        adapter.notifyDataSetChanged();
 
     }
 
@@ -195,10 +206,9 @@ public class CartActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
+
+
 
 
 

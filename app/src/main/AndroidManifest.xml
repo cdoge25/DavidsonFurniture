@@ -216,6 +216,7 @@
         <activity
             android:name=".Activities.DetailProductActivity"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -230,6 +231,7 @@
         <activity
             android:name=".Activities.NewProductActivity"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

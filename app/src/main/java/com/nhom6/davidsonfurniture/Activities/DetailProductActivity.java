@@ -32,6 +32,7 @@ import com.nhom6.davidsonfurniture.Adapters.ProductAdapter;
 import com.nhom6.davidsonfurniture.Constants.Constant;
 import com.nhom6.davidsonfurniture.Models.DetailProduct;
 import com.nhom6.davidsonfurniture.Models.Product;
+import com.nhom6.davidsonfurniture.Models.ProductCart;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityDetailProductBinding;
 import com.nhom6.davidsonfurniture.databinding.ActivityNewProductBinding;
@@ -49,6 +50,9 @@ public class DetailProductActivity extends AppCompatActivity {
     ImageButton imbAdd, imbSubtract;
     int quantity = 1;
     TextView txtQuantity;
+
+    int image_url;
+    String name, type, price, color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,15 +82,38 @@ public class DetailProductActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18N")
+    private void showData() {
+
+        Intent intent = getIntent();
+        binding.imvProductDetailThumb.setImageResource(intent.getIntExtra("Image", 0));
+        binding.txtProductName.setText(intent.getStringExtra("Name"));
+        binding.txtProductCategory.setText(intent.getStringExtra("Category"));
+        binding.txtProductPrice.setText(String.valueOf(intent.getIntExtra("Price", 0)));
+        binding.txtRate.setText(intent.getStringExtra("Rate"));
+
+        //Get intent for passing
+        image_url = intent.getIntExtra("Image",0);
+        name = intent.getStringExtra("Name");
+        type = intent.getStringExtra("Category");
+        price = String.valueOf(intent.getIntExtra("Price", 0));
+//                String color
+    }
+
 
     private void addToCart() {
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(DetailProductActivity.this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DetailProductActivity.this, CartActivity.class);
 
-                //Put Extra Intent
-
+                intent.putExtra("name",name);
+                intent.putExtra("image",image_url);
+                intent.putExtra("type",type);
+                intent.putExtra("price",price);
+//                intent.putExtra("color",color);
+                startActivity(intent);
             }
         });
     }
@@ -121,18 +148,6 @@ public class DetailProductActivity extends AppCompatActivity {
                 txtQuantity.setText(Integer.toString(quantity));
             };
         });
-    }
-
-    @SuppressLint("SetTextI18N")
-    private void showData() {
-
-        Intent intent = getIntent();
-        binding.imvProductDetailThumb.setImageResource(intent.getIntExtra("Image", 0));
-        binding.txtProductName.setText(intent.getStringExtra("Name"));
-        binding.txtProductCategory.setText(intent.getStringExtra("Category"));
-        binding.txtProductPrice.setText(String.valueOf(intent.getIntExtra("Price", 0)));
-        binding.txtRate.setText(intent.getStringExtra("Rate"));
-
     }
 
     private void toFeedback() {
