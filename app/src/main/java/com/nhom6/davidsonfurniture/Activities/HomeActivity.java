@@ -102,6 +102,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void toSofa() {
+        binding.llSofa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void toNewProduct() {

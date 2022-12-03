@@ -33,14 +33,14 @@ public class CategoriesProductActivity extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter <String> adapterItems;
 
-
-    //Toolbar toolbarCategoryProduct;
     //TextView txtCategoryName;
 //    Spinner spinnerCategory;
-//    String[] price = {"Tất cả","Dưới 1.000.000","Từ 1.000.000 đến 5.000.000","Từ 5.000.000 đến 10.000.000","Từ 10. 000.000 trở lên"};
-   //ArrayList<Product>products;
-    //GridView gvCategoryProduct;
-    //OnClickInterface onClickInterface;
+
+     String[] price = {"Tất cả","Dưới 1.000.000","Từ 1.000.000 đến 5.000.000","Từ 5.000.000 đến 10.000.000","Từ 10. 000.000 trở lên"};
+
+   ArrayList<Product>products;
+    GridView gvCategoryProduct;
+    OnClickInterface onClickInterface;
 
 
 
@@ -49,8 +49,12 @@ public class CategoriesProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_categories_product)
 
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -58,11 +62,7 @@ public class CategoriesProductActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
-//        linkViews();
-//        addEventBack();
-//        addEventProductList();
-//        addEventSpinner();
+        
 
         binding = ActivityCategoriesProductBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -71,22 +71,29 @@ public class CategoriesProductActivity extends AppCompatActivity {
 
         loadData();
         addEvent();
+        FilterPrice();
+        goBack();
+        toDetail();
+    }
 
-        autoCompleteTextView = findViewById(R.id.txt_auto_complete);
-        adapterItems = new ArrayAdapter<String>(this, R.layout.item_list_price, items);
-        autoCompleteTextView.setAdapter(adapterItems);
-        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+    private void toDetail() {
+        binding.gvCategoryProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(CategoriesProductActivity.this, DetailProductActivity.class);
+                intent.putExtra("Name", productList.get(i).getProductName());
+                intent.putExtra("Image", productList.get(i).getProductThumb());
+                intent.putExtra("Price", productList.get(i).getProductPrice());
+                intent.putExtra("Rate", productList.get(i).getProductRate());
+                intent.putExtra("Category", productList.get(i).getProductCategory());
+                startActivity(intent);
             }
         });
+
     }
+
+
+
     private void loadData() {
 
         productList = new ArrayList<>();
@@ -116,6 +123,33 @@ public class CategoriesProductActivity extends AppCompatActivity {
         });
     }
 
+    private void FilterPrice() {
+        //Add Filter
+        autoCompleteTextView = findViewById(R.id.txt_auto_complete);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.item_list_price, items);
+        autoCompleteTextView.setAdapter(adapterItems);
+        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void goBack() {
+        binding.toolbarCategoryProduct.getChildAt(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
 //    private void linkViews() {
 //        toolbarCategoryProduct = findViewById(R.id.toolbarCategoryProduct);
 //        txtCategoryName = findViewById(R.id.txtCategoryName);
@@ -125,17 +159,6 @@ public class CategoriesProductActivity extends AppCompatActivity {
 //
 //    }
 //
-//    private void addEventBack() {
-//        setSupportActionBar(toolbarCategoryProduct);
-//        if(getSupportActionBar() != null)
-//            getSupportActionBar().setTitle(null);
-//        toolbarCategoryProduct.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
-//    }
 
 //    private void addEventProductList() {
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(CategoryProductActivity.this, LinearLayoutManager.VERTICAL, false);
@@ -174,6 +197,8 @@ public class CategoriesProductActivity extends AppCompatActivity {
 //        autoCompleteTextView.setAdapter(adapter);
 //
 //        //Filter product
+
+
 //        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //            @Override
 //            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
