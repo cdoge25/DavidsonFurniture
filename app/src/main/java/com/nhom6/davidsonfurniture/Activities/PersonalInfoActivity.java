@@ -20,13 +20,14 @@ import android.widget.Toast;
 import com.nhom6.davidsonfurniture.Adapters.SexAdapter;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.Utils.SexDataUtils;
+import com.nhom6.davidsonfurniture.databinding.ActivityPersonalInfoBinding;
 
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class PersonalInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    ActivityPersonalInfoBinding binding;
     Spinner spinner;
 
 //    private Spinner spinnerSex;
@@ -40,18 +41,20 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info);
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        this.getWindow().getDecorView().setSystemUiVisibility(
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }        this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
+        goback();
         //DatePickerDialog
-
         this.edtTextDate = (EditText) this.findViewById(R.id.edt_TextDateOfBirth);
         this.btnDate = (ImageButton) this.findViewById(R.id.btn_DateOfBirth);
         
@@ -103,6 +106,16 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
 //            }
 //        });
     }
+
+    private void goback() {
+        binding.toolbarPersonalInfo.getChildAt(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
     //User click on Button
     private void buttonSelectDate() {
         //Date Select Listener
