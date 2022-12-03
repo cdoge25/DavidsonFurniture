@@ -24,9 +24,12 @@ public class RegisterActivity extends AppCompatActivity {
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        setContentView(R.layout.activity_on_boarding);
-//        if (getSupportActionBar() != null) {
-//            getSupportActionBar().hide();
-//        }
+        //hide status and action bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -35,12 +38,11 @@ public class RegisterActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         name = findViewById(R.id.edtName);
         mail = findViewById(R.id.edtMail);
         phone = findViewById(R.id.edtPhone);
         password = findViewById(R.id.edtPassword);
+
         send = findViewById(R.id.btnSendOtp);
         back = findViewById(R.id.btnBack);
 
@@ -51,8 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
@@ -72,14 +73,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean validateMail(){
         String val = mail.getEditText().getText().toString().trim();
-        String checkMail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        String checkMail = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
 
         if(val.isEmpty()){
             mail.setError("Không được bỏ trống vùng này");
             return false;
         }
         else if (!val.matches(checkMail)){
-            mail.setError("Email phải theo dạng user@example.extension");
+            mail.setError("Email phải theo dạng user@domain");
             return false;
         }
         else{
@@ -91,15 +92,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean validatePhone() {
         String val = phone.getEditText().getText().toString().trim();
-        String checkPhone = "[0-9]{10}";
+        String checkPhone = "[0-9]{9}";
         if(val.isEmpty()){
             phone.setError("Không được bỏ trống vùng này");
             return false;
         }
-//        else if(!val.matches(checkPhone)){
-//            phone.setError("Số điện thoại phải gồm 10 chữ số");
-//            return false;
-//        }
+        else if(!val.matches(checkPhone)){
+            phone.setError("Số điện thoại gồm 9 chữ số, không có số 0 ở đầu");
+            return false;
+        }
         else{
             phone.setError(null);
             phone.setErrorEnabled(false);
@@ -124,11 +125,19 @@ public class RegisterActivity extends AppCompatActivity {
         if (!validateName() | !validateMail() | !validatePhone() | !validatePassword()) {
             return;
         }
-        String _phoneNo = phone.getEditText().getText().toString().trim();
+        String _name = name.getEditText().getText().toString().trim();
+        String _mail = mail.getEditText().getText().toString().trim();
+        String _phone = "+84" + phone.getEditText().getText().toString().trim();
+        String _password = password.getEditText().getText().toString().trim();
+
 
         Intent intent = new Intent(getApplicationContext(), PhoneOtpActivity.class);
 
-        intent.putExtra("phoneNo", _phoneNo);
+        intent.putExtra("name", _name);
+        intent.putExtra("mail", _mail);
+        intent.putExtra("phone", _phone);
+        intent.putExtra("password", _password);
+
         startActivity(intent);
     }
 }
