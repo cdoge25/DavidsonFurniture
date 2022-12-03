@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.chaos.view.PinView;
@@ -22,6 +25,9 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.nhom6.davidsonfurniture.Models.UserHelperClass;
 import com.nhom6.davidsonfurniture.R;
 
 import java.util.concurrent.TimeUnit;
@@ -32,10 +38,21 @@ public class PhoneOtpActivity extends AppCompatActivity {
     String codeBySystem;
     FirebaseAuth mAuth;
 
+    String name, mail, phone, password;
+
+    ImageButton back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_otp);
+
+        //hide status and action bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -46,31 +63,39 @@ public class PhoneOtpActivity extends AppCompatActivity {
 
         //hooks
         pinFromUser = findViewById(R.id.pvOtp);
-        String _phoneNo = getIntent().getStringExtra("phoneNo");
+        back = findViewById(R.id.btnBack);
 
+        //get intent
+        name = getIntent().getStringExtra("name");
+        mail = getIntent().getStringExtra("mail");
+        phone = getIntent().getStringExtra("phone");
+        password = getIntent().getStringExtra("password");
 
-        sendVerificationCodeToUser(_phoneNo);
+        sendVerificationCodeToUser(phone);
 
+        goBack();
     }
 
-    private void sendVerificationCodeToUser(String phoneNo) {
+    private void goBack() {
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    private void sendVerificationCodeToUser(String phone) {
         mAuth = FirebaseAuth.getInstance();
 //        mAuth.getFirebaseAuthSettings().setAppVerificationDisabledForTesting(true);
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(phoneNo)       // Phone number to verify
+                        .setPhoneNumber(phone)       // Phone number to verify
                         .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
-
-//        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-//                phoneNo,
-//                60,
-//                TimeUnit.SECONDS,
-//                this,
-//                mCallbacks);
     }
 
     private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
@@ -116,6 +141,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            storeNewUsersData();
                             Intent intent = new Intent(getApplicationContext(), RegisterActivity2.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
@@ -126,5 +152,15 @@ public class PhoneOtpActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void storeNewUsersData() {
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootNode.getReference("Users");
+
+        UserHelperClass addNewUser = new UserHelperClass(name, mail, phone, password);
+
+        reference.child(phone).setValue(addNewUser);
+
     }
 }
