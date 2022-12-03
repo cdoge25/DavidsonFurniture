@@ -137,6 +137,7 @@ public class RegisterActivity extends AppCompatActivity {
         intent.putExtra("mail", _mail);
         intent.putExtra("phone", _phone);
         intent.putExtra("password", _password);
+        intent.putExtra("whatTodo","storeData");
 
         startActivity(intent);
     }

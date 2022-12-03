@@ -97,10 +97,12 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
 
                             } else {
-                                Toast.makeText(LoginActivity.this, "Mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                                binding.edtPassword.setError("Mật khẩu không đúng");
+                                binding.edtPassword.requestFocus();
                             }
                         } else {
-                            Toast.makeText(LoginActivity.this, "Số điện thoại chưa được đăng ký", Toast.LENGTH_SHORT).show();
+                            binding.edtPhone.setError("Số điện thoại chưa được đăng ký");
+                            binding.edtPhone.requestFocus();
                         }
                     }
 

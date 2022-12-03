@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityForgetPassword2Binding;
 
@@ -36,16 +38,15 @@ public class ForgetPasswordActivity2 extends AppCompatActivity {
         binding = ActivityForgetPassword2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        moveBack();
+        goBack();
         toForget3();
     }
 
-    private void moveBack() {
+    private void goBack() {
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ForgetPasswordActivity2.this, ForgetPasswordActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
@@ -54,9 +55,50 @@ public class ForgetPasswordActivity2 extends AppCompatActivity {
         binding.btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ForgetPasswordActivity2.this, ForgetPasswordActivity3.class);
-                startActivity(intent);
+                if (!validatePassword() | !validateRetypePassword()){
+                    return;
+                }
+
+                String _newPassword = binding.edtNewPassword.getEditText().getText().toString().trim();
+                String _phone = getIntent().getStringExtra("phone");
+
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                reference.child(_phone).child("password").setValue(_newPassword);
+
+                startActivity(new Intent(getApplicationContext(), ForgetPasswordActivity3.class));
+                finish();
             }
         });
+    }
+
+    private boolean validatePassword() {
+        String val = binding.edtNewPassword.getEditText().getText().toString().trim();
+        if(val.isEmpty()){
+            binding.edtNewPassword.setError("Không được bỏ trống vùng này");
+            return false;
+        }
+        else{
+            binding.edtNewPassword.setError(null);
+            binding.edtNewPassword.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateRetypePassword() {
+        String retypeP = binding.edtRetypePassword.getEditText().getText().toString().trim();
+        String newP = binding.edtNewPassword.getEditText().getText().toString().trim();
+        if (retypeP.isEmpty()){
+            binding.edtRetypePassword.setError("Không được bỏ trống vùng này");
+            return false;
+        }
+        else if (!retypeP.matches(newP)){
+            binding.edtRetypePassword.setError("Mật khẩu chưa khớp");
+            return false;
+        }
+        else{
+            binding.edtRetypePassword.setError(null);
+            binding.edtRetypePassword.setErrorEnabled(false);
+            return true;
+        }
     }
 }

@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.nhom6.davidsonfurniture.Models.UserHelperClass;
 import com.nhom6.davidsonfurniture.R;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class PhoneOtpActivity extends AppCompatActivity {
@@ -38,7 +39,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
     String codeBySystem;
     FirebaseAuth mAuth;
 
-    String name, mail, phone, password;
+    String name, mail, phone, password, whatToDo;
 
     ImageButton back;
 
@@ -70,6 +71,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
         mail = getIntent().getStringExtra("mail");
         phone = getIntent().getStringExtra("phone");
         password = getIntent().getStringExtra("password");
+        whatToDo = getIntent().getStringExtra("whatToDo");
 
         sendVerificationCodeToUser(phone);
 
@@ -141,10 +143,12 @@ public class PhoneOtpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            storeNewUsersData();
-                            Intent intent = new Intent(getApplicationContext(), RegisterActivity2.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
+                            if (Objects.equals(whatToDo, "updateData")){
+                                updateOldUsersData();
+                            }
+                            else{
+                                storeNewUsersData();
+                            }
                         } else {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(PhoneOtpActivity.this, "Không thành công! Xin hãy thử lại", Toast.LENGTH_LONG).show();
@@ -152,6 +156,13 @@ public class PhoneOtpActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void updateOldUsersData() {
+        Intent intent = new Intent(getApplicationContext(), ForgetPasswordActivity2.class);
+        intent.putExtra("phone", phone);
+        startActivity(intent);
+        finish();
     }
 
     private void storeNewUsersData() {
@@ -162,5 +173,8 @@ public class PhoneOtpActivity extends AppCompatActivity {
 
         reference.child(phone).setValue(addNewUser);
 
+        Intent intent = new Intent(getApplicationContext(), RegisterActivity2.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }
