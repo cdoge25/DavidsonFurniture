@@ -25,7 +25,7 @@
             android:text="Đổi số điện thoại"
             android:fontFamily="@font/futura_bold"
             android:textColor="@color/orange"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:gravity="center"
             android:layout_marginEnd="50dp"/>
     </androidx.appcompat.widget.Toolbar>
@@ -64,14 +64,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nhập số điện thoại mới"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:fontFamily="@font/futura_book"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Xác nhận"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:background="@drawable/bg_button_orange"
             android:layout_marginTop="20dp"/>
     </LinearLayout>

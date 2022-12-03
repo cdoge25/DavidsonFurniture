@@ -48,6 +48,15 @@
     <string name="phoneotp_guide">Nhập mã OTP vừa được gửi đến số điện thoại của bạn</string>
     <string name="phoneotp_no_otp">Không nhận được mã OTP?</string>
     <string name="phoneotp_resend">Gửi lại</string>
+
+    <string name="title_activity_change_adress3">ChangeAdressActivity3</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--AutocompleteText-->
+    <string name="select">Lọc giá</string>
+
+    <!--Detail Product-->
+    <string name="review"><u>Xem đánh giá</u></string>
 </resources>
