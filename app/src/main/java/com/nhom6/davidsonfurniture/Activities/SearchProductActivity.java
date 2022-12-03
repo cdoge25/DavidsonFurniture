@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -23,7 +24,6 @@ import java.util.ArrayList;
 public class SearchProductActivity extends AppCompatActivity implements SearchProductAdapter.SelectedProduct {
 
     private GridView gvNearly;
-    private Toolbar toolbar;
     private SearchView searchView;
     ArrayList<Product> dataList;
     ProductAdapter adapter;
@@ -38,6 +38,8 @@ public class SearchProductActivity extends AppCompatActivity implements SearchPr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_product);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -48,23 +50,11 @@ public class SearchProductActivity extends AppCompatActivity implements SearchPr
         linkViews();
         initData();
         addAdapter();
-        addEvents();
         searchProduct();
 
         searchView.requestFocus();
     }
 
-    private void addEvents() {
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
 
     private void addAdapter() {
         adapter= new ProductAdapter(this, R.layout.item_search, dataList);
@@ -82,7 +72,6 @@ public class SearchProductActivity extends AppCompatActivity implements SearchPr
 
     private void linkViews() {
         gvNearly= findViewById(R.id.gvNearlySearch);
-        toolbar= findViewById(R.id.toolbarSearch);
         searchView= findViewById(R.id.svSearchActivity);
 
         lnRecent = findViewById(R.id.lnRecent);

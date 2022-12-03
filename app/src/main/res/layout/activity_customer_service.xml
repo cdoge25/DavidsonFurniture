@@ -1,9 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.CustomerServiceActivity">
+    tools:context=".Activities.CustomerServiceActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarOrderDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIcon="@drawable/ic_action_back"
+            app:contentInsetStartWithNavigation="0dp"
+            android:layout_marginBottom="0dp"
+            android:elevation="5dp"
+            android:background="@color/white"
+            android:layout_gravity="top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Chăm sóc khách hàng"
+                    android:fontFamily="@font/futura_bold"
+                    android:textColor="@color/orange"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="6"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_otp_phone"
+                    android:backgroundTint="@color/white"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <!--END HEADER-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Davidson Furniture xin chào! Bạn cần tư vấn gì ạ? "
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:background="@drawable/custom_view"
+                android:backgroundTint="@color/lightgrey"
+                android:padding="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="3"
+            android:gravity="end">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tôi đang gặp vấn đề về quá trình thanh toán!"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:background="@drawable/custom_view"
+                android:backgroundTint="@color/black"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bạn hãy mô tả cụ thể vấn đề để mình hỗ trợ nhé."
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:background="@drawable/custom_view"
+                android:backgroundTint="@color/lightgrey"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        android:padding="5dp">
+        
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_collections_24"
+            android:backgroundTint="@color/white"
+            android:layout_weight="1.5" />
+        
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tin nhắn"
+            android:fontFamily="@font/futura_book"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_weight="7"
+            android:background="@drawable/bg_stroke"
+            android:padding="10dp"
+            />
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:src="@drawable/ic_account_send_message"
+            android:backgroundTint="@color/white"/>
+
+    </LinearLayout>
+
+</LinearLayout>

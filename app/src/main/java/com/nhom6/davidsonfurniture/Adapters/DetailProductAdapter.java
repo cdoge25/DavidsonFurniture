@@ -49,11 +49,11 @@ public class DetailProductAdapter extends BaseAdapter {
 
             holder.imvThumb = view.findViewById(R.id.imvThumb);
             holder.txtName = view.findViewById(R.id.txtName);
-            holder.txtProductCategory=view.findViewById(R.id.txtProductCategory);
+            holder.txtCategory=view.findViewById(R.id.txtProductCategory);
             holder.txtRate = view.findViewById(R.id.txtRate);
             holder.txtPrice=view.findViewById(R.id.txtPrice);
-            holder.txtSize = view.findViewById(R.id.txtSize);
-            holder.txtMaterial = view.findViewById(R.id.txtMaterial);
+            holder.txtSize = view.findViewById(R.id.txtProductSize);
+            holder.txtMaterial = view.findViewById(R.id.txtProductMaterial);
 
 
             view.setTag(holder);
@@ -66,17 +66,17 @@ public class DetailProductAdapter extends BaseAdapter {
         holder.imvThumb.setImageResource(p.getProductThumb());
         holder.txtName.setText(p.getProductName());
         holder.txtRate.setText(p.getProductRate());
-        holder.txtProductCategory.setText(p.getProductCategory());
+        holder.txtCategory.setText(p.getProductCategory());
         holder.txtPrice.setText(String.valueOf(p.getProductPrice()));
-        holder.txtSize = view.findViewById(R.id.txtSize);
-        holder.txtMaterial = view.findViewById(R.id.txtMaterial);
+        holder.txtSize = view.findViewById(R.id.txtProductSize);
+        holder.txtMaterial = view.findViewById(R.id.txtProductMaterial);
 
         return view;
 
     }
     public static class ViewHolder {
         ImageView imvThumb;
-        TextView txtName, txtProductCategory, txtRate,txtPrice, txtSize, txtMaterial;
+        TextView txtName, txtCategory, txtRate,txtPrice, txtSize, txtMaterial;
         RadioButton radWhite, radGray, radBlack;
 
     }

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.FeedbackProductActivity"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarFeedbackProduct"
@@ -34,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginHorizontal="20dp"
         android:orientation="horizontal"
         android:weightSum="10">
 
@@ -45,14 +44,16 @@
             android:text="4.7"
             android:textSize="20sp"
             android:textColor="@color/orange"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.5"
+            android:fontFamily="@font/futura_book"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="/5"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:fontFamily="@font/futura_book"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -88,7 +89,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp">
 
     <!--Feedback 1-->
         <LinearLayout
@@ -114,7 +117,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Doge"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <!--Rate-->
                 <LinearLayout
@@ -154,14 +158,16 @@
                     android:layout_height="wrap_content"
                     android:text="Sản phẩm rẻ mà chất lượng, khi nào có tiền nhất định sẽ mua tiếp"
                     android:textSize="16sp"
-                    android:fontFamily="@font/futura_book"/>
+                    android:fontFamily="@font/futura_book"
+                    android:textColor="@color/black"/>
 
                 <!--Image feedback-->
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:src="@drawable/img_feedback_1"
-                    android:layout_gravity="left"/>
+                    android:layout_gravity="left"
+                    />
             </LinearLayout>
         </LinearLayout>
 
@@ -185,9 +191,10 @@
                     <!--Name-->
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="Doge"
-                        android:textSize="16sp"/>
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <!--Rate-->
                     <LinearLayout
@@ -227,7 +234,8 @@
                         android:layout_height="wrap_content"
                         android:text="Sản phẩm rẻ mà chất lượng, khi nào có tiền nhất định sẽ mua tiếp"
                         android:textSize="16sp"
-                        android:fontFamily="@font/futura_book"/>
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"/>
 
                     <!--Image feedback-->
                     <ImageView

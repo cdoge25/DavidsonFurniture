@@ -7,19 +7,20 @@
     android:padding="10dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvItemProduct"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:backgroundTint="@color/lightgrey"
         android:elevation="2dp"
         app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/lightgrey"
         android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="150dp"
             android:layout_height="200dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
+            <!--Image-->
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
                 android:layout_height="130dp"
@@ -41,6 +42,7 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
+                <!--Name-->
                 <TextView
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
@@ -51,6 +53,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
+                <!--Rate-->
                 <TextView
                     android:id="@+id/txtRate"
                     android:layout_width="wrap_content"
@@ -74,6 +77,7 @@
 
             </RelativeLayout>
 
+            <!--Categgory-->
             <TextView
                 android:id="@+id/txtProductCategory"
                 android:layout_width="match_parent"
@@ -88,6 +92,7 @@
                 android:layout_width="150dp"
                 android:layout_height="20dp">
 
+                <!--Price-->
                 <TextView
                     android:id="@+id/txtPrice"
                     android:layout_width="wrap_content"
