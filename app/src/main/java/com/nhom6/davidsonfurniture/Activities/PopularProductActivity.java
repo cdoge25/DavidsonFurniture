@@ -49,7 +49,6 @@ public class PopularProductActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         loadData();
-
         addEvent();
 
         goBack();

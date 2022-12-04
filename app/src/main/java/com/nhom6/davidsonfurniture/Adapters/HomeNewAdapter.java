@@ -54,7 +54,7 @@ public class HomeNewAdapter extends RecyclerView.Adapter<HomeNewAdapter.HomeNewV
             super(view);
             imvThumb = view.findViewById(R.id.imvThumb);
             txtName = view.findViewById(R.id.txtName);
-            txtProductCategory=view.findViewById(R.id.txtProductCategory);
+            txtProductCategory=view.findViewById(R.id.txtCategory);
             txtRate = view.findViewById(R.id.txtRate);
             txtPrice=view.findViewById(R.id.txtPrice);
         }
