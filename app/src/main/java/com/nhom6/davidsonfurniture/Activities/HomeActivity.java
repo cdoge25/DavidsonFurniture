@@ -45,6 +45,8 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Intent intent = getIntent();
+
         binding.navApp.setSelectedItemId(R.id.navHome);
         navigationClick();
 
@@ -54,17 +56,46 @@ public class HomeActivity extends AppCompatActivity {
         toNotification();
         toNewProduct();
         toPopularProduct();
-        toSofa();
-    }
+        toDetailProduct();
 
+        toSofa();
+        toGhe();
+        toBan();
+        toGiuong();
+        toGuong();
+        toDen();
+        toTrangTri();
+        toKeTu();
+    }
+    
     private void loadBanners() {
         slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.img_banner_ez, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.img_banner_doclap, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
-
+                
         binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
     }
+
+    private void toDetailProduct() {
+
+//        rcvNew=findViewById(R.id.rvNewProduct);
+//        LinearLayoutManager linearLayoutManager1=new LinearLayoutManager(this);
+//        rcvNew.setLayoutManager(linearLayoutManager1);
+//        ProductInRecyclerviewAdapter ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListProduct());
+//        rcvNew.setAdapter(ProductInRecyclerviewAdapter);
+//
+//        rcvPopular=findViewById(R.id.rvPopularProduct);
+//        LinearLayoutManager linearLayoutManager2 =new LinearLayoutManager(this);
+//        rcvPopular.setLayoutManager(linearLayoutManager2);
+//        ProductInRecyclerviewAdapter ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListProduct());
+//        rcvPopular.setAdapter(ProductInRecyclerviewAdapter);
+
+//        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
+//        ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListproduct(), new on)
+
+    }
+
 
     private void loadNewData() {
         binding.rvNewProduct.setHasFixedSize(true);
@@ -118,6 +149,84 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "sofa");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toKeTu() {
+        binding.llKeTu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "ketu");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toTrangTri() {
+        binding.llTrangTri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "trangtri");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toDen() {
+        binding.llDen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "den");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toGuong() {
+        binding.llGuong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "guong");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toGiuong() {
+        binding.llGiuong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "giuong");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toBan() {
+        binding.llBan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "ban");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void toGhe() {
+        binding.llGhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CategoriesProductActivity.class);
+                i.putExtra("category", "ghe");
                 startActivity(i);
             }
         });
