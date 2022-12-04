@@ -53,7 +53,9 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        goback();
+
+
+
         //DatePickerDialog
         this.edtTextDate = (EditText) this.findViewById(R.id.edt_TextDateOfBirth);
         this.btnDate = (ImageButton) this.findViewById(R.id.btn_DateOfBirth);
@@ -105,6 +107,8 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
 //
 //            }
 //        });
+
+        goback();
     }
 
     private void goback() {
