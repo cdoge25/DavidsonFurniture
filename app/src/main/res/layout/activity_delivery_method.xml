@@ -7,33 +7,28 @@
     tools:context=".Activities.DeliveryMethodActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOrderDetail"
         android:layout_width="match_parent"
-        android:layout_height="68sp"
-        android:orientation="horizontal"
-        android:paddingStart="20sp">
-
-        <ImageButton
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_back"
-            android:layout_gravity="center_vertical"
-            android:background="#FFFFFF"
-            />
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_marginBottom="0dp"
+        android:elevation="5dp"
+        android:background="@color/white">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Phương thức giao hàng"
-            android:textStyle="bold"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/orange"
             android:textSize="20sp"
-            android:textColor="#FF6600"
-            android:layout_marginStart="50sp"
-            android:layout_gravity="center"
-            />
-
-    </LinearLayout>
+            android:gravity="center"
+            android:layout_marginEnd="50dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <!--END HEADER-->
 
     <View
         android:layout_width="match_parent"
@@ -63,14 +58,16 @@
                 android:layout_height="wrap_content"
                 android:text="Tiết kiệm: Giao hàng từ 7 - 9 ngày"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Miễn phí"
                 android:textSize="14sp"
-                android:textColor="#FF6600"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/orange"
                 />
         </LinearLayout>
 
@@ -104,14 +101,16 @@
                 android:layout_height="wrap_content"
                 android:text="Tiêu chuẩn: Giao hàng từ 2 - 5 ngày"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="100,000đ"
                 android:textSize="14sp"
-                android:textColor="#FF6600"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/orange"
                 />
         </LinearLayout>
 
@@ -145,14 +144,16 @@
                 android:layout_height="wrap_content"
                 android:text="Siêu tốc: Giao hàng trong 24h"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="300,000đ"
                 android:textSize="14sp"
-                android:textColor="#FF6600"/>
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/orange"/>
         </LinearLayout>
 
         <RadioButton
@@ -166,10 +167,11 @@
         android:id="@+id/btn_confirmDeliMethod"
         android:layout_width="150sp"
         android:layout_height="50sp"
-        android:text="Xác Nhận"
+        android:text="Xác nhận"
         android:textSize="14sp"
         android:background="@drawable/custom_button"
         android:layout_marginTop="15sp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

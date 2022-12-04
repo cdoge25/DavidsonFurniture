@@ -37,25 +37,27 @@
         android:layout_marginTop="5sp"
         android:fontFamily="@font/futura_book"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_showHomePage"
-        android:layout_width="170sp"
+        android:layout_width="240sp"
         android:layout_height="wrap_content"
         android:text="Trang chủ"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginTop="15sp"
         android:textAllCaps="false"
         android:fontFamily="@font/futura_bold"
-        android:background="@drawable/custom_button"/>
+        android:background="@drawable/bg_button_black"/>
 
     <Button
         android:id="@+id/btn_showOrder"
-        android:layout_width="170sp"
+        android:layout_width="240sp"
         android:layout_height="wrap_content"
         android:text="Xem đơn hàng"
         android:textStyle="bold"
         android:background="@drawable/custom_button"
         android:layout_marginTop="15sp"
+        android:textSize="20dp"
         android:textAllCaps="false"
         android:fontFamily="@font/futura_bold" />
 

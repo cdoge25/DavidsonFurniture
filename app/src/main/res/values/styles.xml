@@ -14,4 +14,10 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_gravity">center_vertical</item>
     </style>
+
+    <style name="prefixText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="fontFamily">@font/futura_book</item>
+    </style>
 </resources>
