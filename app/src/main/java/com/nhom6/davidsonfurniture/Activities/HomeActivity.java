@@ -57,7 +57,6 @@ public class HomeActivity extends AppCompatActivity {
         toNotification();
         toNewProduct();
         toPopularProduct();
-        toDetailProduct();
 
         toSofa();
         toGhe();
@@ -76,25 +75,6 @@ public class HomeActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
 
         binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
-    }
-
-    private void toDetailProduct() {
-
-//        rcvNew=findViewById(R.id.rvNewProduct);
-//        LinearLayoutManager linearLayoutManager1=new LinearLayoutManager(this);
-//        rcvNew.setLayoutManager(linearLayoutManager1);
-//        ProductInRecyclerviewAdapter ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListProduct());
-//        rcvNew.setAdapter(ProductInRecyclerviewAdapter);
-//
-//        rcvPopular=findViewById(R.id.rvPopularProduct);
-//        LinearLayoutManager linearLayoutManager2 =new LinearLayoutManager(this);
-//        rcvPopular.setLayoutManager(linearLayoutManager2);
-//        ProductInRecyclerviewAdapter ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListProduct());
-//        rcvPopular.setAdapter(ProductInRecyclerviewAdapter);
-
-//        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
-//        ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListproduct(), new on)
-
     }
 
 

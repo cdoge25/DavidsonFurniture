@@ -24,7 +24,6 @@ public class HomeNewAdapter extends RecyclerView.Adapter<HomeNewAdapter.HomeNewV
 
     ArrayList<Product> products;
     Context context;
-
     public HomeNewAdapter (Context context, ArrayList<Product> products){
         this.products = products;
         this.context = context;
@@ -57,7 +56,6 @@ public class HomeNewAdapter extends RecyclerView.Adapter<HomeNewAdapter.HomeNewV
         holder.txtRate.setText(p.getProductRate());
         holder.txtProductCategory.setText(p.getProductCategory());
         holder.txtPrice.setText(String.valueOf(p.getProductPrice()));
-
         holder.layoutProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +70,6 @@ public class HomeNewAdapter extends RecyclerView.Adapter<HomeNewAdapter.HomeNewV
             }
         });
     }
-
 
     @Override
     public int getItemCount() {
