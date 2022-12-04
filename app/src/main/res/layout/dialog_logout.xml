@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +25,7 @@
             android:orientation="horizontal"
             android:gravity="center">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCancel"
+                android:id="@+id/btn_CancelLogout"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_button_black"
@@ -33,7 +35,7 @@
                 android:textSize="20sp"
                 android:fontFamily="@font/futura_bold"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnConfirm"
+                android:id="@+id/btn_ConfirmLogout"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -45,7 +47,6 @@
                 android:fontFamily="@font/futura_bold"/>
         </LinearLayout>
 
-
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

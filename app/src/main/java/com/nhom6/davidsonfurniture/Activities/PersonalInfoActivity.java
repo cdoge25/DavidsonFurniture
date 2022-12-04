@@ -14,13 +14,17 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nhom6.davidsonfurniture.Adapters.SexAdapter;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.Utils.SexDataUtils;
 import com.nhom6.davidsonfurniture.databinding.ActivityPersonalInfoBinding;
+import com.nhom6.davidsonfurniture.databinding.ActivitySettingAccountBinding;
 
 import java.time.Year;
 import java.util.ArrayList;
@@ -31,8 +35,8 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
     Spinner spinner;
 
 //    private Spinner spinnerSex;
-    private EditText edtTextDate;
-    private ImageButton btnDate;
+    private TextView txtDateOfBirth;
+    private LinearLayout llChooseDateOfBirth;
     private int lastSelectedYear;
     private int lastSelectedMonth;
     private int lastSelectedDayOfMonth;
@@ -54,25 +58,36 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
+        binding = ActivityPersonalInfoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
+        spinerSex();
+        datePickerDialog();
+
+        goback();
+    }
+
+    private void datePickerDialog() {
         //DatePickerDialog
-        this.edtTextDate = (EditText) this.findViewById(R.id.edt_TextDateOfBirth);
-        this.btnDate = (ImageButton) this.findViewById(R.id.btn_DateOfBirth);
-        
-        this.btnDate.setOnClickListener(new View.OnClickListener() {
+        this.txtDateOfBirth = (TextView) this.findViewById(R.id.txt_DateOfBirth);
+        this.llChooseDateOfBirth = (LinearLayout) this.findViewById(R.id.ll_ChooseDayOfBirth);
+
+        this.llChooseDateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 buttonSelectDate();
             }
         });
-        
+
         //Get Current Date
         final Calendar c = Calendar.getInstance();
         this.lastSelectedYear = c.get(Calendar.YEAR);
         this.lastSelectedMonth = c.get(Calendar.MONTH);
         this.lastSelectedDayOfMonth = c.get(Calendar.DAY_OF_MONTH);
+    }
 
+    private void spinerSex() {
         //Spinner
         spinner = (Spinner) findViewById(R.id.spinner_sex);
         spinner.setOnItemSelectedListener(this);
@@ -86,29 +101,7 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
         ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sexs);
         spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinAdapter);
-        
 
-//        this.spinnerSex = (Spinner) findViewById(R.id.spinner_sex);
-//
-//        SexAdapter[] sexs = SexDataUtils.getSexs();
-//
-//        ArrayAdapter<SexAdapter> adapter = new ArrayAdapter<SexAdapter>(this, android.R.layout.simple_spinner_item, sexs);
-//
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//
-//        this.spinnerSex.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                onItemSelectedHandler(adapterView, view, i, l);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
-
-        goback();
     }
 
     private void goback() {
@@ -126,7 +119,7 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                edtTextDate.setText(dayOfMonth + "/" + (month +1 ) + "/" + year);
+                txtDateOfBirth.setText(dayOfMonth + "/" + (month +1 ) + "/" + year);
 
                 lastSelectedYear = year;
                 lastSelectedMonth = month;
@@ -138,16 +131,6 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
         datePickerDialog = new DatePickerDialog(this, dateSetListener, lastSelectedYear, lastSelectedMonth, lastSelectedDayOfMonth);
         datePickerDialog.show();
     }
-
-    //Show
-
-
-//    private void onItemSelectedHandler(AdapterView<?> adapterView, View view, int i, long l) {
-//        Adapter adapter = adapterView.getAdapter();
-//        SexAdapter sex = (SexAdapter) adapter.getItem(i);
-//
-//        Toast.makeText(getApplicationContext(), "Giới tính: " + sex.getSex(), Toast.LENGTH_SHORT).show();
-//    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

@@ -2,10 +2,15 @@ package com.nhom6.davidsonfurniture.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityAccountBinding;
@@ -46,8 +51,41 @@ public class AccountActivity extends AppCompatActivity {
         toChangeLanguage();
         toCustomerService();
         toContact();
-
+        toLogout();
         goback();
+    }
+
+    private void toLogout() {
+
+
+        binding.llLogout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Dialog dialog = new Dialog(AccountActivity.this);
+            dialog.setContentView(R.layout.dialog_logout);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            Button btnCanCelLogout = dialog.findViewById(R.id.btn_CancelLogout);
+            btnCanCelLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+
+            Button btnConfirmLogout = dialog.findViewById(R.id.btn_ConfirmLogout);
+            btnConfirmLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(AccountActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    //đổ dữ liệu sang màn hình lịch sử và xóa data bên này
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+        }
+    });
     }
 
     private void toContact() {
