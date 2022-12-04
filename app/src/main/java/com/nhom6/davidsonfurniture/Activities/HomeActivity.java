@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.nhom6.davidsonfurniture.Adapters.HomeNewAdapter;
 import com.nhom6.davidsonfurniture.Models.Product;
 import com.nhom6.davidsonfurniture.R;
@@ -20,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
     HomeNewAdapter homeNewAdapter;
+    ArrayList<SlideModel> slideModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +48,22 @@ public class HomeActivity extends AppCompatActivity {
         binding.navApp.setSelectedItemId(R.id.navHome);
         navigationClick();
 
+        loadBanners();
         loadNewData();
 
         toNotification();
         toNewProduct();
         toPopularProduct();
         toSofa();
+    }
 
+    private void loadBanners() {
+        slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.img_banner_ez, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_banner_doclap, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
+
+        binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
     }
 
     private void loadNewData() {

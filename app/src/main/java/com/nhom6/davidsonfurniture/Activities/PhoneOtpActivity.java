@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.arch.core.executor.TaskExecutor;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,6 +44,9 @@ public class PhoneOtpActivity extends AppCompatActivity {
 
     ImageButton back;
 
+    Button resend;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +69,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
         //hooks
         pinFromUser = findViewById(R.id.pvOtp);
         back = findViewById(R.id.btnBack);
+        resend = findViewById(R.id.btnResendOtp);
 
         //get intent
         name = getIntent().getStringExtra("name");
@@ -76,6 +81,17 @@ public class PhoneOtpActivity extends AppCompatActivity {
         sendVerificationCodeToUser(phone);
 
         goBack();
+        resendOtp();
+    }
+
+    private void resendOtp() {
+        resend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(PhoneOtpActivity.this, "Đã gửi mã OTP vào số điện thoại " + phone, Toast.LENGTH_LONG).show();
+                sendVerificationCodeToUser(phone);
+            }
+        });
     }
 
     private void goBack() {
@@ -144,7 +160,7 @@ public class PhoneOtpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             if (Objects.equals(whatToDo, "updateData")){
-                                updateOldUsersData();
+                                updateOldUsersData ();
                             }
                             else{
                                 storeNewUsersData();

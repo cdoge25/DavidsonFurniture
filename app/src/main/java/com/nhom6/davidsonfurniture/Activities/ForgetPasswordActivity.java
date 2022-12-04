@@ -52,6 +52,17 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         back = findViewById(R.id.btnBack);
         sendOtp = findViewById(R.id.btnSendOtp);
         phone = findViewById(R.id.edtPhone);
+
+        goBack();
+    }
+
+    private void goBack() {
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void toPhoneOtp(View view) {
