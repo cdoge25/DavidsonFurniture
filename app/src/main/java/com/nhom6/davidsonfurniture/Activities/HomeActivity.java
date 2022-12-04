@@ -20,7 +20,6 @@ public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
     HomeNewAdapter homeNewAdapter;
-    RecyclerView rcvNew, rcvPopular;
 
 
     @Override
@@ -50,7 +49,6 @@ public class HomeActivity extends AppCompatActivity {
         toNotification();
         toNewProduct();
         toPopularProduct();
-        toDetailProduct();
 
         toSofa();
         toGhe();
@@ -60,25 +58,6 @@ public class HomeActivity extends AppCompatActivity {
         toDen();
         toTrangTri();
         toKeTu();
-
-    }
-
-    private void toDetailProduct() {
-
-//        rcvNew=findViewById(R.id.rvNewProduct);
-//        LinearLayoutManager linearLayoutManager1=new LinearLayoutManager(this);
-//        rcvNew.setLayoutManager(linearLayoutManager1);
-//        ProductInRecyclerviewAdapter ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListProduct());
-//        rcvNew.setAdapter(ProductInRecyclerviewAdapter);
-//
-//        rcvPopular=findViewById(R.id.rvPopularProduct);
-//        LinearLayoutManager linearLayoutManager2 =new LinearLayoutManager(this);
-//        rcvPopular.setLayoutManager(linearLayoutManager2);
-//        ProductInRecyclerviewAdapter ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListProduct());
-//        rcvPopular.setAdapter(ProductInRecyclerviewAdapter);
-
-//        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
-//        ProductInRecyclerviewAdapter = new ProductInRecyclerviewAdapter(getListproduct(), new on)
 
     }
 
@@ -94,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
         products.add(new Product(R.drawable.img_bancafe_luki, "LUKI", "Bàn Cafe", "4.7", 1350000));
         products.add(new Product(R.drawable.img_banan_honey,"HONEY", "Bàn ăn", "4.7", 2250000));
 
-        homeNewAdapter = new HomeNewAdapter(products);
+        homeNewAdapter = new HomeNewAdapter(this, products);
         binding.rvNewProduct.setAdapter(homeNewAdapter);
     }
 

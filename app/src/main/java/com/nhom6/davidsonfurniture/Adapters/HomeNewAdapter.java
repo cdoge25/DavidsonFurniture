@@ -1,5 +1,8 @@
 package com.nhom6.davidsonfurniture.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nhom6.davidsonfurniture.Activities.DetailProductActivity;
 import com.nhom6.davidsonfurniture.Models.Product;
 import com.nhom6.davidsonfurniture.R;
 
@@ -18,8 +22,10 @@ public class HomeNewAdapter extends RecyclerView.Adapter<HomeNewAdapter.HomeNewV
 
     ArrayList<Product> products;
 
-    public HomeNewAdapter (ArrayList<Product> products){
+
+    public HomeNewAdapter(Context context, ArrayList<Product> products) {
         this.products = products;
+
     }
 
     @NonNull
@@ -39,8 +45,8 @@ public class HomeNewAdapter extends RecyclerView.Adapter<HomeNewAdapter.HomeNewV
         holder.txtRate.setText(p.getProductRate());
         holder.txtProductCategory.setText(p.getProductCategory());
         holder.txtPrice.setText(String.valueOf(p.getProductPrice()));
-    }
 
+    }
     @Override
     public int getItemCount() {
         return products.size();

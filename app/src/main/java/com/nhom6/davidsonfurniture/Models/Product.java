@@ -1,6 +1,8 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product  implements Serializable {
 
     public Product(int productThumb, String productName, String productCategory, String productRate, int productPrice) {
         this.productThumb = productThumb;
