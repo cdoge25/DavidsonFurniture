@@ -34,7 +34,8 @@
             android:layout_height="wrap_content"
             android:text="LUKI"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/futura_bold"/>
 
         <TextView
             android:id="@+id/txt_ProTypeOrder"
@@ -42,7 +43,9 @@
             android:layout_height="wrap_content"
             android:text="Bàn cafe"
             android:textSize="12sp"
-            android:layout_marginTop="5sp"/>
+            android:layout_marginTop="5sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/futura_book"/>
 
         <TextView
             android:id="@+id/txt_ProColorOrder"
@@ -50,7 +53,9 @@
             android:layout_height="wrap_content"
             android:text="Đen"
             android:textSize="12sp"
-            android:layout_marginTop="5sp"/>
+            android:layout_marginTop="5sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/futura_book"/>
 
         <TextView
             android:id="@+id/txt_ProPriceOrder"
@@ -59,7 +64,8 @@
             android:text="1,350,000đ"
             android:textSize="12sp"
             android:textColor="#FF6600"
-            android:layout_marginTop="5sp"/>
+            android:layout_marginTop="5sp"
+            android:fontFamily="@font/futura_book"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,7 +77,8 @@
                 android:layout_height="wrap_content"
                 android:text="Số lượng:"
                 android:textSize="12sp"
-                android:layout_marginTop="5sp"/>
+                android:layout_marginTop="5sp"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:id="@+id/txt_ProQuantityOrder"
@@ -80,7 +87,8 @@
                 android:text="1"
                 android:textSize="12sp"
                 android:layout_marginTop="5sp"
-                android:layout_marginStart="5sp"/>
+                android:layout_marginStart="5sp"
+                android:fontFamily="@font/futura_book"/>
 
         </LinearLayout>
 

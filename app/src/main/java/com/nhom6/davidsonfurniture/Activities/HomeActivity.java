@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.nhom6.davidsonfurniture.Adapters.HomeNewAdapter;
 import com.nhom6.davidsonfurniture.Models.Product;
 import com.nhom6.davidsonfurniture.R;
@@ -20,15 +22,18 @@ public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
     HomeNewAdapter homeNewAdapter;
-    RecyclerView rcvNew, rcvPopular;
-
+    ArrayList<SlideModel> slideModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -45,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         binding.navApp.setSelectedItemId(R.id.navHome);
         navigationClick();
 
+        loadBanners();
         loadNewData();
 
         toNotification();
@@ -60,7 +66,15 @@ public class HomeActivity extends AppCompatActivity {
         toDen();
         toTrangTri();
         toKeTu();
-
+    }
+    
+    private void loadBanners() {
+        slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.img_banner_ez, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_banner_doclap, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
+                
+        binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
     }
 
     private void toDetailProduct() {
@@ -237,6 +251,4 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

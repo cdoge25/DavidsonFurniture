@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 
 import com.nhom6.davidsonfurniture.Adapters.NotificationAdapter;
@@ -28,10 +29,14 @@ public class NotificationsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (getSupportActionBar() != null) {
-//            getSupportActionBar().hide();
-//        }
 //        setContentView(R.layout.activity_notifications);
+
+        //hide status and action bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -140,8 +145,7 @@ public class NotificationsActivity extends AppCompatActivity {
         binding.toolbarNotifications.getChildAt(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NotificationsActivity.this, HomeActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

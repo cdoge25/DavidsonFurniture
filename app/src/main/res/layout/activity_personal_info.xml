@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="10"
     tools:context=".Activities.PersonalInfoActivity">
-
-
-
 
 
     <LinearLayout
@@ -19,7 +15,7 @@
         >
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarOrderDetail"
+            android:id="@+id/toolbarPersonalInfo"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -83,16 +79,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-        <EditText
+            android:id="@+id/ll_ChangeName">
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Doge"
+            android:text="Doge"
             android:textSize="20sp"
             android:layout_weight="10"
+            android:layout_marginStart="3dp"
             android:fontFamily="@font/futura_book"
-            android:textColor="@color/black"/>
-        <ImageButton
+            android:textColor="@color/black"
+            android:gravity="center_vertical" />
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_action_see_more"
@@ -117,21 +115,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="10">
-<!--            <EditText-->
-
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Thiết lập"-->
-<!--                android:textSize="20sp"-->
-<!--                android:layout_weight="10"-->
-<!--                android:fontFamily="@font/futura_book"-->
-<!--                android:textColor="@color/black"/>-->
-
             <Spinner
                 android:id="@+id/spinner_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_weight="10" />
+                android:layout_weight="10"/>
         </LinearLayout>
 
         <LinearLayout
@@ -145,22 +133,24 @@
                 android:layout_height="wrap_content"
                 android:text="Ngày sinh: "
                 android:layout_weight="10"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/edt_TextDateOfBirth"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_ChooseDayOfBirth">
+            <TextView
+                android:id="@+id/txt_DateOfBirth"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="Chọn ngày"
                 android:textSize="20sp"
                 android:layout_weight="10"
                 android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
-            <ImageButton
+                android:textColor="@color/black"
+                android:gravity="center_vertical" />
+            <ImageView
                 android:id="@+id/btn_DateOfBirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

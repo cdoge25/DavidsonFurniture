@@ -18,7 +18,7 @@
         android:layout_gravity="top">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarOrderDetail"
+            android:id="@+id/toolbarAccount"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/register_enter_name"
+                android:text="Doge"
                 android:layout_marginTop="10dp"/>
         </LinearLayout>
 
@@ -66,7 +66,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:id="@+id/ll_SettingAccount"
+                >
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,18 +82,20 @@
                     android:layout_weight="10"
                     android:fontFamily="@font/futura_book"
                     android:textColor="@color/black"/>
-                <ImageButton
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_action_see_more"
-                    android:backgroundTint="@color/white" />
+                    android:backgroundTint="@color/white"
+                    />
             </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ll_Voucher">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:src="@drawable/ic_baseline_new_releases_24"
@@ -103,7 +108,7 @@
                         android:layout_weight="10"
                         android:fontFamily="@font/futura_book"
                         android:textColor="@color/black"/>
-                    <ImageButton
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_action_see_more"
@@ -114,7 +119,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/ll_ChangeLanguage">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:src="@drawable/ic_baseline_language_24" />
@@ -126,7 +132,7 @@
                         android:layout_weight="10"
                         android:fontFamily="@font/futura_book"
                         android:textColor="@color/black" />
-                    <ImageButton
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_action_see_more"
@@ -137,7 +143,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ll_CustomerService">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:src="@drawable/ic_account_chat" />
@@ -149,7 +156,7 @@
                         android:layout_weight="10"
                         android:fontFamily="@font/futura_book"
                         android:textColor="@color/black"/>
-                    <ImageButton
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_action_see_more"
@@ -160,7 +167,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/ll_Contact">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:src="@drawable/ic_account_contact" />
@@ -172,7 +180,7 @@
                         android:layout_weight="10"
                         android:fontFamily="@font/futura_book"
                         android:textColor="@color/black"/>
-                    <ImageButton
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_action_see_more"
@@ -183,10 +191,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/ll_Logout">
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:src="@drawable/ic_baseline_output_24" />
+                        android:layout_height="wrap_content" android:src="@drawable/ic_baseline_output_24"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -195,7 +204,7 @@
                         android:layout_weight="10"
                         android:fontFamily="@font/futura_book"
                         android:textColor="@color/black"/>
-                    <ImageButton
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_action_see_more"
