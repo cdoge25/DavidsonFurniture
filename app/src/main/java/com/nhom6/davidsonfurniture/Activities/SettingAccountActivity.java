@@ -2,6 +2,7 @@ package com.nhom6.davidsonfurniture.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -33,7 +34,63 @@ public class SettingAccountActivity extends AppCompatActivity {
         binding = ActivitySettingAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        toPersonalInfo();
+        toChangeEmail();
+        toChangeNumberPhone();
+        toChangePassword();
+        toAddress();
+
         goback();
+    }
+
+    private void toAddress() {
+        binding.llAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingAccountActivity.this, ChangeAddressActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toChangePassword() {
+        binding.llChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingAccountActivity.this, ChangePasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toChangeNumberPhone() {
+        binding.llChangeNumberPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingAccountActivity.this, ChangeNumberPhoneActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toChangeEmail() {
+        binding.llChangeEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingAccountActivity.this, ChangeEmailActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void toPersonalInfo() {
+        binding.llPersonalInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingAccountActivity.this, PersonalInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void goback() {
