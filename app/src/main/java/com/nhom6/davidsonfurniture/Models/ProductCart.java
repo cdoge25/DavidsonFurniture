@@ -1,31 +1,40 @@
 package com.nhom6.davidsonfurniture.Models;
 
 public class ProductCart {
-    int productImage;
+    int productId, productThumb;
     String productName;
     String productType;
-    String productPrice;
     String productColor;
-    String productQuantity;
+    int productPrice, productQuantity;
 
     //Constructor
 
-    public ProductCart(int productImage, String productName, String productType, String productPrice, String productColor, String productQuantity) {
-        this.productImage = productImage;
+    public ProductCart(int productId, int productThumb, String productName, String productType, String productColor, int productPrice, int productQuantity) {
+        this.productId = productId;
+        this.productThumb = productThumb;
         this.productName = productName;
         this.productType = productType;
-        this.productPrice = productPrice;
         this.productColor = productColor;
+        this.productPrice = productPrice;
         this.productQuantity = productQuantity;
     }
 
-    //Getter and setter
-    public int getProductImage() {
-        return productImage;
+    //Getter and Setter
+
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProductImage(int productImage) {
-        this.productImage = productImage;
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public int getProductThumb() {
+        return productThumb;
+    }
+
+    public void setProductThumb(int productThumb) {
+        this.productThumb = productThumb;
     }
 
     public String getProductName() {
@@ -44,14 +53,6 @@ public class ProductCart {
         this.productType = productType;
     }
 
-    public String getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(String productPrice) {
-        this.productPrice = productPrice;
-    }
-
     public String getProductColor() {
         return productColor;
     }
@@ -60,11 +61,19 @@ public class ProductCart {
         this.productColor = productColor;
     }
 
-    public String getProductQuantity() {
+    public int getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public int getProductQuantity() {
         return productQuantity;
     }
 
-    public void setProductQuantity(String productQuantity) {
+    public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
 }

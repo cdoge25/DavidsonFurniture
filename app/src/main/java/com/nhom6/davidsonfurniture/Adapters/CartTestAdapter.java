@@ -61,7 +61,7 @@ public class CartTestAdapter extends ArrayAdapter<ProductCart> {
 
         //Gán giá trị
         ProductCart p = arrayList.get(position);
-        holder.imgProduct.setImageResource(p.getProductImage());
+        holder.imgProduct.setImageResource(p.getProductThumb());
         holder.proName.setText(p.getProductName());
         holder.proType.setText(p.getProductType());
         holder.proPrice.setText(String.valueOf(p.getProductPrice()));

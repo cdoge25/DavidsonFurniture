@@ -48,11 +48,11 @@ public class DetailProductActivity extends AppCompatActivity {
     ArrayList<DetailProduct> productList;
     Toolbar toolbar;
     ImageButton imbAdd, imbSubtract;
-    int quantity = 1;
+    int quantity = 1, price = 0;
     TextView txtQuantity;
 
     int image_url;
-    String name, type, price, color;
+    String name, type, finalPrice, color, finalQuantity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,16 +76,37 @@ public class DetailProductActivity extends AppCompatActivity {
         binding = ActivityDetailProductBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        showData();
+        color = "Xám";
+        getColor();
 
-        toFeedback();
-
+        finalQuantity = "1";
         adjustQuantity();
+
+        showData();
 
         addToCart();
 
+        toFeedback();
         goBack();
+    }
 
+    private void getColor() {
+        binding.radGroupColor.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.radWhite:
+                        color = "Trắng";
+                        break;
+                    case R.id.radBlack:
+                        color = "Đen";
+                        break;
+                    case R.id.radGray:
+                        color = "Xám";
+                        break;
+                }
+            }
+        });
     }
 
     @SuppressLint("SetTextI18N")
@@ -102,8 +123,8 @@ public class DetailProductActivity extends AppCompatActivity {
         image_url = intent.getIntExtra("Image",0);
         name = intent.getStringExtra("Name");
         type = intent.getStringExtra("Category");
-        price = String.valueOf(intent.getIntExtra("Price", 0));
-//                String color
+        price = intent.getIntExtra("Price", 0);
+
     }
 
 
@@ -117,7 +138,11 @@ public class DetailProductActivity extends AppCompatActivity {
                 intent.putExtra("name",name);
                 intent.putExtra("image",image_url);
                 intent.putExtra("type",type);
-                intent.putExtra("price",price);
+                intent.putExtra("price",finalPrice);
+                intent.putExtra("color", color);
+                intent.putExtra("quantity", finalQuantity);
+                intent.putExtra("whatToDo", "addToCart");
+
 //                intent.putExtra("color",color);
                 startActivity(intent);
             }
@@ -130,6 +155,7 @@ public class DetailProductActivity extends AppCompatActivity {
         ImageButton imbAdd = findViewById(R.id.imbAdd);
         ImageButton imbSubtract = findViewById(R.id.imbSubtract);
         TextView txtQuantity = findViewById(R.id.txtProductQuantity);
+        TextView txtPrice = findViewById(R.id.txtProductPrice);
 
         imbAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +164,9 @@ public class DetailProductActivity extends AppCompatActivity {
                     quantity += 1;
                 }
                 txtQuantity.setText(Integer.toString(quantity));
+                price = quantity * Integer.parseInt(txtPrice.getText().toString());
+                finalPrice = String.valueOf(price);
+                finalQuantity = txtQuantity.getText().toString();
             }
         });
 
@@ -152,6 +181,9 @@ public class DetailProductActivity extends AppCompatActivity {
                     }
                 }
                 txtQuantity.setText(Integer.toString(quantity));
+                price = quantity * Integer.parseInt(txtPrice.getText().toString());
+                finalPrice = String.valueOf(price);
+                finalQuantity = txtQuantity.getText().toString();
             };
         });
     }
