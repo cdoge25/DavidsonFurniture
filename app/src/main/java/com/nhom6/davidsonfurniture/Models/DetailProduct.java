@@ -81,7 +81,7 @@ public class DetailProduct {
 
     //Constructor
 
-    public DetailProduct(int productThumb, String productName, String productCategory, String productRate, String productSize, String productMaterial, String productColor, double productPrice, int checked) {
+    public DetailProduct(int productThumb, String productName, String productCategory, String productRate, String productSize, String productMaterial, String productColor, int productPrice, int checked) {
         this.productThumb = productThumb;
         this.productName = productName;
         this.productCategory = productCategory;
