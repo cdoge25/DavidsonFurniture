@@ -81,10 +81,10 @@ public class PopularProductActivity extends AppCompatActivity {
     }
     private void loadData() {
         productList = new ArrayList<>();
-        productList.add(new Product(R.drawable.img_sofabang_anastasia,"ANASTASIA", "Sofa Bằng", "4.7", 8500000));
+        productList.add(new Product(R.drawable.img_sofabang_anastasia,"ANASTASIA", "Sofa Băng", "4.7", 8500000));
         productList.add(new Product(R.drawable.img_banan_honey,"HONEY", "Bàn ăn", "4.7", 2859000));
         productList.add(new Product(R.drawable.img_banlamviec_builder,"BUILDER", "Bàn làm việc", "4.7", 1350000));
-        productList.add(new Product(R.drawable.img_nemngoi_candy,"CANDY", "Nệm ngồi", "4.7", 10500000));
+        productList.add(new Product(R.drawable.img_nemngoi_candy,"CANDY", "Nệm ngồi", "4.7", 1050000));
         productList.add(new Product(R.drawable.img_ttdongho_king,"KING", "Đồng hồ", "4.7", 8990000));
         productList.add(new Product(R.drawable.img_ttdongho_queen,"QUEEN", "Đồng hồ", "4.7", 799000));
         productList.add(new Product(R.drawable.img_guongtoanthan_patax,"PATAX", "Gương toàn thân", "4.7",2690000));

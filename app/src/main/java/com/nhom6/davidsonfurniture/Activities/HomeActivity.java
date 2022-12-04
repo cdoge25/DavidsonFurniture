@@ -52,6 +52,7 @@ public class HomeActivity extends AppCompatActivity {
 
         loadBanners();
         loadNewData();
+        loadPopularData();
 
         toNotification();
         toNewProduct();
@@ -67,13 +68,13 @@ public class HomeActivity extends AppCompatActivity {
         toTrangTri();
         toKeTu();
     }
-    
+
     private void loadBanners() {
         slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.img_banner_ez, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.img_banner_doclap, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
-                
+
         binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
     }
 
@@ -110,6 +111,20 @@ public class HomeActivity extends AppCompatActivity {
 
         homeNewAdapter = new HomeNewAdapter(products);
         binding.rvNewProduct.setAdapter(homeNewAdapter);
+    }
+
+    private void loadPopularData() {
+        binding.rvPopularProduct.setHasFixedSize(true);
+        binding.rvPopularProduct.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<Product> products = new ArrayList<>();
+        products.add(new Product(R.drawable.img_sofabang_anastasia, "ANASTASIA", "Sofa băng", "4.7", 8450000));
+        products.add(new Product(R.drawable.img_banan_honey, "HONEY", "Bàn ăn", "4.7", 2859000));
+        products.add(new Product(R.drawable.img_banlamviec_builder, "BUILDER", "Bàn làm việc", "4.7", 1350000));
+        products.add(new Product(R.drawable.img_nemngoi_candy,"CANDY", "Nệm ngồi", "4.7", 1050000));
+
+        homeNewAdapter = new HomeNewAdapter(products);
+        binding.rvPopularProduct.setAdapter(homeNewAdapter);
     }
 
     private void navigationClick() {
