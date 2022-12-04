@@ -109,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
         products.add(new Product(R.drawable.img_bancafe_luki, "LUKI", "Bàn Cafe", "4.7", 1350000));
         products.add(new Product(R.drawable.img_banan_honey,"HONEY", "Bàn ăn", "4.7", 2250000));
 
-        homeNewAdapter = new HomeNewAdapter(products);
+        homeNewAdapter = new HomeNewAdapter(getApplicationContext(), products);
         binding.rvNewProduct.setAdapter(homeNewAdapter);
     }
 
@@ -123,7 +123,7 @@ public class HomeActivity extends AppCompatActivity {
         products.add(new Product(R.drawable.img_banlamviec_builder, "BUILDER", "Bàn làm việc", "4.7", 1350000));
         products.add(new Product(R.drawable.img_nemngoi_candy,"CANDY", "Nệm ngồi", "4.7", 1050000));
 
-        homeNewAdapter = new HomeNewAdapter(products);
+        homeNewAdapter = new HomeNewAdapter(getApplicationContext(), products);
         binding.rvPopularProduct.setAdapter(homeNewAdapter);
     }
 

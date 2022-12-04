@@ -48,7 +48,7 @@ public class DetailProductActivity extends AppCompatActivity {
     ArrayList<DetailProduct> productList;
     Toolbar toolbar;
     ImageButton imbAdd, imbSubtract;
-    int quantity = 1, price = 0;
+    int quantity = 1, price = 1;
     TextView txtQuantity;
 
     int image_url;
@@ -79,10 +79,11 @@ public class DetailProductActivity extends AppCompatActivity {
         color = "Xám";
         getColor();
 
+        showData();
+
+        finalPrice = (binding.txtProductPrice.getText().toString());
         finalQuantity = "1";
         adjustQuantity();
-
-        showData();
 
         addToCart();
 

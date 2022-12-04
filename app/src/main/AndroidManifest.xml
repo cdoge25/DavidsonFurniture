@@ -71,28 +71,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.CategoryProductActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Activities.CategoriesProductActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activities.MainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activities.DeliveredOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -395,7 +374,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity>
+        <activity
             android:name=".Activities.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
