@@ -59,8 +59,9 @@
                 android:id="@+id/spFilterPrice"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:backgroundTint="@color/black"/>
-
+                android:backgroundTint="@color/black"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -69,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="2"
-        android:layout_marginTop="10dp"
+
         android:padding="20dp"/>
 
 </LinearLayout>

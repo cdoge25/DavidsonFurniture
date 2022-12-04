@@ -1,7 +1,10 @@
 package com.nhom6.davidsonfurniture.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +12,12 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.BaseAdapter;
+import android.widget.Filter;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.nhom6.davidsonfurniture.Adapters.ProductAdapter;
@@ -22,6 +28,7 @@ import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityCategoriesProductBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class CategoriesProductActivity extends AppCompatActivity {
@@ -31,20 +38,17 @@ public class CategoriesProductActivity extends AppCompatActivity {
     ArrayList<Product> productList;
     String category;
 
-    String[] items = {"Tất cả", "Dưới 1 triệu", "Từ 1-5 triệu", "Từ 5-10 triệu", "Trên 10 triệu"};
-    AutoCompleteTextView autoCompleteTextView;
-    ArrayAdapter<String> adapterItems;
 
-    //TextView txtCategoryName;
+    ArrayList<Product> products;
 
 
 //    OnClickInterface onClickInterface;
 
     // Spinner
-    ArrayList<Product> products;
-    GridView gvCategoryProduct;
-    Spinner spinnerCategory;
-    String[] price = {"Tất cả", "Dưới 1.000.000", "Từ 1.000.000 đến 5.000.000", "Từ 5.000.000 đến 10.000.000", "Từ 10. 000.000 trở lên"};
+//    ArrayAdapter<Filter> filteradapter;
+//    GridView gvProduct;
+    Spinner spinner;
+    String[] price = {"Tất cả", "Dưới 1 triệu", "Từ 1-5 triệu", "Từ 5-10 triệu", "Trên 10 triệu"};
 
 
     @Override
@@ -83,8 +87,29 @@ public class CategoriesProductActivity extends AppCompatActivity {
         toDetail();
 
         loadData();
+
+        initializeViews();
     }
 
+
+   //Intialite gidview and spinner, set adapters and listen to spinner itemSelected
+
+    private  void initializeViews() {
+        spinner = findViewById(R.id.spFilterPrice);
+        spinner.setAdapter(new ArrayAdapter<String>(this,R.layout.item_list_price, price));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+}
+
+    //Create Adapter for ArrayAdapter
 
     private void loadData() {
 
@@ -204,24 +229,6 @@ public class CategoriesProductActivity extends AppCompatActivity {
         });
     }
 
-//    private void FilterPrice() {
-//        //Add Filter
-//        autoCompleteTextView = findViewById(R.id.txt_auto_complete);
-//        adapterItems = new ArrayAdapter<String>(this, R.layout.item_list_price, items);
-//        autoCompleteTextView.setAdapter(adapterItems);
-//        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//    }
-
     private void goBack() {
         binding.toolbarCategoryProduct.getChildAt(0).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -230,47 +237,9 @@ public class CategoriesProductActivity extends AppCompatActivity {
             }
         });
     }
+}
 
-//    private void linkViews() {
-//        toolbarCategoryProduct = findViewById(R.id.toolbarCategoryProduct);
-//        txtCategoryName = findViewById(R.id.txtCategoryName);
-//        spinnerCategory = findViewById(R.id.spinnerCategory);
-////        rcvProductCategory = findViewById(R.id.rcvCategoryProduct);
-//
-//
-//    }
-//
 
-//    private void addEventProductList() {
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(CategoryProductActivity.this, LinearLayoutManager.VERTICAL, false);
-//        rcvProductCategory.setLayoutManager(layoutManager);
-//
-//        getData();
-//
-//        rcvProductCategory.setAdapter(new ProductCategoryAdapter(CategoryProductActivity.this, R.layout.item_product, products, onClickInterface));
-//
-//        onClickInterface = number -> {
-//            Intent intent = new Intent(this, DetailProductActivity.class);
-//            intent.putExtra(Constant.ID_PRODUCT, number);
-//            startActivity(intent);
-//        };
-//    }
-//    private void getData(){
-//        productList = MainActivity.productList;
-//        products = new ArrayList<>();
-//        Intent intent = getIntent();
-//        if (intent != null) {
-//            String number = String.valueOf(intent.getExtras().getInt("id"));
-//            for (Product p : productList) {
-//                if (p.getProductCategory().equals(number)) {
-//                    products.add(p);
-//                }
-//            }
-//            //set Title
-//            txtCategoryName.setText(intent.getExtras().getString("category"));
-//        }
-//    }
-//
 //    private void addEventSpinner() {
 //        //creating array adapter
 //        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.activity_categories_product, items);
@@ -327,4 +296,3 @@ public class CategoriesProductActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
-}
