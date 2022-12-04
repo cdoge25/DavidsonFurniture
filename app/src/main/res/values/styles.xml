@@ -30,4 +30,9 @@
         parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/custom_bottom_sheet</item>
     </style>
+    <style name="prefixText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="fontFamily">@font/futura_book</item>
+    </style>
 </resources>

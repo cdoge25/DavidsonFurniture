@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "716716386397",
+    "firebase_url": "https://davidson-furniture-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "davidson-furniture",
     "storage_bucket": "davidson-furniture.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "716716386397-9md3n7aiegt4jgbub0kdkdj4ea5fhu2l.apps.googleusercontent.com",
+          "client_id": "716716386397-ufu30hgkvrhmpnrqsbjo1529o9k8j3vp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nhom6.davidsonfurniture",

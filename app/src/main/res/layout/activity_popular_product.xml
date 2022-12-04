@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PopularProductActivity"
-    android:padding="20dp"
+
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -34,6 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="2"
-        android:stretchMode="columnWidth"/>
+        android:stretchMode="columnWidth"
+        android:padding="20dp"
+        android:verticalSpacing="15dp"
+        android:horizontalSpacing="20dp"/>
 
 </LinearLayout>

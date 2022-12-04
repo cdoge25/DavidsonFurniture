@@ -15,9 +15,7 @@
         <CheckBox
             android:id="@+id/chk_select"
             android:layout_width="20sp"
-            android:layout_height="20sp"
-            android:layout_marginTop="60sp"
-            />
+            android:layout_height="20sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -30,29 +28,26 @@
                 android:id="@+id/img_product"
                 android:layout_width="120sp"
                 android:layout_height="120sp"
-                android:src="@drawable/img_sofagiuong_elena"/>
+                android:src="@drawable/img_sofabang_elena"/>
 
 
         </androidx.cardview.widget.CardView>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="10sp"
-            android:layout_gravity="center">
+            android:layout_marginStart="10sp">
 
             <TextView
                 android:id="@+id/txt_ProductName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ALICE"
-                android:textStyle="bold"
                 android:textSize="14sp"
                 android:fontFamily="@font/futura_bold"
                 android:textColor="@color/black"
+                android:layout_gravity="left"
                 />
 
             <TextView
@@ -62,14 +57,19 @@
                 android:text="Sofa băng"
                 android:textSize="12sp"
                 android:fontFamily="@font/futura_book"
+                android:layout_gravity="left"
+                android:textColor="@color/grey" />
 
-                />
-            <Spinner
-                android:id="@+id/spn_ColorProduct"
-                android:layout_width="70sp"
-                android:layout_height="17sp"
-                android:layout_marginTop="5sp"
-                />
+            <TextView
+                android:id="@+id/txt_ProductColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Màu xám"
+                android:textSize="12sp"
+                android:fontFamily="@font/futura_book"
+                android:layout_gravity="left"
+                android:textColor="@color/black" />
+
             <TextView
                 android:id="@+id/txt_ProductPrice"
                 android:layout_width="wrap_content"
@@ -78,46 +78,54 @@
                 android:fontFamily="@font/futura_book"
                 android:textSize="14sp"
                 android:layout_marginTop="5sp"
-                android:textColor="#FF6600" />
+                android:textColor="#FF6600"
+                android:layout_gravity="left"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5sp"
+                android:weightSum="10">
 
                 <ImageButton
                     android:id="@+id/btn_minus"
-                    android:layout_width="20sp"
+                    android:layout_width="0dp"
                     android:layout_height="20sp"
                     android:src="@drawable/ic_action_minus"
-                    android:layout_marginTop="10sp"/>
+                    android:layout_weight="2"
+                    android:background="#F5F5F5"
+                    />
 
                 <TextView
                     android:id="@+id/txt_NumberInCart"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="02"
-                    android:layout_margin="10sp"
                     android:textSize="14sp"
                     android:fontFamily="@font/futura_book"
+                    android:layout_weight="2.5"
+                    android:gravity="center"
                     />
 
                 <ImageButton
                     android:id="@+id/btn_plus"
-                    android:layout_width="20sp"
+                    android:layout_width="0dp"
                     android:layout_height="20sp"
                     android:src="@drawable/ic_action_plus"
-                    android:layout_marginTop="10sp"/>
+                    android:background="#F5F5F5"
+                    android:layout_weight="2"/>
 
                 <ImageButton
-                    android:id="@+id/btn_delete"
-                    android:layout_width="20sp"
+                    android:id="@+id/btn_deleteCart"
+                    android:layout_width="0dp"
                     android:layout_height="20sp"
                     android:src="@drawable/ic_action_delete"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginStart="100sp"
-                    />
-
+                    android:layout_weight="3"
+                    android:layout_marginStart="10sp"
+                    android:background="#F5F5F5"
+                    android:gravity="right"/>
             </LinearLayout>
 
         </LinearLayout>

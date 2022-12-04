@@ -1,6 +1,7 @@
 package com.nhom6.davidsonfurniture.Activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.nhom6.davidsonfurniture.Adapters.ViewPagerOrderStatusAdapter;
@@ -20,6 +22,7 @@ public class OrderStatusActivity extends AppCompatActivity {
     private ViewPager2 dViewPager;
     private ViewPagerOrderStatusAdapter ViewPagerAdapter;
     String detailName;
+    BottomNavigationView navApp;
 
     Toolbar toolbarOrderStatus;
 
@@ -73,6 +76,11 @@ public class OrderStatusActivity extends AppCompatActivity {
                 }
             }).attach();
         }
+        
+        //Navigation
+        navApp = findViewById(R.id.navApp);
+        navApp.setSelectedItemId(R.id.navOrder);
+        navigationClick();
 
         //khởi tạo
         dTabLayout = findViewById(R.id.tab_layout);
@@ -113,6 +121,28 @@ public class OrderStatusActivity extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
             }
+        });
+    }
+
+    private void navigationClick() {
+       navApp.setOnItemSelectedListener(item ->{
+            switch (item.getItemId()){
+                case R.id.navHome:
+                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.navCart:
+                    startActivity(new Intent(getApplicationContext(),CartActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.navOrder:
+                    return true;
+                case R.id.navAccount:
+                    startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
+            }
+            return false;
         });
     }
 }
