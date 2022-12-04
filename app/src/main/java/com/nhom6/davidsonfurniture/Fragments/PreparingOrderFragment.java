@@ -44,8 +44,8 @@ public class PreparingOrderFragment extends Fragment {
 
     private List<PreparingOrder> initData() {
         List<PreparingOrder> preparingOrders = new ArrayList<>();
-        preparingOrders.add(new PreparingOrder(R.drawable.img_bancafe_mushroom, "MUSHROOM", "Bàn cafe", "Đen", "3,750,000đ", "Số lượng: 1"));
-        preparingOrders.add(new PreparingOrder(R.drawable.img_densan_logly, "LOGLY", "Đèn sàn", "Đen", "990,000đ", "Số lượng: 1"));
+        preparingOrders.add(new PreparingOrder(R.drawable.img_bancafe_mushroom, "MUSHROOM", "Bàn cafe", "Đen", 3750000, 1, "DF123456785"));
+        preparingOrders.add(new PreparingOrder(R.drawable.img_densan_logly, "LOGLY", "Đèn sàn", "Đen", 990000, 1, "DF123456785"));
         return preparingOrders;
     }
 

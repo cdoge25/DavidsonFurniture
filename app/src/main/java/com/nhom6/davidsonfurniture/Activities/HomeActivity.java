@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.nhom6.davidsonfurniture.Adapters.HomeNewAdapter;
 import com.nhom6.davidsonfurniture.Models.Product;
 import com.nhom6.davidsonfurniture.R;
@@ -20,14 +22,18 @@ public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
     HomeNewAdapter homeNewAdapter;
-
+    ArrayList<SlideModel> slideModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -44,7 +50,9 @@ public class HomeActivity extends AppCompatActivity {
         binding.navApp.setSelectedItemId(R.id.navHome);
         navigationClick();
 
+        loadBanners();
         loadNewData();
+        loadPopularData();
 
         toNotification();
         toNewProduct();
@@ -58,7 +66,15 @@ public class HomeActivity extends AppCompatActivity {
         toDen();
         toTrangTri();
         toKeTu();
+    }
 
+    private void loadBanners() {
+        slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.img_banner_ez, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_banner_doclap, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
+
+        binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
     }
 
 
@@ -73,8 +89,22 @@ public class HomeActivity extends AppCompatActivity {
         products.add(new Product(R.drawable.img_bancafe_luki, "LUKI", "Bàn Cafe", "4.7", 1350000));
         products.add(new Product(R.drawable.img_banan_honey,"HONEY", "Bàn ăn", "4.7", 2250000));
 
-        homeNewAdapter = new HomeNewAdapter(this, products);
+        homeNewAdapter = new HomeNewAdapter(getApplicationContext(), products);
         binding.rvNewProduct.setAdapter(homeNewAdapter);
+    }
+
+    private void loadPopularData() {
+        binding.rvPopularProduct.setHasFixedSize(true);
+        binding.rvPopularProduct.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<Product> products = new ArrayList<>();
+        products.add(new Product(R.drawable.img_sofabang_anastasia, "ANASTASIA", "Sofa băng", "4.7", 8450000));
+        products.add(new Product(R.drawable.img_banan_honey, "HONEY", "Bàn ăn", "4.7", 2859000));
+        products.add(new Product(R.drawable.img_banlamviec_builder, "BUILDER", "Bàn làm việc", "4.7", 1350000));
+        products.add(new Product(R.drawable.img_nemngoi_candy,"CANDY", "Nệm ngồi", "4.7", 1050000));
+
+        homeNewAdapter = new HomeNewAdapter(getApplicationContext(), products);
+        binding.rvPopularProduct.setAdapter(homeNewAdapter);
     }
 
     private void navigationClick() {
@@ -216,6 +246,4 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

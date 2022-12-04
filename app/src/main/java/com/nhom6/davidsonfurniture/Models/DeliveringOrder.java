@@ -1,20 +1,29 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class DeliveringOrder {
+import java.io.Serializable;
+
+public class DeliveringOrder implements Serializable {
+    int deliveringID;
     int deliveringThumb; //hình ảnh
     String deliveringName;
     String deliveringType;
     String deliveringColor;
-    String deliveringPrice;
-    String deliveringQuantity;
+    double deliveringPrice;
+    int deliveringQuantity;
+    String deliveringCode;
 
-    public DeliveringOrder(int deliveringThumb, String deliveringName, String deliveringType, String deliveringColor, String deliveringPrice, String deliveringQuantity) {
+    public int getPreparingID() {
+        return deliveringID;
+    }
+
+    public DeliveringOrder(int deliveringThumb, String deliveringName, String deliveringType, String deliveringColor, double deliveringPrice, int deliveringQuantity, String deliveringCode) {
         this.deliveringThumb = deliveringThumb;
         this.deliveringName = deliveringName;
         this.deliveringType = deliveringType;
         this.deliveringColor = deliveringColor;
         this.deliveringPrice = deliveringPrice;
         this.deliveringQuantity = deliveringQuantity;
+        this.deliveringCode = deliveringCode;
     }
 
     public int getDeliveringThumb() {
@@ -49,20 +58,27 @@ public class DeliveringOrder {
         this.deliveringColor = deliveringColor;
     }
 
-    public String getDeliveringPrice() {
+    public double getDeliveringPrice() {
         return deliveringPrice;
     }
 
-    public void setDeliveringPrice(String deliveringPrice) {
+    public void setDeliveringPrice(double deliveringPrice) {
         this.deliveringPrice = deliveringPrice;
     }
 
-    public String getDeliveringQuantity() {
+    public int getDeliveringQuantity() {
         return deliveringQuantity;
     }
 
-    public void setDeliveringQuantity(String deliveringQuantity) {
+    public void setDeliveringQuantity(int deliveringQuantity) {
         this.deliveringQuantity = deliveringQuantity;
     }
 
+    public String getDeliveringCode() {
+        return deliveringCode;
+    }
+
+    public void setDeliveringCode(String deliveringCode) {
+        this.deliveringCode = deliveringCode;
+    }
 }

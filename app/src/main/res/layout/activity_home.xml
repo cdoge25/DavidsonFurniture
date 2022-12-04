@@ -35,31 +35,22 @@
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:id="@+id/rlSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/smoke"
-            android:elevation="5dp"
+            app:cardCornerRadius="10dp"
             android:padding="10dp">
-            <ImageView
-                android:id="@+id/imvSearch"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/svHome"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_action_search"
-                android:layout_centerVertical="true"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tìm kiếm"
-                android:fontFamily="@font/futura_book"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/grey"
-                android:layout_toEndOf="@+id/imvSearch"/>
-        </RelativeLayout>
+                android:background="@color/smoke"
+                app:iconifiedByDefault="false"
+                android:focusable="false"/>
+        </androidx.cardview.widget.CardView>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -77,11 +68,16 @@
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="10dp"
                     android:layout_gravity="fill">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/img_banner_ez"/>
+
+                    <com.denzcoskun.imageslider.ImageSlider
+                        android:id="@+id/imsSliderBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        app:iss_placeholder="@drawable/img_banner_ez"
+                        app:iss_auto_cycle="true"
+                        app:iss_period="3000">
+
+                    </com.denzcoskun.imageslider.ImageSlider>
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -185,7 +181,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Đèn"
+                                android:text="Đèn"     
                                 android:fontFamily="@font/futura_book"
                                 android:textSize="14sp"/>
                         </LinearLayout>
@@ -323,7 +319,6 @@
 
         </ScrollView>
     </LinearLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navApp"

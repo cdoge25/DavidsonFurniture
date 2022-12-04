@@ -74,6 +74,14 @@ dependencies {
         exclude module: "play-services-safetynet"
     }
 
+    //Firebase extra
     implementation 'androidx.browser:browser:1.4.0'
     implementation 'com.google.firebase:firebase-appcheck-playintegrity'
+
+    //Google Maps
+    implementation 'com.google.maps.android:android-maps-utils:2.3.0'
+    implementation 'com.google.android.libraries.places:places:2.7.0'
+    
+    //Material CardView
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 }

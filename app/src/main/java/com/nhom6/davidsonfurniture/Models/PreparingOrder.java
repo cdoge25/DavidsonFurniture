@@ -1,20 +1,29 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class PreparingOrder {
+import java.io.Serializable;
+
+public class PreparingOrder implements Serializable {
+    int preparingID;
     int preparingThumb;
     String preparingName;
     String preparingType;
     String preparingColor;
-    String preparingPrice;
-    String preparingQuantity;
+    double preparingPrice;
+    int preparingQuantity;
+    String preparingCode;
 
-    public PreparingOrder(int preparingThumb, String preparingName, String preparingType, String preparingColor, String preparingPrice, String preparingQuantity) {
+    public int getPreparingID() {
+        return preparingID;
+    }
+
+    public PreparingOrder(int preparingThumb, String preparingName, String preparingType, String preparingColor, double preparingPrice, int preparingQuantity, String preparingCode) {
         this.preparingThumb = preparingThumb;
         this.preparingName = preparingName;
         this.preparingType = preparingType;
         this.preparingColor = preparingColor;
         this.preparingPrice = preparingPrice;
         this.preparingQuantity = preparingQuantity;
+        this.preparingCode = preparingCode;
     }
 
     public int getPreparingThumb() {
@@ -49,19 +58,27 @@ public class PreparingOrder {
         this.preparingColor = preparingColor;
     }
 
-    public String getPreparingPrice() {
+    public double getPreparingPrice() {
         return preparingPrice;
     }
 
-    public void setPreparingPrice(String preparingPrice) {
+    public void setPreparingPrice(double preparingPrice) {
         this.preparingPrice = preparingPrice;
     }
 
-    public String getPreparingQuantity() {
+    public int getPreparingQuantity() {
         return preparingQuantity;
     }
 
-    public void setPreparingQuantity(String preparingQuantity) {
+    public void setPreparingQuantity(int preparingQuantity) {
         this.preparingQuantity = preparingQuantity;
+    }
+
+    public String getPreparingCode() {
+        return preparingCode;
+    }
+
+    public void setPreparingCode(String preparingCode) {
+        this.preparingCode = preparingCode;
     }
 }

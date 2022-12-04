@@ -1,21 +1,25 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class CompletedOrder {
+import java.io.Serializable;
 
+public class CompletedOrder implements Serializable {
+    int completedID;
     int completedThumb;
     String completedName;
     String completedType;
     String completedColor;
-    String completedPrice;
-    String completedQuantity;
+    double completedPrice;
+    int completedQuantity;
+    String completedCode;
 
-    public CompletedOrder(int completedThumb, String completedName, String completedType, String completedColor, String completedPrice, String completedQuantity) {
+    public CompletedOrder(int completedThumb, String completedName, String completedType, String completedColor, double completedPrice, int completedQuantity, String completedCode) {
         this.completedThumb = completedThumb;
         this.completedName = completedName;
         this.completedType = completedType;
         this.completedColor = completedColor;
         this.completedPrice = completedPrice;
         this.completedQuantity = completedQuantity;
+        this.completedCode = completedCode;
     }
 
     public int getCompletedThumb() {
@@ -50,19 +54,28 @@ public class CompletedOrder {
         this.completedColor = completedColor;
     }
 
-    public String getCompletedPrice() {
+    public double getCompletedPrice() {
         return completedPrice;
     }
 
-    public void setCompletedPrice(String completedPrice) {
+    public void setCompletedPrice(double completedPrice) {
         this.completedPrice = completedPrice;
     }
 
-    public String getCompletedQuantity() {
+    public int getCompletedQuantity() {
         return completedQuantity;
     }
 
-    public void setCompletedQuantity(String completedQuantity) {
+    public void setCompletedQuantity(int completedQuantity) {
         this.completedQuantity = completedQuantity;
     }
+
+    public String getCompletedCode() {
+        return completedCode;
+    }
+
+    public void setCompletedCode(String completedCode) {
+        this.completedCode = completedCode;
+    }
+
 }
