@@ -99,6 +99,7 @@
                             android:textSize="14sp"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/llGhe"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -115,6 +116,7 @@
                             android:textSize="14sp"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/llBan"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -131,6 +133,7 @@
                             android:textSize="14sp"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/llKeTu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -160,6 +163,7 @@
                         android:gravity="fill">
 
                         <LinearLayout
+                            android:id="@+id/llDen"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -171,11 +175,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Đèn"                            
+                                android:text="Đèn"     
                                 android:fontFamily="@font/futura_book"
                                 android:textSize="14sp"/>
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/llGiuong"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -191,7 +197,9 @@
                                 android:fontFamily="@font/futura_book"
                                 android:textSize="14sp"/>
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/llGuong"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -207,7 +215,9 @@
                                 android:fontFamily="@font/futura_book"
                                 android:textSize="14sp"/>
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/llTrangTri"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"

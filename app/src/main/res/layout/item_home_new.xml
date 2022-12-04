@@ -8,6 +8,7 @@
     android:layout_margin="10dp">
 
     <LinearLayout
+        android:id="@+id/layoutItem"
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:orientation="vertical">
@@ -67,7 +68,7 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/txtProductCategory"
+            android:id="@+id/txtCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sofa băng"
