@@ -1,16 +1,14 @@
 package com.nhom6.davidsonfurniture.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nhom6.davidsonfurniture.Adapters.NotificationAdapter;
 import com.nhom6.davidsonfurniture.Models.Notification;
@@ -18,7 +16,6 @@ import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityNotificationsBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NotificationsActivity extends AppCompatActivity {
 
@@ -122,7 +119,7 @@ public class NotificationsActivity extends AppCompatActivity {
                 "Đơn hàng đã huỷ", "Nhấn để xem chi tiết"));
         notificationList.add(new Notification(R.drawable.ic_notification_delivered,
                 "Giao hàng thành công", "Nhấn để xem chi tiết"));
-        notificationList.add(new Notification(R.drawable.ic_status_delivering,
+        notificationList.add(new Notification(R.drawable.ic_status_delivering_inactive,
                 "Đơn hàng đang được vận chuyển", "Nhấn để xem chi tiết"));
         notificationList.add(new Notification(R.drawable.ic_pick_voucher,
                 "Bạn có mã giảm giá gần hết hạn", "Nhấn để xem chi tiết"));

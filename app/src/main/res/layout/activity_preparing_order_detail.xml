@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.DeliveredOrderDetailActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activities.PreparingOrderDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarDeliveredOrderDetail"
+        android:id="@+id/toolbarPreparingOrderDetail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -36,7 +36,7 @@
         android:orientation="vertical"
         android:layout_weight="1">
         <TextView
-            android:id="@+id/txtDeliveredDetailCode"
+            android:id="@+id/txtPreparingDetailCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mã đơn hàng: DF123456789"
@@ -71,7 +71,7 @@
                     android:elevation="5dp"
                     app:cardCornerRadius="20dp">
                     <ImageView
-                        android:id="@+id/imvDeliveredDetailThumb"
+                        android:id="@+id/imvPreparingDetailThumb"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
                         android:scaleType="fitXY"
@@ -88,7 +88,7 @@
                     android:orientation="vertical"
                     android:gravity="center_vertical">
                     <TextView
-                        android:id="@+id/txtDeliveredDetailName"
+                        android:id="@+id/txtPreparingDetailName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ALICE"
@@ -98,7 +98,7 @@
                         android:layout_gravity="left"/>
 
                     <TextView
-                        android:id="@+id/txtDeliveredDetailType"
+                        android:id="@+id/txtPreparingDetailType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sofa băng"
@@ -109,7 +109,7 @@
                         android:layout_gravity="left"/>
 
                     <TextView
-                        android:id="@+id/txtDeliveredDetailColor"
+                        android:id="@+id/txtPreparingDetailColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Xám"
@@ -120,7 +120,7 @@
                         android:layout_gravity="left"/>
 
                     <TextView
-                        android:id="@+id/txtDeliveredDetailPrice"
+                        android:id="@+id/txtPreparingDetailPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="9,000,000đ"
@@ -131,7 +131,7 @@
                         android:layout_gravity="left"/>
 
                     <TextView
-                        android:id="@+id/txtDeliveredDetailQuantity"
+                        android:id="@+id/txtPreparingDetailQuantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Số lượng: 2"
@@ -207,13 +207,13 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_status_preparing_inactive"
+                        android:src="@drawable/ic_status_preparing_active"
                         android:layout_gravity="center"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Đang chuẩn bị"
-                        android:textColor="@color/grey"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         android:fontFamily="@font/futura_book"
                         android:layout_gravity="center_vertical"
@@ -224,133 +224,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="04/11/2022 10:00"
-                    android:textColor="@color/grey"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0"/>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_status_progress"
-                android:layout_marginVertical="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_gravity="left"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_status_delivering_inactive"
-                        android:layout_gravity="center" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Đang giao"
-                        android:textColor="@color/grey"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/futura_book"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="04/11/2022 11:00"
-                    android:textColor="@color/grey"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/futura_book"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0"/>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_status_progress"
-                android:layout_marginVertical="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_gravity="left"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_status_delivered_active"
-                        android:layout_gravity="center" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Đã giao"
-                        android:textColor="@color/grey"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/futura_book"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="04/11/2022 12:00"
-                    android:textColor="@color/grey"
+                    android:textColor="@color/black"
                     android:textSize="12sp"
                     android:fontFamily="@font/futura_book"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0"/>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:gravity="center_horizontal"
-        android:layout_weight="0">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnReturnOrder"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button_black"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:text="Trả hàng"
-            android:textSize="20sp"
-            android:fontFamily="@font/futura_bold"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnComplete"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/bg_button_orange"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:text="Hoàn tất"
-            android:textSize="20sp"
-            android:fontFamily="@font/futura_bold"/>
-    </LinearLayout>
-
 
 </LinearLayout>

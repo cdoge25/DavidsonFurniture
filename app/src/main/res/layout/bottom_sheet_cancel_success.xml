@@ -3,19 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    app:cardCornerRadius="20dp">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarCancelOrder"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:elevation="2dp"
-        android:background="@color/white"
-        android:theme="?attr/actionBarTheme"
-        >
-        <!-- app:menu="@menu/bottom_sheet_cancel_heading" -->
+        android:background="@drawable/custom_bottom_sheet"
+        android:theme="?attr/actionBarTheme">
 
         <TextView
             android:layout_width="match_parent"
@@ -43,19 +39,35 @@
         android:fontFamily="@font/futura_book"
         android:justificationMode="inter_word"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBackHome"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/bg_button_orange"
-        android:fontFamily="@font/futura_bold"
-        android:gravity="center"
-        android:text="Trang chủ"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:layout_marginBottom="30dp">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirmSuccess"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_black"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Xác nhận"
+            android:textSize="20sp"
+            android:fontFamily="@font/futura_bold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBackHome"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_button_orange"
+            android:fontFamily="@font/futura_bold"
+            android:gravity="center"
+            android:text="Trang chủ"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
 </LinearLayout>
