@@ -92,7 +92,7 @@ public class AccountActivity extends AppCompatActivity {
         binding.llContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccountActivity.this, CustomerServiceActivity.class);
+                Intent intent = new Intent(AccountActivity.this, ContactActivity.class);
                 startActivity(intent);
             }
         });
