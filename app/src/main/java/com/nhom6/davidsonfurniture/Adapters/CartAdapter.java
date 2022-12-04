@@ -35,8 +35,8 @@ public class CartAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
+    public Object getItem(int i) {
+        return product.get(i);
     }
 
     @Override
@@ -53,6 +53,7 @@ public class CartAdapter extends BaseAdapter {
 
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(item_layout,null);
+
             //Ánh xạ
             holder.imgProduct = convertView.findViewById(R.id.img_product);
             holder.proName = convertView.findViewById(R.id.txt_ProductName);
@@ -72,12 +73,12 @@ public class CartAdapter extends BaseAdapter {
 
         //Gán giá trị
         ProductCart p = product.get(position);
-        holder.imgProduct.setImageResource(p.getProductImage());
+        holder.imgProduct.setImageResource(p.getProductThumb());
         holder.proName.setText(p.getProductName());
         holder.proType.setText(p.getProductType());
         holder.proPrice.setText(String.valueOf(p.getProductPrice()));
         holder.proColor.setText(p.getProductColor());
-        holder.proNumber.setText(p.getProductQuantity());
+        holder.proNumber.setText(String.valueOf(p.getProductQuantity()));
 
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override

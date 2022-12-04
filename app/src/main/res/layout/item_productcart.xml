@@ -66,9 +66,9 @@
                 android:layout_height="wrap_content"
                 android:text="Màu xám"
                 android:textSize="12sp"
-                android:fontFamily="@font/futura_bold"
+                android:fontFamily="@font/futura_book"
                 android:layout_gravity="left"
-                android:textColor="@color/grey" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txt_ProductPrice"
