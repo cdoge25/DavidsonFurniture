@@ -1,10 +1,17 @@
 package com.nhom6.davidsonfurniture.Activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -15,8 +22,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.nhom6.davidsonfurniture.Databases.SessionManager;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityLoginBinding;
+
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,6 +54,14 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Check Shared Preferences
+        SessionManager sessionManager = new SessionManager(LoginActivity.this, SessionManager.SESSION_REMEMBERME);
+        if (sessionManager.checkRememberMe()){
+            HashMap<String,String> rememberMeDetails = sessionManager.getRememberMeDetailFromSession();
+            binding.loginPhone.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPHONE));
+            binding.loginPassword.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPASSWORD));
+        }
+
         toRegister();
         toForgetPassword();
         toHome();
@@ -55,6 +73,11 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Check Internet Connection
+                if(!isConnected(LoginActivity.this)){
+                    showConnectDialog();
+                }
+
                 //validate fields
                 if (!validatePhone() | !validatePassword()) {
                     return;
@@ -70,6 +93,11 @@ public class LoginActivity extends AppCompatActivity {
                     _phone = _phone.substring(3);
                 }
                 String _completedPhoneNumber = "+84" + _phone;
+
+                if (binding.cbRememberMe.isChecked()){
+                    SessionManager sessionManager = new SessionManager(LoginActivity.this, SessionManager.SESSION_REMEMBERME);
+                    sessionManager.createRememberMeSession(_phone, _password);
+                }
 
                 //Firebase Database Check
                 Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phone").equalTo(_completedPhoneNumber);
@@ -92,6 +120,10 @@ public class LoginActivity extends AppCompatActivity {
                                 String _phone = snapshot.child(_completedPhoneNumber).child("phone").getValue(String.class);
                                 String _password = snapshot.child(_completedPhoneNumber).child("password").getValue(String.class);
 
+                                //Create a Session
+                                SessionManager sessionManager = new SessionManager(LoginActivity.this, SessionManager.SESSION_USERSESSION);
+                                sessionManager.createLoginSession(_name, _mail, _phone, _password);
+
                                 //Go To Home
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);
@@ -113,6 +145,39 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private boolean isConnected(LoginActivity loginActivity) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) loginActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private void showConnectDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        builder.setMessage("Vui lòng kiểm tra lại kết nối mạng để tiếp tục")
+                .setCancelable(true)
+                .setPositiveButton("Cài đặt", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                })
+                .setNegativeButton("Đóng", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
     }
 
     private void toRegister() {
