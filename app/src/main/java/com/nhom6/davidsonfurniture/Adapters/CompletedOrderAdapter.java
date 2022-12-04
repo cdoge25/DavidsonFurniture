@@ -1,15 +1,20 @@
 package com.nhom6.davidsonfurniture.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nhom6.davidsonfurniture.Activities.ReviewActivity;
 import com.nhom6.davidsonfurniture.Models.CompletedOrder;
 import com.nhom6.davidsonfurniture.R;
 
@@ -38,9 +43,31 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
         holder.imvCompletedThumb.setImageResource(b.getCompletedThumb());
         holder.txtCompletedName.setText(b.getCompletedName());
         holder.txtCompletedType.setText(b.getCompletedType());
-        holder.txtCompletedPrice.setText(b.getCompletedPrice());
         holder.txtCompletedColor.setText(b.getCompletedColor());
-        holder.txtCompletedQuantity.setText(b.getCompletedQuantity());
+        holder.txtCompletedPrice.setText(String.format("%.0f", b.getCompletedPrice()) + "đ");
+        holder.txtCompletedQuantity.setText(String.format("Số lượng: %s",b.getCompletedQuantity()));
+
+        holder.btnReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { goToReview(b);
+            }
+        });
+
+        holder.layoutItemCompleted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToReview(b);
+            }
+        });
+    }
+
+    private void goToReview(CompletedOrder b) {
+        Intent intent = new Intent(context, ReviewActivity.class);
+        //truyền dữ liệu
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("object_completed", b);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
     }
 
     @Override
@@ -54,6 +81,8 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
     public class CompletedViewHolder extends RecyclerView.ViewHolder {
         ImageView imvCompletedThumb;
         TextView txtCompletedName, txtCompletedPrice, txtCompletedType, txtCompletedColor, txtCompletedQuantity;
+        Button btnReview;
+        RelativeLayout layoutItemCompleted;
 
         public CompletedViewHolder(View view) {
             super(view);
@@ -63,6 +92,8 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
             txtCompletedColor = view.findViewById(R.id.txtCompletedColor);
             txtCompletedPrice = view.findViewById(R.id.txtCompletedPrice);
             txtCompletedQuantity = view.findViewById(R.id.txtCompletedQuantity);
+            btnReview = view.findViewById(R.id.btnReview);
+            layoutItemCompleted = view.findViewById(R.id.layoutItemCompleted);
         }
     }
 }

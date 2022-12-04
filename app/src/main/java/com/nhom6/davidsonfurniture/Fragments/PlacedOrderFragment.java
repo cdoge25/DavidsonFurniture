@@ -10,18 +10,21 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nhom6.davidsonfurniture.Activities.OrderStatusActivity;
 import com.nhom6.davidsonfurniture.Models.PlacedOrder;
 import com.nhom6.davidsonfurniture.Adapters.PlacedOrderAdapter;
 import com.nhom6.davidsonfurniture.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class PlacedOrderFragment extends Fragment {
 
     RecyclerView rcvPlaced;
     PlacedOrderAdapter placedAdapter;
 
+    String detailName;
     public PlacedOrderFragment() {
         // Required empty public constructor
     }
@@ -37,15 +40,25 @@ public class PlacedOrderFragment extends Fragment {
         rcvPlaced.setHasFixedSize(true);
         rcvPlaced.setItemAnimator(new DefaultItemAnimator());
 
+        OrderStatusActivity activity = (OrderStatusActivity) getActivity();
+        detailName = activity.getDetailName();
+
         placedAdapter = new PlacedOrderAdapter(getContext(),initData());
         rcvPlaced.setAdapter(placedAdapter);
+
         return view;
     }
-
     private List<PlacedOrder> initData() {
         List<PlacedOrder> placedOrders = new ArrayList<>();
-        placedOrders.add(new PlacedOrder(R.drawable.img_bancafe_luki, "LUKI", "Bàn cafe", "Đen", "1,350,000đ", "Số lượng: 1"));
-        placedOrders.add(new PlacedOrder(R.drawable.img_densan_noti, "NOTI", "Đèn sàn", "Đen", "990,000đ", "Số lượng: 2"));
+        placedOrders.add(new PlacedOrder(1, R.drawable.img_bancafe_luki, "LUKI", "Bàn cafe", "Đen", 1350000, 1, "DF123456789"));
+        placedOrders.add(new PlacedOrder(2,R.drawable.img_densan_noti, "NOTI", "Đèn sàn", "Đen", 990000, 2, "DF123456788"));
+
+        if (Objects.equals(detailName, "LUKI")){
+            placedOrders.remove(0);
+        }
+        else if (Objects.equals(detailName, "NOTI")){
+            placedOrders.remove(1);
+        }
         return placedOrders;
     }
 
@@ -55,6 +68,11 @@ public class PlacedOrderFragment extends Fragment {
         if(placedAdapter != null){
             placedAdapter.release();
         }
+    }
+
+    public void deleteOrder(int i){
+        List<PlacedOrder> placedOrders = new ArrayList<>();
+        placedOrders.remove(i);
     }
 }
 

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingVertical="15dp">
+    android:paddingVertical="15dp"
+    android:id="@+id/layoutItemDelivering">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -93,7 +94,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnViewOrderDetail"
+                android:id="@+id/btnDeliveringDetail"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
