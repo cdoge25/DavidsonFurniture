@@ -8,7 +8,6 @@ import android.view.WindowManager;
 
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityCustomerServiceBinding;
-import com.nhom6.davidsonfurniture.databinding.ActivitySettingAccountBinding;
 
 public class CustomerServiceActivity extends AppCompatActivity {
     ActivityCustomerServiceBinding binding;
@@ -34,10 +33,10 @@ public class CustomerServiceActivity extends AppCompatActivity {
         binding = ActivityCustomerServiceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        goback();
+        goBack();
     }
 
-    private void goback() {
+    private void goBack() {
         binding.toolbarCustomerService.getChildAt(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

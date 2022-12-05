@@ -62,19 +62,24 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/edt_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nhập email mới"
             android:textSize="20dp"
-            android:fontFamily="@font/futura_book"/>
+            android:fontFamily="@font/futura_book"
+            android:maxLines="1"
+            android:lines="1" />
 
         <Button
+            android:id="@+id/btn_Update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Xác nhận"
             android:textSize="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/bg_button_orange"/>
+            android:background="@drawable/bg_button_orange"
+            tools:ignore="InvalidId" />
 
     </LinearLayout>
 

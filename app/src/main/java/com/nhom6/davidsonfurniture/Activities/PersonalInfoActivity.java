@@ -3,6 +3,7 @@ package com.nhom6.davidsonfurniture.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -33,6 +34,7 @@ import java.util.Calendar;
 public class PersonalInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ActivityPersonalInfoBinding binding;
     Spinner spinner;
+//    TextView txtSex;
 
 //    private Spinner spinnerSex;
     private TextView txtDateOfBirth;
@@ -64,8 +66,19 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
 
         spinerSex();
         datePickerDialog();
+        toChangeName();
 
         goback();
+    }
+
+    private void toChangeName() {
+        binding.llChangeName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalInfoActivity.this, ChangeNameActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void datePickerDialog() {
@@ -102,6 +115,7 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
         spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinAdapter);
 
+
     }
 
     private void goback() {
@@ -134,8 +148,9 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String item = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), "Giới tính: " + item, Toast.LENGTH_SHORT).show();
+//        String item = parent.getItemAtPosition(position).toString();
+////        TextView txtSex = (TextView) findViewById(R.id.txt_Sex);
+////        txtSex.setText(item);
 
     }
 

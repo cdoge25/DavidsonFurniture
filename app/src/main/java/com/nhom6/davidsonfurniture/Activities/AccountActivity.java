@@ -55,9 +55,18 @@ public class AccountActivity extends AppCompatActivity {
         goback();
     }
 
+    private void toContact() {
+        binding.llContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this,ContactActivity.class );
+                startActivity(intent);
+            }
+        });
+    }
+
     private void toLogout() {
-
-
+        
         binding.llLogout.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -88,15 +97,6 @@ public class AccountActivity extends AppCompatActivity {
     });
     }
 
-    private void toContact() {
-        binding.llContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AccountActivity.this, ContactActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     private void toCustomerService() {
         binding.llCustomerService.setOnClickListener(new View.OnClickListener() {

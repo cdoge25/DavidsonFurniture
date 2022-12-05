@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.nhom6.davidsonfurniture.R;
+import com.nhom6.davidsonfurniture.databinding.ActivityChangeNameBinding;
 import com.nhom6.davidsonfurniture.databinding.ActivityContactBinding;
 
 public class ContactActivity extends AppCompatActivity {
@@ -30,6 +31,9 @@ public class ContactActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        binding = ActivityContactBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         goBack();
     }

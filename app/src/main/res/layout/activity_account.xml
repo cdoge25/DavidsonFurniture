@@ -7,8 +7,6 @@
     tools:context=".Activities.AccountActivity"
     android:orientation="vertical">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -143,7 +141,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:id="@+id/ll_CustomerService">
                     <ImageView
                         android:layout_width="wrap_content"
@@ -171,7 +169,7 @@
                     android:id="@+id/ll_Contact">
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:src="@drawable/ic_account_contact" />
+                        android:layout_height="wrap_content" android:src="@drawable/ic_account_contact"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
