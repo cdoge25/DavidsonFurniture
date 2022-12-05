@@ -110,6 +110,13 @@
                 android:backgroundTint="@color/orange"
                 android:textAllCaps="false"
                 android:background="@drawable/bg_button_orange"/>
+
+            <TextView
+                android:id="@+id/txtCompletedStatusReview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ReviewStatus"
+                android:visibility="invisible"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

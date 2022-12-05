@@ -211,6 +211,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnUploadReview"
+        android:enabled="false"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"

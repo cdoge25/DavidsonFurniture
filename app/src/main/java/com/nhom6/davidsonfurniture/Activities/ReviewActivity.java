@@ -154,10 +154,10 @@ public class ReviewActivity extends AppCompatActivity {
 
                 double rating = rtbReviewRating.getRating();
                 String review = edtReview.getText().toString();
-                review = review.replace(" ", "");
+                int countreview = review.trim().length();
                 BitmapDrawable image = (BitmapDrawable) imvReviewPhoto.getDrawable();
 
-                if(review != "" && image != null){
+                if(countreview != 0 && image != null){
                     openDialogUploadedReview();
                 }
                 else{

@@ -71,6 +71,7 @@ public class ReturnOrderActivity extends AppCompatActivity {
         linkViews();
         addEvents();
         goBack();
+        createUploadImageDialog();
 
 //        launcherImage = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result ->{
 //            if (result.getResultCode() == RESULT_OK && result.getData() != null) {
@@ -125,11 +126,11 @@ public class ReturnOrderActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int radId = radGroupReturn.getCheckedRadioButtonId();
-                String review = edtReturnNote.getText().toString();
-                review = review.replace(" ", "");
+                String note = edtReturnNote.getText().toString();
+                int countnote = note.trim().length();
                 BitmapDrawable image = (BitmapDrawable) imvReturnPhoto.getDrawable();
 
-                if(radId != -1 && review != "" && image != null){
+                if(radId != -1 && countnote != 0 && image != null){
                     openDialogReturnOrder();
                 }
                 else{

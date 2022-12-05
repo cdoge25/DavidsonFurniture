@@ -11,8 +11,13 @@ public class CompletedOrder implements Serializable {
     double completedPrice;
     int completedQuantity;
     String completedCode;
+    int completeStatusReview;
 
-    public CompletedOrder(int completedThumb, String completedName, String completedType, String completedColor, double completedPrice, int completedQuantity, String completedCode) {
+    public int getCompletedID() {
+        return completedID;
+    }
+
+    public CompletedOrder(int completedThumb, String completedName, String completedType, String completedColor, double completedPrice, int completedQuantity, String completedCode, int completeStatusReview) {
         this.completedThumb = completedThumb;
         this.completedName = completedName;
         this.completedType = completedType;
@@ -20,6 +25,7 @@ public class CompletedOrder implements Serializable {
         this.completedPrice = completedPrice;
         this.completedQuantity = completedQuantity;
         this.completedCode = completedCode;
+        this.completeStatusReview = completeStatusReview;
     }
 
     public int getCompletedThumb() {
@@ -78,4 +84,11 @@ public class CompletedOrder implements Serializable {
         this.completedCode = completedCode;
     }
 
+    public int getCompleteStatusReview() {
+        return completeStatusReview;
+    }
+
+    public void setCompleteStatusReview(int completeStatusReview) {
+        this.completeStatusReview = completeStatusReview;
+    }
 }
