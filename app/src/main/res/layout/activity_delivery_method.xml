@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarOrderDetail"
+        android:id="@+id/toolbarMethodDelivery"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -168,7 +168,7 @@
         android:layout_width="150sp"
         android:layout_height="50sp"
         android:text="Xác nhận"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:background="@drawable/custom_button"
         android:layout_marginTop="15sp"
         android:layout_gravity="center_horizontal"

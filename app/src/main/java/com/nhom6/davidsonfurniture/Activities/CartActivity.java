@@ -45,8 +45,12 @@ public class CartActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -62,13 +66,13 @@ public class CartActivity extends AppCompatActivity {
         getSentData();
         loadData();
 
-        //Mảng manggiohang
-        if(manggiohang != null){
-
-        }else {
-            manggiohang = new ArrayList<>();
-        }
-
+        binding.btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CartActivity.this, OrderActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void navigationClick() {
@@ -177,10 +181,6 @@ public class CartActivity extends AppCompatActivity {
        });
         dialog.show();
     };
-    //========================= UPDATE ===============================
-
-
-
     //==========================DialogColor===========================
     public void DialogColor(ProductCart p){
 
