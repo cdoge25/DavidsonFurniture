@@ -13,9 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -47,6 +49,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
     ActivityCustomerServiceBinding binding;
     private RecyclerView rcvMessage;
     private ImageView imvGetPhoto, imvSend;
+    private ImageButton btnCall;
     private EditText edtMessage;
     private LinearLayout layoutContainer;
     private Toolbar toolbar;
@@ -62,6 +65,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> activityResultLauncher;
     boolean isCamera,cameraPermissionGranted;
     private static final int PERMISSIONS_REQUEST_ACCESS_CAMERA = 11;
+    private static final int MY_PERMISSION_REQUEST_CODE_CALL_PHONE = 555;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +90,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
         initViews();
         addEvents();
+        call();
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
         time= currentTime + ", " + currentDate;
@@ -93,6 +98,26 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
         goBack();
     }
+
+    private void call() {
+
+        btnCall = (ImageButton) findViewById(R.id.btn_Call);
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("0898191893"));
+                try{
+                    startActivity(in);
+                }
+
+                catch (android.content.ActivityNotFoundException ex){
+                    Toast.makeText(getApplicationContext(),"Không thể thực hiện",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
 
     private void addEvents() {
 

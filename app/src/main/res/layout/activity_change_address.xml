@@ -85,6 +85,7 @@
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/btn_editAddress1"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -139,6 +140,7 @@
             </LinearLayout>
 
             <ImageButton
+                android:id="@+id/btn_editAddress2"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -161,6 +163,7 @@
             android:layout_height="1dp"
             android:background="@color/grey" />
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_newAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button_orange"
