@@ -5,102 +5,140 @@
     android:background="@drawable/dialog_bg"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="10"
-        android:layout_margin="20sp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Màu sắc"
             android:textColor="@color/orange"
-            android:layout_weight="8"
             android:gravity="center_horizontal"
-            android:layout_marginStart="50sp"/>
+            android:layout_centerHorizontal="true"/>
 
         <ImageButton
             android:id="@+id/btn_closeBottomSheet"
-            android:layout_width="30sp"
-            android:layout_height="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_action_close"
             android:background="@color/white"
-            android:layout_weight="2" />
-    </LinearLayout>
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
 
-    <LinearLayout
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40sp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginStart="20sp"-->
+<!--        android:layout_marginEnd="20sp"-->
+<!--        android:layout_marginTop="10sp"-->
+<!--        android:paddingStart="10sp">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/radio_black"-->
+<!--            android:layout_width="30sp"-->
+<!--            android:layout_height="30sp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Đen"-->
+<!--            android:fontFamily="@font/futura_book"-->
+<!--            android:layout_marginStart="10sp"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40sp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginStart="20sp"-->
+<!--        android:layout_marginTop="10sp"-->
+<!--        android:layout_marginEnd="20sp"-->
+<!--        android:paddingStart="10sp">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/radio_grey"-->
+<!--            android:layout_width="30sp"-->
+<!--            android:layout_height="30sp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Xám"-->
+<!--            android:fontFamily="@font/futura_book"-->
+<!--            android:layout_marginStart="10sp"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40sp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginStart="20sp"-->
+<!--        android:layout_marginTop="10sp"-->
+<!--        android:layout_marginEnd="20sp"-->
+<!--        android:paddingStart="10sp">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/radio_white"-->
+<!--            android:layout_width="30sp"-->
+<!--            android:layout_height="30sp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Trắng"-->
+<!--            android:fontFamily="@font/futura_book"-->
+<!--            android:layout_marginStart="10sp"/>-->
+<!--    </LinearLayout>-->
+
+    <RadioGroup
+        android:id="@+id/radgroup_color"
         android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:orientation="horizontal"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="10sp"
-        android:paddingStart="10sp">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="left">
 
         <RadioButton
             android:id="@+id/radio_black"
-            android:layout_width="30sp"
-            android:layout_height="30sp"/>
-
-        <TextView
+            android:text="Đen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đen"
             android:fontFamily="@font/futura_book"
-            android:layout_marginStart="10sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:orientation="horizontal"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginEnd="20sp"
-        android:paddingStart="10sp">
+            android:layout_gravity="left" />
 
         <RadioButton
             android:id="@+id/radio_grey"
-            android:layout_width="30sp"
-            android:layout_height="30sp"/>
-
-        <TextView
+            android:text="Xám"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xám"
             android:fontFamily="@font/futura_book"
-            android:layout_marginStart="10sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:orientation="horizontal"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginEnd="20sp"
-        android:paddingStart="10sp">
+            android:layout_gravity="left" />
 
         <RadioButton
             android:id="@+id/radio_white"
-            android:layout_width="30sp"
-            android:layout_height="30sp"/>
-
-        <TextView
+            android:text="Trắng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Trắng"
             android:fontFamily="@font/futura_book"
-            android:layout_marginStart="10sp"/>
-    </LinearLayout>
+            android:layout_gravity="left" />
+
+
+
+
+
+
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_confirmColorCart"

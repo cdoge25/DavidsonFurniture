@@ -7,11 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.card.MaterialCardView;
 import com.nhom6.davidsonfurniture.Activities.CartActivity;
+import com.nhom6.davidsonfurniture.Activities.DetailProductActivity;
 import com.nhom6.davidsonfurniture.Models.ProductCart;
 import com.nhom6.davidsonfurniture.R;
 
@@ -21,6 +26,8 @@ public class CartAdapter extends BaseAdapter {
     CartActivity activity;
     int item_layout;
     List<ProductCart> product;
+    int quantity, price, finalPrice, originalPrice, totalPrice;
+    int total = 0;
 
     //Constructor
     public CartAdapter(CartActivity activity, int item_layout, List<ProductCart> product) {
@@ -65,6 +72,7 @@ public class CartAdapter extends BaseAdapter {
             holder.btnPlus = convertView.findViewById(R.id.btn_plus);
             holder.btnMinus = convertView.findViewById(R.id.btn_minus);
             holder.chkSelect = convertView.findViewById(R.id.chk_select);
+            holder.cvProductColor = convertView.findViewById(R.id.cvProductColor);
 
             convertView.setTag(holder);
         }else{
@@ -80,43 +88,162 @@ public class CartAdapter extends BaseAdapter {
         holder.proColor.setText(p.getProductColor());
         holder.proNumber.setText(String.valueOf(p.getProductQuantity()));
 
+        //Gán Số lượng, Tiền vào biến
+        quantity = p.getProductQuantity();
+        price = p.getProductPrice();
+        originalPrice = price / quantity;
+
+
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activity.DialogDelete(p);
-
             }
         });
+
         holder.btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(holder.btnPlus.getId() == R.id.btn_plus){
+                    quantity +=1;
+                }
+                holder.proNumber.setText(Integer.toString(quantity));
+                finalPrice = quantity * originalPrice;
+                holder.proPrice.setText(String.valueOf(finalPrice));
+                total += finalPrice;
+                activity.EventUltils(total);
 
             }
         });
+
         holder.btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(holder.btnMinus.getId() == R.id.btn_minus){
+                    if (quantity > 1) {
+                        quantity -= 1;
+                    }
+                    holder.proNumber.setText(Integer.toString(quantity));
+                    finalPrice = quantity * originalPrice;
+                    holder.proPrice.setText(String.valueOf(finalPrice));
+                    total -= finalPrice;
+                    activity.EventUltils(total);
+                }
             }
         });
-        holder.chkSelect.setOnClickListener(new View.OnClickListener() {
+
+//        holder.btnPlus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int sum = 0, i;
+//                if(holder.btnPlus.getId() == R.id.btn_plus){
+//                int qnt = product.get(position).getProductQuantity();
+//                qnt ++;
+//                product.get(position).setProductQuantity(qnt);
+//                //Tính tổng tiền
+//                    for(i=0; i< product.size(); i++){
+//                        sum += product.get(i).getProductPrice() * product.get(i).getProductQuantity();
+//                    }
+//                }
+//                holder.proPrice.setText(String.valueOf(sum));
+//                activity.EventUltils(sum);
+//            }
+//        });
+//
+//        holder.btnMinus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int sum = 0, i;
+//                if(holder.btnPlus.getId() == R.id.btn_plus){
+//                    int qnt = product.get(position).getProductQuantity();
+//                    qnt --;
+//                    product.get(position).setProductQuantity(qnt);
+//                    //Tính tổng tiền
+//                    for(i=0; i< product.size(); i++){
+//                        sum += product.get(i).getProductPrice() * product.get(i).getProductQuantity();
+//                    }
+//                }
+//                holder.proPrice.setText(String.valueOf(sum));
+//                activity.EventUltils(sum);
+//            }
+//        });
+//        holder.chkSelect.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int sum = 0, i;
+//                for(i=0;i<product.size();i++){
+//                    sum = sum + (product.get(i).getProductPrice() * product.get(i).getProductQuantity());
+//                };
+//                activity.EventUltils(sum);
+//            }
+//        });
+
+//        for(int i = 0; i < product.size(); i++){
+//            if(p.get)
+//
+//        }
+
+
+//        holder.chkSelect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if(!(isChecked)){
+//                    for(int i = 0; i < product.size(); i++){
+//                        total += finalPrice;
+//                    }
+//                    activity.EventUltils(total);
+//                } else {
+//                    total -= finalPrice;
+//                    activity.EventUltils(total);
+//                }
+//            }
+//        });
+
+
+//        holder.chkSelect.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                    activity.EventUltils(finalPrice);
+//            }
+//        });
+
+//        holder.chkSelect.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int sum = 0, i;
+//                for(i=0;i<product.size();i++)
+//                    sum = sum + (product.get(i).getProductPrice() * product.get(i).getProductQuantity());
+//                    activity.EventUltils(sum);
+//            }
+//        });
+
+//        holder.chkSelect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//
+//
+//            }
+//        });
+
+        holder.cvProductColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                activity.DialogColor(p);
             }
         });
 
-        holder.proColor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                activity.DialogColor();
-            }
-        });
-        //Intent
 
         return convertView;
+    }
+
+    public void updatePrice(){
+        int sum = 0, i;
+        for(i=0; i< product.size(); i++){
+            sum += product.get(i).getProductPrice() * product.get(i).getProductQuantity();
+        }
 
     }
+
 
 
 
@@ -126,5 +253,6 @@ public class CartAdapter extends BaseAdapter {
         TextView proName, proType, proPrice, proColor, proNumber;
         ImageButton btnDelete, btnPlus, btnMinus;
         CheckBox chkSelect;
+        MaterialCardView cvProductColor;
     }
 }
