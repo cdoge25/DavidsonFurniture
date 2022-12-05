@@ -102,10 +102,10 @@
                     android:textColor="@color/black"/>
 
                 <TextView
+                    android:id="@+id/txt_totalPriceCart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:text="0đ"
+                    android:text="0"
                     android:textSize="16sp"
                     android:textColor="@color/orange"
                     android:fontFamily="@font/futura_book"/>
@@ -113,6 +113,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_Order"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_marginStart="20dp"

@@ -1,31 +1,29 @@
 package com.nhom6.davidsonfurniture.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.Toast;
 import android.view.WindowManager;
-import android.widget.Adapter;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.nhom6.davidsonfurniture.Adapters.CartAdapter;
 import com.nhom6.davidsonfurniture.Databases.DatabaseHelper;
 import com.nhom6.davidsonfurniture.Models.ProductCart;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityCartBinding;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -35,6 +33,8 @@ public class CartActivity extends AppCompatActivity {
     ArrayList<ProductCart> products;
     DatabaseHelper db;
     String whatToDo = "addToCart";
+    public static ArrayList<ProductCart> manggiohang;
+    String color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,9 @@ public class CartActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -61,6 +64,13 @@ public class CartActivity extends AppCompatActivity {
         getSentData();
         loadData();
 
+        binding.btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CartActivity.this, OrderActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void navigationClick() {
@@ -169,43 +179,8 @@ public class CartActivity extends AppCompatActivity {
        });
         dialog.show();
     };
-
     //==========================DialogColor===========================
-    public void DialogColor(){
-//        //Truyền Dialog
-//        Dialog dialog = new Dialog(this);
-//        dialog.setContentView(R.layout.dialog_color_cart);
-//        dialog.show();
-//
-//        //Khai báo các thành phần
-//        RadioButton radioBlack, radioGrey, radioWhite;
-//
-//        //Ánh xạ
-//        radioBlack = dialog.findViewById(R.id.radio_black);
-//        radioGrey = dialog.findViewById(R.id.radio_grey);
-//        radioWhite = dialog.findViewById(R.id.radio_white);
-//
-//        //Xử lý event
-//        radioBlack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        radioGrey.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        radioWhite.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+    public void DialogColor(ProductCart p){
 
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.bottomsheetlayout);
@@ -217,18 +192,81 @@ public class CartActivity extends AppCompatActivity {
 
         //Khai báo các thành phần
         RadioButton radioBlack, radioGrey, radioWhite;
+        RadioButton radioButton;
+        ImageButton btnClose;
+        Button btnConfirm;
+        String a =p.getProductColor();
+
         //Ánh xạ
         radioBlack = dialog.findViewById(R.id.radio_black);
         radioGrey = dialog.findViewById(R.id.radio_grey);
         radioWhite = dialog.findViewById(R.id.radio_white);
-        //Xử lý event
-        radioBlack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        RadioGroup radiogroup = dialog.findViewById(R.id.radgroup_color);
 
+        btnClose = dialog.findViewById(R.id.btn_closeBottomSheet);
+        btnConfirm = dialog.findViewById(R.id.btn_confirmColorCart);
+
+        // get selected radio button from radioGroup
+        int selectedId = radiogroup.getCheckedRadioButtonId();
+        // find the radiobutton by returned id
+        radioButton = (RadioButton) findViewById(selectedId);
+
+        if(a.equals("Đen")){
+            radioBlack.setChecked(true);
+        } else if(a.equals("Xám")){
+            radioGrey.setChecked(true);
+        } else{
+            radioWhite.setChecked(true);
+        }
+
+        radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.radio_white:
+                        color = "Trắng";
+                        break;
+                    case R.id.radio_black:
+                        color = "Đen";
+                        break;
+                    case R.id.radio_grey:
+                        color = "Xám";
+                        break;
+                }
             }
         });
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.queryData("UPDATE " + DatabaseHelper.TBL_NAME +  " SET " + DatabaseHelper.COL_COLOR + " = '"
+                        + color + "' WHERE " + DatabaseHelper.COL_ID + " = '" + p.getProductId() + "'");
+                loadData();
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
+
+    //================================TỔNG TIỀN ===========================
+    public void EventUltils(int totalPrice){
+//        for(int i =0; i <binding.lvProductCart.getCount(); i++){
+//            totalPrice += binding.lvProductCart.getPositionForView().g
+//        }
+
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        binding.txtTotalPriceCart.setText(decimalFormat.format(totalPrice));
+    }
+
+
+
 
 
 
