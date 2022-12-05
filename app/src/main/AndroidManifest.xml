@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -19,7 +19,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DavidsonFurniture"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Activities.NewAddressActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -36,7 +42,7 @@
             android:value="AIzaSyAXrv9RhlbG3gZPH2FiiqhAFhrQ7-u2hMU" />
         <meta-data
             android:name="com.google.android.gms.version"
-            android:exported="true"/>
+            android:exported="true" />
 
         <activity
             android:name=".Activities.MapsActivity"
@@ -45,7 +51,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".Activities.ChangeAddressActivity2"
@@ -204,7 +209,6 @@
         <activity
             android:name=".Activities.CartActivity"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -254,7 +258,6 @@
         <activity
             android:name=".Activities.DetailProductActivity"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -269,7 +272,6 @@
         <activity
             android:name=".Activities.NewProductActivity"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -289,6 +291,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -313,7 +316,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".Activities.PhoneOtpActivity"
@@ -388,9 +390,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
     </application>
+
 </manifest>

@@ -13,7 +13,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,25 +22,26 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.nhom6.davidsonfurniture.R;
-import com.nhom6.davidsonfurniture.databinding.ActivityChangeAddress2Binding;
+import com.nhom6.davidsonfurniture.databinding.ActivityNewAddressBinding;
 
-public class ChangeAddressActivity2 extends FragmentActivity implements OnMapReadyCallback {
+public class NewAddressActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private ActivityChangeAddress2Binding binding;
+    private ActivityNewAddressBinding binding;
     private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_change_address2);
+        //setContentView(R.layout.activity_new_address);
 
-        binding = ActivityChangeAddress2Binding.inflate(getLayoutInflater());
+        binding = ActivityNewAddressBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
 
         toMapsActivity();
         addEvent();
@@ -52,7 +52,7 @@ public class ChangeAddressActivity2 extends FragmentActivity implements OnMapRea
         binding.btnConfirmLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(ChangeAddressActivity2.this);
+                Dialog dialog = new Dialog(NewAddressActivity.this);
                 dialog.setContentView(R.layout.dialog_update_success);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.setCancelable(false);
@@ -73,14 +73,14 @@ public class ChangeAddressActivity2 extends FragmentActivity implements OnMapRea
         binding.edtChooseAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChangeAddressActivity2.this,MapsActivity.class );
+                Intent intent = new Intent(NewAddressActivity.this, MapsActivity.class );
                 startActivity(intent);
             }
         });
     }
 
     private void goBack() {
-        binding.toolbarChangeAddress2.getChildAt(0).setOnClickListener(new View.OnClickListener() {
+        binding.toolbarNewAddress.getChildAt(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -117,9 +117,7 @@ public class ChangeAddressActivity2 extends FragmentActivity implements OnMapRea
 
         //Phóng to bản đồ
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(UEL, 15));
-
     }
-
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
