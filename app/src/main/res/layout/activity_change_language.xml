@@ -31,69 +31,35 @@
     </androidx.appcompat.widget.Toolbar>
     <!--END HEADER-->
 
-    <LinearLayout
+    <RadioGroup
+        android:id="@+id/radGroupLanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        android:weightSum="5">
-
-        <LinearLayout
+        android:paddingHorizontal="20dp">
+        <RadioButton
+            android:id="@+id/rad_TiengViet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_weight="4">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tiếng Việt"
-                android:textSize="24sp"
-                android:layout_weight="3"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"
-                android:layout_marginStart="5dp"/>
-
-        </LinearLayout>
-
+            android:layout_margin="6dp"
+            android:text="Tiếng Việt"
+            android:textColor="@color/black"
+            android:fontFamily="@font/futura_book"
+            android:textSize="20sp"
+            android:checked="true"
+            android:paddingLeft="10dp"
+            android:buttonTint="@color/orange"/>
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        android:weightSum="5">
-
-        <LinearLayout
+            android:id="@+id/rad_English"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_weight="4">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="English"
-                android:textSize="24sp"
-                android:layout_weight="3"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"
-                android:layout_marginStart="5dp"/>
-
-        </LinearLayout>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
+            android:layout_margin="6dp"
+            android:text="Tiếng Anh"
+            android:textColor="@color/black"
+            android:fontFamily="@font/futura_book"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            android:buttonTint="@color/orange"/>
+    </RadioGroup>
 
 
 
