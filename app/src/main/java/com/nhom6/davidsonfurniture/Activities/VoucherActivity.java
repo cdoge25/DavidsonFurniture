@@ -41,7 +41,7 @@ public class VoucherActivity extends AppCompatActivity {
         toDetailVoucher();
         addVoucher();
 
-        goback();
+        goBack();
     }
 
     private void addVoucher() {
@@ -76,7 +76,7 @@ public class VoucherActivity extends AppCompatActivity {
         });
     }
 
-    private void goback() {
+    private void goBack() {
         binding.toolbarVoucher.getChildAt(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

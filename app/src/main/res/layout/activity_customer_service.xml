@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.CustomerServiceActivity"
-    android:orientation="vertical">
+    tools:context=".Activities.CustomerServiceActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="1">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarCustomerService"
             android:layout_width="match_parent"
@@ -23,7 +17,10 @@
             android:layout_marginBottom="0dp"
             android:elevation="5dp"
             android:background="@color/white"
-            android:layout_gravity="top">
+            android:layout_gravity="top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,100 +48,67 @@
         </androidx.appcompat.widget.Toolbar>
         <!--END HEADER-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Davidson Furniture xin chào! Bạn cần tư vấn gì ạ? "
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:layout_weight="2"
-                android:background="@drawable/custom_view"
-                android:backgroundTint="@color/lightgrey"
-                android:padding="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp"
-            android:weightSum="3"
-            android:gravity="end">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Tôi đang gặp vấn đề về quá trình thanh toán!"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:layout_weight="2"
-                android:background="@drawable/custom_view"
-                android:backgroundTint="@color/black"
-                android:padding="10dp"/>
-        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutChat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp"
-            android:weightSum="3">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Bạn hãy mô tả cụ thể vấn đề để mình hỗ trợ nhé."
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:layout_weight="2"
-                android:background="@drawable/custom_view"
-                android:backgroundTint="@color/lightgrey"
-                android:padding="10dp"/>
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/rcvChat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
         </LinearLayout>
-    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout_bottom"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="20dp"/>
+
 
 
     <LinearLayout
+        android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="0"
-        android:padding="5dp">
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
         
         <ImageButton
+            android:id="@+id/btn_Photo"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_baseline_collections_24"
             android:backgroundTint="@color/white"
-            android:layout_weight="1.5" />
+            android:layout_weight="0.15"/>
         
         <EditText
+            android:id="@+id/edt_Message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Nhập tin nhắn"
             android:fontFamily="@font/futura_book"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:layout_weight="7"
+            android:layout_weight="0.7"
             android:background="@drawable/bg_stroke"
             android:padding="10dp"
             />
         <ImageButton
+            android:id="@+id/btn_Send"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1.5"
+            android:layout_weight="0.15"
             android:src="@drawable/ic_account_send_message"
             android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

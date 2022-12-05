@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarOrderDetail"
+        android:id="@+id/toolbarChangeName"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -46,6 +46,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/btn_Update"
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

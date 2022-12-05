@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityAccountBinding;
@@ -13,6 +15,9 @@ import com.nhom6.davidsonfurniture.databinding.ActivityChangeLanguageBinding;
 public class ChangeLanguageActivity extends AppCompatActivity {
 
     ActivityChangeLanguageBinding binding;
+
+    RadioGroup radGroupLanguage;
+    RadioButton radTiengViet, radEnglish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +37,35 @@ public class ChangeLanguageActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-
-
         binding = ActivityChangeLanguageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        radGroupLanguage = findViewById(R.id.radGroupLanguage);
+
+        radTiengViet = findViewById(R.id.rad_TiengViet);
+        radEnglish = findViewById(R.id.rad_English);
+
+        addEvent();
+
         goBack();
+    }
+
+    private void addEvent() {
+        radTiengViet.setTextColor(getResources().getColor(R.color.orange));
+
+        radGroupLanguage.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.rad_TiengViet) {
+                    radTiengViet.setTextColor(getResources().getColor(R.color.orange));
+                    radEnglish.setTextColor(getResources().getColor(R.color.black));
+                } else if (i == R.id.rad_English) {
+                    radEnglish.setTextColor(getResources().getColor(R.color.orange));
+                    radTiengViet.setTextColor(getResources().getColor(R.color.black));
+                }
+            }
+
+        });
     }
 
     private void goBack() {
