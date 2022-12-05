@@ -2,6 +2,7 @@ package com.nhom6.davidsonfurniture.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -35,7 +36,33 @@ public class ChangeAddressActivity extends AppCompatActivity {
         binding = ActivityChangeAddressBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        toEditAddress();
+
         goBack();
+    }
+
+    private void toEditAddress() {
+        binding.btnEditAddress1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChangeAddressActivity.this,MapsActivity.class );
+                startActivity(intent);
+            }
+        });
+        binding.btnEditAddress2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChangeAddressActivity.this,MapsActivity.class );
+                startActivity(intent);
+            }
+        });
+        binding.btnNewAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChangeAddressActivity.this,MapsActivity.class );
+                startActivity(intent);
+            }
+        });
     }
 
     private void goBack() {

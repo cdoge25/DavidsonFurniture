@@ -3,6 +3,7 @@ package com.nhom6.davidsonfurniture.Activities;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -33,6 +34,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        goBack();
+    }
+
+    private void goBack() {
+        binding.toolbarMap.getChildAt(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     /**
@@ -68,7 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in UEL and move the camera
         LatLng UEL = new LatLng(10.871880365649952, 106.7783411306927);
-        mMap.addMarker(new MarkerOptions().position(UEL).title("Marker in Sydney"));
+        mMap.addMarker(new MarkerOptions().position(UEL).title("Trường ĐH Kinh tế - Luật"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(UEL));
 
         //Phóng to bản đồ
