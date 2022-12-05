@@ -14,21 +14,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_gravity">center_vertical</item>
     </style>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
-    </style>
 
-<!--    bottom sheet dialog theme-->
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
-    </style>
-
-<!--    bottom sheet style-->
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/custom_bottom_sheet</item>
-    </style>
     <style name="prefixText">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/grey</item>

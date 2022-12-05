@@ -48,7 +48,7 @@ public class DetailProductActivity extends AppCompatActivity {
     ArrayList<DetailProduct> productList;
     Toolbar toolbar;
     ImageButton imbAdd, imbSubtract;
-    int quantity = 1, price = 1;
+    int quantity = 1, price = 0;
     TextView txtQuantity;
 
     int image_url;
@@ -79,11 +79,11 @@ public class DetailProductActivity extends AppCompatActivity {
         color = "Xám";
         getColor();
 
-        showData();
-
-        finalPrice = (binding.txtProductPrice.getText().toString());
         finalQuantity = "1";
         adjustQuantity();
+
+        showData();
+        finalPrice = binding.txtProductPrice.getText().toString();
 
         addToCart();
 
@@ -190,14 +190,14 @@ public class DetailProductActivity extends AppCompatActivity {
     }
 
     private void toFeedback() {
-            binding.btnSeeReview.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(DetailProductActivity.this, FeedbackProductActivity.class);
-                    startActivity(i);
-                }
-            });
-        }
+        binding.btnSeeReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DetailProductActivity.this, FeedbackProductActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 
 
     private void goBack() {
@@ -209,5 +209,3 @@ public class DetailProductActivity extends AppCompatActivity {
         });
     }
 }
-
-
