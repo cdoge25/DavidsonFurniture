@@ -44,9 +44,9 @@ public class CompletedOrderFragment extends Fragment {
 
     private List<CompletedOrder> initData() {
         List<CompletedOrder> completedOrders = new ArrayList<>();
-        completedOrders.add(new CompletedOrder(R.drawable.img_sofabang_anastasia, "ANASTASIA", "Sofa băng", "Đen", 8450000, 1, "DF887654320"));
-        completedOrders.add(new CompletedOrder(R.drawable.img_guongdeban_coba, "COBA", "Gương để bàn", "Đen", 1220000, 1, "DF857654320"));
-        completedOrders.add(new CompletedOrder(R.drawable.img_kedungdo_ez, "PAMITI", "Kệ đựng đồ", "Trắng", 1220000, 1, "DF867654320"));
+        completedOrders.add(new CompletedOrder(R.drawable.img_sofabang_anastasia, "ANASTASIA", "Sofa băng", "Đen", 8450000, 1, "DF887654320", 0));
+        completedOrders.add(new CompletedOrder(R.drawable.img_guongdeban_coba, "COBA", "Gương để bàn", "Đen", 1220000, 1, "DF857654320", 1));
+        completedOrders.add(new CompletedOrder(R.drawable.img_kedungdo_ez, "PAMITI", "Kệ đựng đồ", "Trắng", 1220000, 1, "DF867654320", 1));
         return completedOrders;
     }
 

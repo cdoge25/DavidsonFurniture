@@ -37,6 +37,7 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
         return new CompletedOrderAdapter.CompletedViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull CompletedOrderAdapter.CompletedViewHolder holder, int position) {
         CompletedOrder b = completedOrderList.get(position);
@@ -46,6 +47,11 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
         holder.txtCompletedColor.setText(b.getCompletedColor());
         holder.txtCompletedPrice.setText(String.format("%.0f", b.getCompletedPrice()) + "đ");
         holder.txtCompletedQuantity.setText(String.format("Số lượng: %s",b.getCompletedQuantity()));
+//        holder.txtCompletedStatusReview.setText(b.getCompleteStatusReview());
+
+        if (holder.txtCompletedStatusReview.getText().toString() == "1"){
+            holder.btnReview.setClickable(false);
+        }
 
         holder.btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +86,7 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
 
     public class CompletedViewHolder extends RecyclerView.ViewHolder {
         ImageView imvCompletedThumb;
-        TextView txtCompletedName, txtCompletedPrice, txtCompletedType, txtCompletedColor, txtCompletedQuantity;
+        TextView txtCompletedName, txtCompletedPrice, txtCompletedType, txtCompletedColor, txtCompletedQuantity, txtCompletedStatusReview;
         Button btnReview;
         RelativeLayout layoutItemCompleted;
 
@@ -92,6 +98,7 @@ public class CompletedOrderAdapter extends RecyclerView.Adapter<CompletedOrderAd
             txtCompletedColor = view.findViewById(R.id.txtCompletedColor);
             txtCompletedPrice = view.findViewById(R.id.txtCompletedPrice);
             txtCompletedQuantity = view.findViewById(R.id.txtCompletedQuantity);
+            txtCompletedStatusReview = view.findViewById(R.id.txtCompletedStatusReview);
             btnReview = view.findViewById(R.id.btnReview);
             layoutItemCompleted = view.findViewById(R.id.layoutItemCompleted);
         }

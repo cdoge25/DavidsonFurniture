@@ -118,6 +118,7 @@ public class PlacedOrderDetailActivity extends AppCompatActivity {
         sheetDialogCancelOrder.setContentView(view);
         sheetDialogCancelOrder.setCancelable(false);
         sheetDialogCancelOrder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                setBackgroundDrawableResource(android.R.color.transparent);
 
         btnCancelConfirm = view.findViewById(R.id.btnCancelConfirm);
         toolbarCancelOrder = view.findViewById(R.id.toolbarCancelOrder);
