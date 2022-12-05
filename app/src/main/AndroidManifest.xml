@@ -49,21 +49,20 @@
         </activity>
         <activity
             android:name=".Activities.ChangeAddressActivity2"
-            android:exported="false"
-            tools:ignore="MissingClass">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Activities.CategoryProductActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.OrderStatusActivity"
+            android:name=".Activities.DeliveringOrderDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.PreparingOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -71,6 +70,13 @@
         </activity>
         <activity
             android:name=".Activities.DeliveredOrderDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.CategoriesProductActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -198,6 +204,7 @@
         <activity
             android:name=".Activities.CartActivity"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -217,7 +224,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.OrderDetailActivity"
+            android:name=".Activities.PlacedOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -247,6 +254,7 @@
         <activity
             android:name=".Activities.DetailProductActivity"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -261,6 +269,7 @@
         <activity
             android:name=".Activities.NewProductActivity"
             android:exported="false">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -274,7 +283,12 @@
         </activity>
         <activity
             android:name=".Activities.HomeActivity"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -295,14 +309,7 @@
         </activity>
         <activity
             android:name=".Activities.AccountActivity"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -366,13 +373,24 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".Activities.OrderStatusActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
     </application>
-
 </manifest>

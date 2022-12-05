@@ -1,8 +1,10 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class Product {
+import java.io.Serializable;
 
-    public Product(int productThumb, String productName, String productCategory, String productRate, double productPrice) {
+public class Product  implements Serializable {
+
+    public Product(int productThumb, String productName, String productCategory, String productRate, int productPrice) {
         this.productThumb = productThumb;
         this.productName = productName;
         this.productCategory = productCategory;
@@ -12,7 +14,7 @@ public class Product {
 
     int productThumb;
     String productName, productCategory, productRate;
-    double productPrice;
+    int productPrice;
 
     public int getProductThumb() {
         return productThumb;
@@ -46,11 +48,11 @@ public class Product {
         this.productRate = productRate;
     }
 
-    public double getProductPrice() {
+    public int getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(int productPrice) {
         this.productPrice = productPrice;
     }
 }

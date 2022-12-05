@@ -45,8 +45,8 @@ public class DeliveredOrderFragment extends Fragment {
 
     private List<DeliveredOrder> initData() {
         List<DeliveredOrder> deliveredOrders = new ArrayList<>();
-        deliveredOrders.add(new DeliveredOrder(R.drawable.img_banan_honey, "DALAT", "Bàn ăn", "Đen", "4,500,000đ", "Số lượng: 1"));
-        deliveredOrders.add(new DeliveredOrder(R.drawable.img_sofabang_alice, "ALICE", "Sofa băng", "Xám", "9,000,000đ", "Số lượng: 2"));
+        deliveredOrders.add(new DeliveredOrder(R.drawable.img_banan_honey, "DALAT", "Bàn ăn", "Đen", 4500000, 1, "DF987654320"));
+        deliveredOrders.add(new DeliveredOrder(R.drawable.img_sofabang_alice, "ALICE", "Sofa băng", "Xám", 9000000, 2,"DF987654321"));
         return deliveredOrders;
     }
 

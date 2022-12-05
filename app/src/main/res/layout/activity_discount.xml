@@ -7,33 +7,28 @@
     tools:context=".Activities.DiscountActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDiscount"
         android:layout_width="match_parent"
-        android:layout_height="68sp"
-        android:orientation="horizontal"
-        android:paddingStart="20sp"
-
-        android:gravity="center_vertical">
-
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_back"
-            android:background="#FFFFFF"
-            />
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_marginBottom="0dp"
+        android:elevation="5dp"
+        android:background="@color/white">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mã giảm giá"
-            android:textStyle="bold"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/orange"
             android:textSize="20sp"
-            android:textColor="#FF6600"
-            android:layout_marginStart="80sp"
-            />
-
-    </LinearLayout>
+            android:gravity="center"
+            android:layout_marginEnd="50dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <!--END HEADER-->
 
     <View
         android:layout_width="match_parent"
@@ -69,24 +64,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Miễn phí vận chuyển"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đơn tối thiêu 1tr, miễn phí tối đa 50k"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="HSD: 1/12/2022"
                 android:textSize="10sp"
-                android:textColor="#9E9E9E"/>
-
-
-
-
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_book"/>
 
         </LinearLayout>
 
@@ -103,7 +99,8 @@
             android:backgroundTint="#F5F5F5"
             android:text="Chọn"
             android:textColor="#FF6600"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 
@@ -136,20 +133,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Miễn phí vận chuyển"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đơn tối thiêu 5tr, miễn phí tối đa 250k"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="HSD: 1/12/2022"
                 android:textSize="10sp"
-                android:textColor="#9E9E9E"/>
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_book"/>
 
         </LinearLayout>
 
@@ -166,7 +168,8 @@
             android:backgroundTint="#F5F5F5"
             android:text="Chọn"
             android:textSize="10sp"
-            android:textColor="#FF6600"/>
+            android:textColor="#FF6600"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 
@@ -199,20 +202,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Giảm 10%"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đơn tối thiêu 10tr, giảm tối đa 1tr"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="HSD: 1/12/2022"
                 android:textSize="10sp"
-                android:textColor="#9E9E9E"/>
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_book"/>
 
         </LinearLayout>
 
@@ -229,7 +237,8 @@
             android:backgroundTint="#F5F5F5"
             android:text="Chọn"
             android:textSize="10sp"
-            android:textColor="#FF6600"/>
+            android:textColor="#FF6600"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

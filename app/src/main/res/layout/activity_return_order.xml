@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarOrderDetail"
+        android:id="@+id/toolbarReturnOrder"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -30,158 +30,171 @@
     </androidx.appcompat.widget.Toolbar>
     <!--END HEADER-->
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lý do:"
-        android:fontFamily="@font/futura_bold"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:gravity="left"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_height="wrap_content">
 
-    <RadioGroup
-        android:id="@+id/radGroupCancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp">
-        <RadioButton
-            android:id="@+id/radReason1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:buttonTint="@color/black"
-            android:paddingLeft="8dp"
-            android:text="Giao sai mẫu mã"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/futura_book"/>
-        <RadioButton
-            android:id="@+id/radReason2"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:buttonTint="@color/black"
-            android:paddingLeft="8dp"
-            android:text="Giao thiếu hàng"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/futura_book"/>
-        <RadioButton
-            android:id="@+id/radReason3"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:buttonTint="@color/black"
-            android:paddingLeft="8dp"
-            android:text="Sản phẩm đã qua sử dụng"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/futura_book"/>
-        <RadioButton
-            android:id="@+id/radReason4"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:buttonTint="@color/black"
-            android:paddingLeft="8dp"
-            android:text="Sản phẩm bị hư hại"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/futura_book"/>
-        <RadioButton
-            android:id="@+id/radReason6"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:buttonTint="@color/black"
-            android:paddingLeft="8dp"
-            android:text="Sản phẩm khác với mô tả"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:gravity="center_vertical"
-            android:fontFamily="@font/futura_book"
-            android:checked="true"/>
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Minh chứng:"
-        android:fontFamily="@font/futura_bold"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:gravity="left"
-        android:layout_marginTop="15dp"
-        android:layout_marginHorizontal="20dp"/>
+    </ScrollView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp">
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lý do:"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="175dp"
+        <RadioGroup
+            android:id="@+id/radGroupReturn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:id="@+id/radReason1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:buttonTint="@color/black"
+                android:paddingLeft="8dp"
+                android:text="Giao sai mẫu mã"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/futura_book"/>
+            <RadioButton
+                android:id="@+id/radReason2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:buttonTint="@color/black"
+                android:paddingLeft="8dp"
+                android:text="Giao thiếu hàng"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/futura_book"/>
+            <RadioButton
+                android:id="@+id/radReason3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:buttonTint="@color/black"
+                android:paddingLeft="8dp"
+                android:text="Sản phẩm đã qua sử dụng"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/futura_book"/>
+            <RadioButton
+                android:id="@+id/radReason4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:buttonTint="@color/black"
+                android:paddingLeft="8dp"
+                android:text="Sản phẩm bị hư hại"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/futura_book"/>
+            <RadioButton
+                android:id="@+id/radReason6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:buttonTint="@color/black"
+                android:paddingLeft="8dp"
+                android:text="Sản phẩm khác với mô tả"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/futura_book"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minh chứng:"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:weightSum="10">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAddImageReturn"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:text="Thêm hình ảnh"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:drawableTop="@drawable/ic_action_camera"
+                android:background="@drawable/bg_edittext"
+                android:padding="20dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="5"/>
+
+            <ImageView
+                android:id="@+id/imvReturnPhoto"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:text="Thêm hình ảnh"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/ic_action_camera"
+                android:background="@drawable/bg_edittext"
+                android:padding="20dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="5"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ghi chú:"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="left"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/edtReturnNote"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Thêm hình ảnh"
-            android:fontFamily="@font/futura_book"
-            android:textColor="@color/orange"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:drawableTop="@drawable/ic_action_camera"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bg_edittext"
-            android:padding="20dp"
-            android:layout_marginVertical="10dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="175dp"
-            android:layout_height="100dp"
-            android:text="Thêm video"
             android:fontFamily="@font/futura_book"
-            android:textColor="@color/orange"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:drawableTop="@drawable/ic_action_video"
-            android:background="@drawable/bg_edittext"
-            android:padding="20dp"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"/>
-
+            android:gravity="top"
+            android:hint="Những thông tin khác"
+            android:maxLines="4"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ghi chú:"
-        android:fontFamily="@font/futura_bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:gravity="left"
-        android:layout_marginTop ="10dp"
-        android:layout_marginHorizontal="20dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_edittext"
-        android:fontFamily="@font/futura_book"
-        android:gravity="top"
-        android:hint="Những thông tin khác"
-        android:maxLines="4"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="16dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSendRequest"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/bg_button_orange"
         android:text="Gửi"
@@ -190,6 +203,7 @@
         android:textAllCaps="false"
         android:gravity="center"
         android:layout_gravity="center"
-        android:fontFamily="@font/futura_bold"/>
+        android:fontFamily="@font/futura_bold"
+        android:layout_weight="0"/>
 
 </LinearLayout>

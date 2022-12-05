@@ -7,37 +7,28 @@
     tools:context=".Activities.ChooseBankActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarChooseBank"
         android:layout_width="match_parent"
-        android:layout_height="68sp"
-        android:orientation="horizontal"
-        android:paddingStart="20sp">
-
-        <ImageButton
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_back"
-            android:layout_gravity="center_vertical"
-            android:background="#FFFFFF"
-            />
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:contentInsetStartWithNavigation="0dp"
+        android:layout_marginBottom="0dp"
+        android:elevation="5dp"
+        android:background="@color/white">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chọn ngân hàng"
-            android:textStyle="bold"
+            android:fontFamily="@font/futura_bold"
+            android:textColor="@color/orange"
             android:textSize="20sp"
-            android:textColor="#FF6600"
-            android:layout_marginStart="90sp"
-            android:layout_gravity="center"
-            />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
+            android:gravity="center"
+            android:layout_marginEnd="50dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <!--END HEADER-->
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchview_bank"
@@ -53,7 +44,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="5sp"
         android:layout_marginStart="5sp"
-        android:layout_marginEnd="5sp">
+        android:layout_marginEnd="5sp"
+        >
 
     </ListView>
 

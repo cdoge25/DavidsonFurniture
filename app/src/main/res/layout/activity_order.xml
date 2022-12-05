@@ -7,38 +7,30 @@
     tools:context=".Activities.OrderActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <!--END HEADER-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOrderActivity"
         android:layout_width="match_parent"
-        android:layout_height="68sp"
-        android:orientation="horizontal"
-        android:paddingStart="20sp">
-
-        <ImageButton
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_back"
-            android:layout_gravity="center_vertical"
-            android:background="#FFFFFF"
-            />
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="0dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:navigationIcon="@drawable/ic_action_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/futura_bold"
+            android:gravity="center"
             android:text="Đặt hàng"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="#FF6600"
-            android:layout_marginStart="110sp"
-            android:layout_gravity="center"
-            />
+            android:textColor="@color/orange"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
 
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50sp"
@@ -69,14 +61,17 @@
                 android:layout_height="wrap_content"
                 android:text="Địa chỉ giao hàng"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phường Linh Xuân, TP.Thủ Đức"
                 android:textSize="14sp"
-                />
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_book"/>
         </LinearLayout>
         
         <ImageButton
@@ -119,6 +114,8 @@
                 android:text="Phương thức giao hàng"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"
                 />
 
             <TextView
@@ -126,6 +123,8 @@
                 android:layout_height="wrap_content"
                 android:text="Tiêu chuẩn"
                 android:textSize="14sp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_book"
                 />
         </LinearLayout>
 
@@ -168,14 +167,17 @@
                 android:layout_height="wrap_content"
                 android:text="Mã giảm giá"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/futura_book"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Miễn phí vận chuyển"
                 android:textSize="14sp"
-                />
+                android:textColor="@color/grey"
+                android:fontFamily="@font/futura_book" />
         </LinearLayout>
 
         <ImageButton
@@ -195,11 +197,12 @@
         android:textStyle="bold"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
+        android:textColor="@color/black"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250sp"
+        android:layout_height="270sp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:layout_marginTop="10sp">
@@ -208,19 +211,14 @@
             android:id="@+id/lv_productOrder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/custom_view_2"
-            >
-
+            android:background="@drawable/custom_view_2">
         </ListView>
-
-
-
 
     </LinearLayout>
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="100sp"
+        android:layout_height="wrap_content"
         android:padding="5sp"
         android:layout_marginTop="5sp"
         android:layout_marginStart="20sp"
@@ -230,58 +228,81 @@
         <TableRow android:weightSum="2">
             <TextView
                 android:text="Tiền hàng"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/txt_totalPrice"
-                android:text="1,3000,000đ"
+                android:text="1,300,000đ"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:layout_gravity="right"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:gravity="right"
+                android:textSize="14sp"/>
         </TableRow>
 
         <TableRow android:weightSum="2">
             <TextView
                 android:text="Phí vận chuyển"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/txt_feeDelivery"
                 android:text="100,000đ"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:layout_gravity="right"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:gravity="right"
+                android:textSize="14sp"/>
         </TableRow>
 
         <TableRow android:weightSum="2">
             <TextView
                 android:text="Giảm giá"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                android:fontFamily="@font/futura_book"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/txt_discount"
-                android:text="-50,000đ"
+                android:layout_gravity="right"
+                android:gravity="right"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:fontFamily="@font/futura_book"
+                android:text="- 50,000đ"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
         </TableRow>
 
         <TableRow android:weightSum="2">
             <TextView
                 android:text="Tổng thanh toán"
                 android:layout_weight="1"
-                android:textColor="#FF6600"/>
+                android:textColor="#FF6600"
+                android:fontFamily="@font/futura_book"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/txt_totalPriceFinal"
-                android:text="1,400,000đ"
+                android:text="1,350,000đ"
                 android:layout_weight="1"
+                android:layout_gravity="right"
                 android:gravity="right"
-                android:textColor="#FF6600"/>
+                android:textColor="#FF6600"
+                android:fontFamily="@font/futura_book"
+                android:textSize="14sp"/>
         </TableRow>
-
-
-
-
-
-
 
     </TableLayout>
 
@@ -303,10 +324,12 @@
         <Button
             android:id="@+id/btn_continueOrder"
             android:layout_width="match_parent"
-            android:layout_height="44sp"
+            android:layout_height="50sp"
             android:text="Tiếp tục"
             android:textSize="20sp"
-            android:background="@drawable/custom_button"/>
+            android:background="@drawable/custom_button"
+            android:textAllCaps="false"
+            android:gravity="center"/>
     </LinearLayout>
 
 
