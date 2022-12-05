@@ -19,12 +19,12 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/btnClose"
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:background="#00000000"
-                android:src="@drawable/ic_action_close" />
+                android:src="@drawable/ic_action_back" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,46 +35,86 @@
                 android:textSize="36sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
-
-            <TextView
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/black"
+            app:cardCornerRadius="20dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/futura_book"
-                android:gravity="center"
-                android:text="@string/phoneotp_guide"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:orientation="vertical"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <com.chaos.view.PinView
-                android:id="@+id/pvOtp"
-                style="@style/PinWidget.PinView"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/futura_book"
+                        android:gravity="center"
+                        android:text="@string/phoneotp_guide"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/pvOtp"
+                        style="@style/PinWidget.PinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:cursorVisible="true"
+                        android:inputType="number"
+                        android:itemBackground="@color/lightorange"
+                        app:cursorColor="@color/black"
+                        app:hideLineWhenFilled="true"
+                        app:itemCount="6"
+                        app:itemWidth="40dp"
+                        app:itemHeight="40dp"
+                        app:itemRadius="3dp"
+                        app:lineColor="@color/grey" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:onClick="callNextScreenFromOTP"
+                    android:text="@string/phoneotp_confirm"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_button_orange"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:cursorVisible="true"
-                android:inputType="number"
-                android:itemBackground="@color/lightorange"
-                app:cursorColor="@color/black"
-                app:hideLineWhenFilled="true"
-                app:itemCount="6"
-                app:itemHeight="50dp"
-                app:itemRadius="5dp"
-                app:lineColor="@color/grey" />
+                android:textColor="@color/black"
+                android:text="Không nhận được OTP?"
+                android:fontFamily="@font/futura_book"
+                android:textSize="20sp"/>
+            <Button
+                android:id="@+id/btnResendOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="Gửi lại"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/futura_book"/>
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:onClick="callNextScreenFromOTP"
-            android:text="@string/phoneotp_confirm"
-            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

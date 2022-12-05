@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20sp">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Xác nhận xóa !"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:fontFamily="@font/futura_bold"
-        android:gravity="center_horizontal"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        android:text="Bạn muốn xóa sản phẩm khỏi giỏ hàng ?"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="20sp"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_width="150sp"
-            android:layout_height="44sp"
-            android:text="Hủy"
-            android:textAllCaps="false"
+        android:padding="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/futura_bold"
-            android:background="@drawable/custom_button"
-            android:layout_gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:text="Xác nhận xóa !"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-        <Button
-            android:layout_width="150sp"
-            android:layout_height="44sp"
-            android:text="Xác nhận"
-            android:textAllCaps="false"
-            android:fontFamily="@font/futura_bold"
-            android:background="@drawable/custom_button"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Bạn muốn xóa sản phẩm khỏi giỏ hàng ?"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/futura_book"
+            android:layout_gravity="center"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_CancelDeleteCart"
+                android:layout_width="0sp"
+                android:layout_height="50sp"
+                android:text="Hủy"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:fontFamily="@font/futura_bold"
+                android:background="@drawable/bg_button_black"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textSize="14sp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_ConfirmDeleteCart"
+                android:layout_width="0dp"
+                android:layout_height="50sp"
+                android:text="Xác nhận"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:fontFamily="@font/futura_bold"
+                android:background="@drawable/custom_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
     </LinearLayout>
 
-
-
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

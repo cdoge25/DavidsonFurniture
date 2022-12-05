@@ -32,4 +32,9 @@
         parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/custom_bottom_sheet</item>
     </style>
+    <style name="DialogAnimation">
+
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
 </resources>

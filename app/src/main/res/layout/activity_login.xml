@@ -20,6 +20,7 @@
             android:src="@drawable/img_logo_bgwhite" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtPhone"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,17 +33,19 @@
             app:startIconTint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginPhone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/smoke"
                 android:fontFamily="@font/futura_book"
-                android:inputType="textEmailAddress"
+                android:inputType="phone"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,6 +59,7 @@
             app:startIconTint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/smoke"
@@ -71,6 +75,7 @@
             android:layout_height="wrap_content">
 
             <CheckBox
+                android:id="@+id/cbRememberMe"
                 style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,19 +94,22 @@
                 android:fontFamily="@font/futura_book"
                 android:text="@string/login_forget_password"
                 android:textColor="@color/orange"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="toForgetPassword"/>
 
         </RelativeLayout>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/futura_bold"
             android:text="@string/login_login"
             android:textAllCaps="false"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:onClick="toHome"
+            android:background="@drawable/bg_button_orange"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -143,14 +151,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
-                android:src="@drawable/img_login_facebook" />
+                android:src="@drawable/img_login_facebook"
+                android:onClick="toFacebook"/>
             <ImageButton
                 android:id="@+id/btnGoogle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:background="#00000000"
-                android:src="@drawable/img_login_google" />
+                android:src="@drawable/img_login_google"
+                android:onClick="toGoogle"/>
 
         </LinearLayout>
 
@@ -175,7 +185,8 @@
                 android:fontFamily="@font/futura_book"
                 android:text="@string/login_register"
                 android:textColor="@color/orange"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="toRegister"/>
 
         </LinearLayout>
 

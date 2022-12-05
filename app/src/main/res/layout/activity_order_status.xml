@@ -7,45 +7,60 @@
     tools:context=".Activities.OrderStatusActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarOrderStatus"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:navigationIcon="@drawable/ic_action_back"
-        app:contentInsetStartWithNavigation="0dp"
-        android:layout_marginBottom="0dp"
-        android:elevation="5dp"
-        android:background="@color/white">
-
-        <TextView
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarOrderStatus"
             android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIcon="@drawable/ic_action_back"
+            app:contentInsetStartWithNavigation="0dp"
+            android:layout_marginBottom="0dp"
+            android:elevation="5dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đơn hàng"
+                android:fontFamily="@font/futura_bold"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginEnd="50dp"/>
+        </androidx.appcompat.widget.Toolbar>
+        <!--END HEADER-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_height="wrap_content"
-            android:text="Đơn hàng"
-            android:fontFamily="@font/futura_bold"
-            android:textColor="@color/orange"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_marginEnd="50dp"/>
-    </androidx.appcompat.widget.Toolbar>
-    <!--END HEADER-->
+            android:layout_width="match_parent"
+            app:tabBackground="@color/white"
+            app:tabTextColor="@color/grey"
+            app:tabSelectedTextColor="@color/black"
+            app:tabIndicatorColor="@color/black"
+            app:tabGravity="start"
+            app:tabRippleColor="@color/orange"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/text_tablayout">
+        </com.google.android.material.tabs.TabLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navApp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        app:tabBackground="@color/white"
-        app:tabTextColor="@color/grey"
-        app:tabSelectedTextColor="@color/black"
-        app:tabIndicatorColor="@color/black"
-        app:tabGravity="start"
-        app:tabRippleColor="@color/orange"
-        app:tabMode="scrollable"
-        app:tabTextAppearance="@style/text_tablayout">
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_weight="0"/>
 </LinearLayout>
