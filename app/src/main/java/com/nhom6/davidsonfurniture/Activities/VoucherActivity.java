@@ -74,6 +74,20 @@ public class VoucherActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.btnFreeDelivery2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(VoucherActivity.this, DetailVoucherActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.btnDiscountDelivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(VoucherActivity.this, DetailVoucherActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void goBack() {
