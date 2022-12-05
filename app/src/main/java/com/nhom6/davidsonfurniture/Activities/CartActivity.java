@@ -44,6 +44,8 @@ public class CartActivity extends AppCompatActivity {
         binding = ActivityCartBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        //hide status and action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         if (getSupportActionBar() != null) {
@@ -157,26 +159,26 @@ public class CartActivity extends AppCompatActivity {
         btnConfirm = dialog.findViewById(R.id.btn_ConfirmDeleteCart);
 
         //Xử lý event
-       btnCancel.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               dialog.dismiss();
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
 
-           }
-       });
+            }
+        });
         dialog.show();
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 db.queryData("DELETE FROM " + DatabaseHelper.TBL_NAME
                         + " WHERE " + DatabaseHelper.COL_ID
                         + " = '" + p.getProductId() + "'"
                 );
                 loadData();
                 dialog.dismiss();
-           }
-       });
+            }
+        });
         dialog.show();
     };
     //==========================DialogColor===========================
@@ -242,7 +244,6 @@ public class CartActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

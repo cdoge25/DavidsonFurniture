@@ -105,14 +105,11 @@ public class CartAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if(holder.btnPlus.getId() == R.id.btn_plus){
-                    quantity +=1;
+                    quantity += 1;
                 }
                 holder.proNumber.setText(Integer.toString(quantity));
                 finalPrice = quantity * originalPrice;
                 holder.proPrice.setText(String.valueOf(finalPrice));
-                total += finalPrice;
-                activity.EventUltils(total);
-
             }
         });
 
@@ -123,12 +120,10 @@ public class CartAdapter extends BaseAdapter {
                     if (quantity > 1) {
                         quantity -= 1;
                     }
-                    holder.proNumber.setText(Integer.toString(quantity));
-                    finalPrice = quantity * originalPrice;
-                    holder.proPrice.setText(String.valueOf(finalPrice));
-                    total -= finalPrice;
-                    activity.EventUltils(total);
                 }
+                holder.proNumber.setText(Integer.toString(quantity));
+                finalPrice = quantity * originalPrice;
+                holder.proPrice.setText(String.valueOf(finalPrice));
             }
         });
 
@@ -236,13 +231,13 @@ public class CartAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void updatePrice(){
-        int sum = 0, i;
-        for(i=0; i< product.size(); i++){
-            sum += product.get(i).getProductPrice() * product.get(i).getProductQuantity();
-        }
-
-    }
+//    public void updatePrice(){
+//        int sum = 0, i;
+//        for(i=0; i< product.size(); i++){
+//            sum += product.get(i).getProductPrice() * product.get(i).getProductQuantity();
+//        }
+//
+//    }
 
 
 

@@ -12,12 +12,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarOrderDetail"
                 android:layout_width="match_parent"
@@ -45,15 +45,15 @@
             <ListView
                 android:id="@+id/lv_productCart"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="800sp"
                 android:layout_marginStart="20sp"
-                android:layout_marginTop="10sp"
                 android:layout_marginEnd="20sp"
-                android:layout_marginBottom="10sp"
-                android:divider="#00000000"
-                android:dividerHeight="15dp">
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp">
 
             </ListView>
+
+
 
         </LinearLayout>
 
@@ -62,26 +62,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="0"
-            android:layout_gravity="bottom">
+            android:layout_weight="0">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginBottom="15dp"/>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="30sp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:paddingHorizontal="20dp"
-                android:layout_marginBottom="15dp">
+                android:paddingStart="30sp"
+                android:weightSum="5">
 
                 <CheckBox
                     android:layout_width="20sp"
-                    android:layout_height="20sp"/>
+                    android:layout_height="20sp"
+                    android:layout_weight="0.5"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,6 +88,7 @@
                     android:layout_marginStart="10sp"
                     android:text="Tất cả"
                     android:textSize="16sp"
+                    android:layout_weight="0.5"
                     android:fontFamily="@font/futura_book"
                     android:textColor="@color/black"/>
 
@@ -96,8 +96,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50sp"
-                    android:text="Tổng số tiền: "
+                    android:text="Tổng số tiền:"
                     android:textSize="16sp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/futura_book"
                     android:textColor="@color/black"/>
 
@@ -107,6 +108,7 @@
                     android:layout_height="wrap_content"
                     android:text="0"
                     android:textSize="16sp"
+                    android:layout_weight="3"
                     android:textColor="@color/orange"
                     android:fontFamily="@font/futura_book"/>
 
@@ -116,9 +118,10 @@
                 android:id="@+id/btn_Order"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
                 android:text="Đặt hàng"
                 android:textSize="20sp"
                 android:textAllCaps="false"
@@ -136,13 +139,3 @@
         app:menu="@menu/bottom_nav_menu"/>
 
 </LinearLayout>
-        
-
-
-
-
-
-
-
-
-
