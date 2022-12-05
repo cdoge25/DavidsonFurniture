@@ -1,69 +1,92 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class PlacedOrder {
-    int orderThumb;
-    String orderName;
-    String orderType;
-    String orderColor;
-    String orderPrice;
-    String orderQuantity;
+import java.io.Serializable;
 
-    public PlacedOrder(int orderThumb, String orderName, String orderType, String orderColor, String orderPrice, String orderQuantity) {
-        this.orderThumb = orderThumb;
-        this.orderName = orderName;
-        this.orderType = orderType;
-        this.orderColor = orderColor;
-        this.orderPrice = orderPrice;
-        this.orderQuantity = orderQuantity;
+public class PlacedOrder implements Serializable {
+    int placedID;
+    int placedThumb;
+    String placedName;
+    String placedType;
+    String placedColor;
+    double placedPrice;
+    int placedQuantity;
+    String placedCode;
+
+    public PlacedOrder(int placedID, int placedThumb, String placedName, String placedType, String placedColor, double placedPrice, int placedQuantity, String placedCode) {
+        this.placedID = placedID;
+        this.placedThumb = placedThumb;
+        this.placedName = placedName;
+        this.placedType = placedType;
+        this.placedColor = placedColor;
+        this.placedPrice = placedPrice;
+        this.placedQuantity = placedQuantity;
+        this.placedCode = placedCode;
     }
 
-    public int getOrderThumb() {
-        return orderThumb;
+    public int getPlacedID() {
+        return placedID;
     }
 
-    public void setOrderThumb(int orderThumb) {
-        this.orderThumb = orderThumb;
+    public void setPlacedID(int placedID) {
+        this.placedID = placedID;
     }
 
-    public String getOrderName() {
-        return orderName;
+    public int getPlacedThumb() {
+        return placedThumb;
     }
 
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
+    public void setPlacedThumb(int placedThumb) {
+        this.placedThumb = placedThumb;
     }
 
-    public String getOrderType() {
-        return orderType;
+    public String getPlacedName() {
+        return placedName;
     }
 
-    public void setOrderType(String orderType) {
-        this.orderType = orderType;
+    public void setPlacedName(String placedName) {
+        this.placedName = placedName;
     }
 
-    public String getOrderColor() {
-        return orderColor;
+    public String getPlacedType() {
+        return placedType;
     }
 
-    public void setOrderColor(String orderColor) {
-        this.orderColor = orderColor;
+    public void setPlacedType(String placedType) {
+        this.placedType = placedType;
     }
 
-    public String getOrderPrice() {
-        return orderPrice;
+    public String getPlacedColor() {
+        return placedColor;
     }
 
-    public void setOrderPrice(String orderPrice) {
-        this.orderPrice = orderPrice;
+    public void setPlacedColor(String placedColor) {
+        this.placedColor = placedColor;
     }
 
-    public String getOrderQuantity() {
-        return orderQuantity;
+    public double getPlacedPrice() {
+        return placedPrice;
     }
 
-    public void setOrderQuantity(String orderQuantity) {
-        this.orderQuantity = orderQuantity;
+    public void setPlacedPrice(double placedPrice) {
+        this.placedPrice = placedPrice;
     }
 
+    public int getPlacedQuantity() {
+        return placedQuantity;
+    }
+
+    public void setPlacedQuantity(int placedQuantity) {
+        this.placedQuantity = placedQuantity;
+    }
+
+    public String getPlacedCode() {
+        return placedCode;
+    }
+
+    public void setPlacedCode(String placedCode) {
+        this.placedCode = placedCode;
+    }
 
 }
+
+

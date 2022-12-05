@@ -50,14 +50,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.CategoriesProductActivity"
+            android:name=".Activities.DeliveringOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.OrderStatusActivity"
+            android:name=".Activities.PreparingOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -65,6 +65,13 @@
         </activity>
         <activity
             android:name=".Activities.DeliveredOrderDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.CategoriesProductActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -212,7 +219,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Activities.OrderDetailActivity"
+            android:name=".Activities.PlacedOrderDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -361,14 +368,19 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".Activities.OrderStatusActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
     </application>
-
 </manifest>

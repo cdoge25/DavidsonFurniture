@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingVertical="15dp"
+    android:id="@+id/layoutItemPlaced"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="20dp"
         app:cardCornerRadius="20dp"
-        android:elevation="5dp"
+        android:elevation="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <RelativeLayout
@@ -27,7 +28,7 @@
                 android:elevation="2dp"
                 app:cardCornerRadius="20dp">
                 <ImageView
-                    android:id="@+id/imvOrderThumb"
+                    android:id="@+id/imvPlacedThumb"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:scaleType="fitXY"/>
@@ -43,7 +44,7 @@
                 android:orientation="vertical"
                 android:gravity="center_vertical">
                 <TextView
-                    android:id="@+id/txtOrderName"
+                    android:id="@+id/txtPlacedName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -52,7 +53,7 @@
                     android:layout_gravity="left"/>
 
                 <TextView
-                    android:id="@+id/txtType"
+                    android:id="@+id/txtPlacedType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -62,7 +63,7 @@
                     android:layout_gravity="left"/>
 
                 <TextView
-                    android:id="@+id/txtColor"
+                    android:id="@+id/txtPlacedColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -72,7 +73,7 @@
                     android:layout_gravity="left"/>
 
                 <TextView
-                    android:id="@+id/txtOrderDetailPrice"
+                    android:id="@+id/txtPlacedPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -82,7 +83,7 @@
                     android:layout_gravity="left"/>
 
                 <TextView
-                    android:id="@+id/txtQuantity"
+                    android:id="@+id/txtPlacedQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -93,22 +94,21 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnViewOrderDetail"
+                android:id="@+id/btnDetail"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="105dp"
-                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="Chi tiết"
-                android:textColor="@color/white"
-                android:textSize="10sp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_button_orange"
                 android:fontFamily="@font/futura_book"
-                android:backgroundTint="@color/orange"
+                android:text="Chi tiết"
                 android:textAllCaps="false"
-                android:background="@drawable/bg_button_orange"/>
+                android:textColor="@color/white"
+                android:textSize="10sp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

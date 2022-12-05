@@ -1,21 +1,31 @@
 package com.nhom6.davidsonfurniture.Models;
 
-public class DeliveredOrder {
+import java.io.Serializable;
+
+public class DeliveredOrder implements Serializable {
+    int deliveredID;
     int deliveredThumb; //hình ảnh
     String deliveredName;
     String deliveredType;
     String deliveredColor;
-    String deliveredPrice;
-    String deliveredQuantity;
+    double deliveredPrice;
+    int deliveredQuantity;
+    String deliveredCode;
 
-    public DeliveredOrder(int deliveredThumb, String deliveredName, String deliveredType, String deliveredColor, String deliveredPrice, String deliveredQuantity) {
+    public int getDeliveredID() {
+        return deliveredID;
+    }
+
+    public DeliveredOrder(int deliveredThumb, String deliveredName, String deliveredType, String deliveredColor, double deliveredPrice, int deliveredQuantity, String deliveredCode) {
         this.deliveredThumb = deliveredThumb;
         this.deliveredName = deliveredName;
         this.deliveredType = deliveredType;
         this.deliveredColor = deliveredColor;
         this.deliveredPrice = deliveredPrice;
         this.deliveredQuantity = deliveredQuantity;
+        this.deliveredCode = deliveredCode;
     }
+
 
     public int getDeliveredThumb() {
         return deliveredThumb;
@@ -49,19 +59,27 @@ public class DeliveredOrder {
         this.deliveredColor = deliveredColor;
     }
 
-    public String getDeliveredPrice() {
+    public double getDeliveredPrice() {
         return deliveredPrice;
     }
 
-    public void setDeliveredPrice(String deliveredPrice) {
+    public void setDeliveredPrice(double deliveredPrice) {
         this.deliveredPrice = deliveredPrice;
     }
 
-    public String getDeliveredQuantity() {
+    public int getDeliveredQuantity() {
         return deliveredQuantity;
     }
 
-    public void setDeliveredQuantity(String deliveredQuantity) {
+    public void setDeliveredQuantity(int deliveredQuantity) {
         this.deliveredQuantity = deliveredQuantity;
+    }
+
+    public String getDeliveredCode() {
+        return deliveredCode;
+    }
+
+    public void setDeliveredCode(String deliveredCode) {
+        this.deliveredCode = deliveredCode;
     }
 }

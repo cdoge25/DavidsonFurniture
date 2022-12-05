@@ -1,29 +1,19 @@
 package com.nhom6.davidsonfurniture.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.BaseAdapter;
-import android.widget.Filter;
-import android.widget.GridView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.nhom6.davidsonfurniture.Adapters.ProductAdapter;
-import com.nhom6.davidsonfurniture.Adapters.ProductCategoryAdapter;
-import com.nhom6.davidsonfurniture.Interfaces.OnClickInterface;
+import com.nhom6.davidsonfurniture.Adapters.SpinnerAdapter;
 import com.nhom6.davidsonfurniture.Models.Product;
+import com.nhom6.davidsonfurniture.Models.SpinnerPrice;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.databinding.ActivityCategoriesProductBinding;
 
@@ -38,17 +28,8 @@ public class CategoriesProductActivity extends AppCompatActivity {
     ArrayList<Product> productList;
     String category;
 
-
-    ArrayList<Product> products;
-
-
-//    OnClickInterface onClickInterface;
-
-    // Spinner
-//    ArrayAdapter<Filter> filteradapter;
-//    GridView gvProduct;
     Spinner spinner;
-    String[] price = {"Tất cả", "Dưới 1 triệu", "Từ 1-5 triệu", "Từ 5-10 triệu", "Trên 10 triệu"};
+    SpinnerAdapter spinnerAdapter;
 
 
     @Override
@@ -80,7 +61,6 @@ public class CategoriesProductActivity extends AppCompatActivity {
 
         addEvent();
 
-//        FilterPrice();
 
         goBack();
 
@@ -88,15 +68,14 @@ public class CategoriesProductActivity extends AppCompatActivity {
 
         loadData();
 
-        initializeViews();
+        loadSpinner();
+
     }
 
-
-   //Intialite gidview and spinner, set adapters and listen to spinner itemSelected
-
-    private  void initializeViews() {
+    private void loadSpinner() {
         spinner = findViewById(R.id.spFilterPrice);
-        spinner.setAdapter(new ArrayAdapter<String>(this,R.layout.item_list_price, price));
+        spinnerAdapter = new SpinnerAdapter(this, R.layout.item_selected_spinner, getListPrice());
+        spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -105,9 +84,24 @@ public class CategoriesProductActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
-}
+    }
+
+    private List<SpinnerPrice> getListPrice() {
+        List<SpinnerPrice> list =new ArrayList<>();
+
+        list.add(new SpinnerPrice("Tất cả"));
+        list.add(new SpinnerPrice("Dưới 1 triệu"));
+        list.add(new SpinnerPrice("Từ 1-5 triệu"));
+        list.add(new SpinnerPrice("Từ 5-10 triệu"));
+        list.add(new SpinnerPrice("Trên 10 triệu"));
+
+        return list;
+    }
+
+
 
     //Create Adapter for ArrayAdapter
 
@@ -238,61 +232,3 @@ public class CategoriesProductActivity extends AppCompatActivity {
         });
     }
 }
-
-
-//    private void addEventSpinner() {
-//        //creating array adapter
-//        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.activity_categories_product, items);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        autoCompleteTextView.setAdapter(adapter);
-//
-//        //Filter product
-
-
-//        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                getData();
-//                ArrayList<Product> productsFilter = new ArrayList<>();
-//                switch (i) {
-//                    case 0:
-//                        productsFilter = products;
-//                        break;
-//                    case 1:
-//                        for (Product p2 : products) {
-//                            if (p2.getProductPrice() < 1000000) {
-//                                productsFilter.add(p2);
-//                            }
-//                        }
-//                        break;
-//                    case 2:
-//                        for (Product p3 : products) {
-//                            if (p3.getProductPrice() >= 1000000 && p3.getProductPrice() < 5000000) {
-//                                productsFilter.add(p3);
-//                            }
-//                        }
-//                        break;
-//                    case 3:
-//                        for (Product p4 : products) {
-//                            if (p4.getProductPrice() >= 5000000 && p4.getProductPrice() < 10000000) {
-//                                productsFilter.add(p4);
-//                            }
-//                        }
-//                        break;
-//                    case 4:
-//                        for (Product p5 : products) {
-//                            if (p5.getProductPrice() >= 10000000) {
-//                                productsFilter.add(p5);
-//                            }
-//                        }
-//                        break;
-//                }
-//                gvCategoryProduct.setAdapter(new ProductAdapter(CategoriesProductActivity.this, R.layout.item_product, productsFilter, onClickInterface));
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
-//    }
