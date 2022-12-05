@@ -1,9 +1,13 @@
 package com.nhom6.davidsonfurniture.Activities;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -34,8 +38,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        
+        addEvent();
 
         goBack();
+    }
+
+    private void addEvent() {
+        binding.btnConfirmLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(MapsActivity.this);
+                dialog.setContentView(R.layout.dialog_update_success);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.setCancelable(false);
+
+                Button btnClose = dialog.findViewById(R.id.btn_Close);
+                btnClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+                dialog.show();
+            }
+        });
     }
 
     private void goBack() {

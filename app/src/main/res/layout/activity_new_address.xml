@@ -5,18 +5,17 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ChangeAddressActivity2">
+    tools:context=".Activities.NewAddressActivity">
 
     <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MapsActivity"
-        />
+        tools:context=".MapsActivity"/>
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarChangeAddress2"
+        android:id="@+id/toolbarNewAddress"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -52,7 +51,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingBottom="5dp"
-            android:text="Chi tiết địa chỉ"
+            android:text="Thêm địa chỉ mới"
             android:textColor="@color/orange" />
 
         <View
@@ -74,7 +73,7 @@
             android:background="@drawable/custom_view"
             android:fontFamily="@font/futura_book"
             android:padding="10dp"
-            android:text="Nhà"
+            android:hint="Nhập tên"
             android:textSize="14sp" />
 
         <TextView
@@ -86,13 +85,13 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/edt_chooseAddress"
+            android:id="@+id/edt_ChooseAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_view"
             android:fontFamily="@font/futura_book"
             android:padding="10dp"
-            android:text="Phường Linh Xuân, Tp. Thủ Đức"
+            android:hint="Nhập hoặc chọn địa chỉ"
             android:textSize="14sp" />
 
         <CheckBox
@@ -105,11 +104,10 @@
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnConfirmLocation"
+            android:id="@+id/btn_ConfirmLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:layout_weight="0.4"
             android:background="@drawable/bg_button_orange"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"

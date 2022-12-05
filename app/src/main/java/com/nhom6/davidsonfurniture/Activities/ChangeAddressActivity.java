@@ -36,30 +36,36 @@ public class ChangeAddressActivity extends AppCompatActivity {
         binding = ActivityChangeAddressBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        toNewAddress();
+
         toEditAddress();
 
         goBack();
+    }
+
+    private void toNewAddress() {
+        binding.btnNewAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChangeAddressActivity.this, NewAddressActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void toEditAddress() {
         binding.btnEditAddress1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChangeAddressActivity.this,MapsActivity.class );
+                Intent intent = new Intent(ChangeAddressActivity.this,ChangeAddressActivity2.class );
                 startActivity(intent);
             }
         });
         binding.btnEditAddress2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChangeAddressActivity.this,MapsActivity.class );
-                startActivity(intent);
-            }
-        });
-        binding.btnNewAddress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ChangeAddressActivity.this,MapsActivity.class );
+                Intent intent = new Intent(ChangeAddressActivity.this,ChangeAddressActivity2.class );
                 startActivity(intent);
             }
         });
