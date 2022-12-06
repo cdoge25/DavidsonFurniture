@@ -111,7 +111,7 @@
             android:background="@drawable/bg_button_orange"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="Cập nhật"
+            android:text="Thêm"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16dp"

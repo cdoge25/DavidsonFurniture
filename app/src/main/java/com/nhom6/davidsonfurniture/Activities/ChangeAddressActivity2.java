@@ -67,6 +67,44 @@ public class ChangeAddressActivity2 extends FragmentActivity implements OnMapRea
                 dialog.show();
             }
         });
+
+        binding.btnDeleteAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(ChangeAddressActivity2.this);
+                dialog.setContentView(R.layout.dialog_delete_address);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                Button btnCanCelLogout = dialog.findViewById(R.id.btn_CancelDel);
+                btnCanCelLogout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                Button btnConfirmLogout = dialog.findViewById(R.id.btn_ConfirmDel);
+                btnConfirmLogout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Dialog dialog = new Dialog(ChangeAddressActivity2.this);
+                        dialog.setContentView(R.layout.dialog_update_success);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialog.setCancelable(false);
+
+                        Button btnClose = dialog.findViewById(R.id.btn_Close);
+                        btnClose.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                finish();
+                            }
+                        });
+                        dialog.show();
+                    }
+                });
+                dialog.show();
+            }
+        });
     }
 
     private void toMapsActivity() {

@@ -1,6 +1,7 @@
 package com.nhom6.davidsonfurniture.Activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -8,7 +9,9 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -66,6 +69,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
     boolean isCamera,cameraPermissionGranted;
     private static final int PERMISSIONS_REQUEST_ACCESS_CAMERA = 11;
     private static final int MY_PERMISSION_REQUEST_CODE_CALL_PHONE = 555;
+    private static final String LOG_TAG = "AndroidExample";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,10 +91,20 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
         binding = ActivityCustomerServiceBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
+        //Call
+        this.btnCall = this.findViewById(R.id.btn_Call);
+
+        this.btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                askPermissionAndCall();
+            }
+        });
 
         initViews();
         addEvents();
-        call();
+        callNow();
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
         time= currentTime + ", " + currentDate;
@@ -99,13 +113,33 @@ public class CustomerServiceActivity extends AppCompatActivity {
         goBack();
     }
 
-    private void call() {
+    private void askPermissionAndCall() {
+        // With Android Level >= 23, you have to ask the user
+        // for permission to Call.
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) { // 23
 
-        btnCall = (ImageButton) findViewById(R.id.btn_Call);
+            // Check if we have Call permission
+            int sendSmsPermisson = ActivityCompat.checkSelfPermission(this,
+                    Manifest.permission.CALL_PHONE);
+
+            if (sendSmsPermisson != PackageManager.PERMISSION_GRANTED) {
+                // If don't have permission so prompt the user.
+                this.requestPermissions(
+                        new String[]{Manifest.permission.CALL_PHONE},
+                        MY_PERMISSION_REQUEST_CODE_CALL_PHONE
+                );
+                return;
+            }
+        }
+        this.callNow();
+    }
+    @SuppressLint("MissingPermission")
+    private void callNow() {
+
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("0898191893"));
+                Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("+84898191893"));
                 try{
                     startActivity(in);
                 }
@@ -115,8 +149,10 @@ public class CustomerServiceActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
+
+
+
 
 
     private void addEvents() {
@@ -173,6 +209,8 @@ public class CustomerServiceActivity extends AppCompatActivity {
     private void createSheetDialog() {
         if(dialog == null){
             View view= LayoutInflater.from(CustomerServiceActivity.this).inflate(R.layout.bottom_sheet_upload_image, null);
+
+
             openSheetCamera= view.findViewById(R.id.btn_Camera);
             openSheetGallery= view.findViewById(R.id.btn_Gallery);
             openSheetCamera.setOnClickListener(new View.OnClickListener() {
@@ -278,6 +316,43 @@ public class CustomerServiceActivity extends AppCompatActivity {
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 cameraPermissionGranted = true;
+            }
+        }
+        //Permission phone call
+        switch (requestCode) {
+            case MY_PERMISSION_REQUEST_CODE_CALL_PHONE: {
+
+                // Note: If request is cancelled, the result arrays are empty.
+                // Permissions granted (CALL_PHONE).
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Log.i(LOG_TAG, "Đã được cấp quyền!");
+                    Toast.makeText(this, "Đã được cấp quyền!", Toast.LENGTH_LONG).show();
+
+                    this.callNow();
+                }
+                // Cancelled or denied.
+                else {
+                    Log.i(LOG_TAG, "Quyền truy cập bị từ chối!");
+                    Toast.makeText(this, "Quyền truy cập bị từ chối!", Toast.LENGTH_LONG).show();
+                }
+                break;
+            }
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == MY_PERMISSION_REQUEST_CODE_CALL_PHONE) {
+            if (resultCode == RESULT_OK) {
+                // Do something with data (Result returned).
+                Toast.makeText(this, "Action OK", Toast.LENGTH_LONG).show();
+            } else if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(this, "Action Cancelled", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Action Failed", Toast.LENGTH_LONG).show();
             }
         }
     }
