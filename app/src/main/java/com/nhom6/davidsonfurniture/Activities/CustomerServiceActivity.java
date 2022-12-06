@@ -139,7 +139,8 @@ public class CustomerServiceActivity extends AppCompatActivity {
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("+84898191893"));
+                String numPhone = "0898191893";
+                Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("tel: "+ numPhone));
                 try{
                     startActivity(in);
                 }
