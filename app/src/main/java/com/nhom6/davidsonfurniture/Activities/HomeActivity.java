@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.img_banner_doclap, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.img_banner_hobu, ScaleTypes.FIT));
 
-        binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.FIT);
+        binding.imsSliderBanner.setImageList(slideModels, ScaleTypes.CENTER_CROP);
     }
 
 

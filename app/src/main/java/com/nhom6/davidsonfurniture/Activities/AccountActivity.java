@@ -52,7 +52,6 @@ public class AccountActivity extends AppCompatActivity {
         toCustomerService();
         toContact();
         toLogout();
-        goback();
     }
 
     private void toContact() {
@@ -124,15 +123,6 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AccountActivity.this, VoucherActivity.class);
                 startActivity(intent);
-            }
-        });
-    }
-
-    private void goback() {
-        binding.toolbarAccount.getChildAt(0).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
             }
         });
     }

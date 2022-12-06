@@ -35,133 +35,180 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="15sp"
-        android:background="@drawable/custom_view"
-        android:gravity="center_vertical"
-        android:weightSum="3">
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="280sp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_marginStart="5sp"
-            android:layout_weight="1">
+            android:layout_alignParentStart="true">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tiết kiệm: Giao hàng từ 7 - 9 ngày"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/custom_view"
+                android:gravity="center_vertical"
+                android:weightSum="3"
+                android:orientation="vertical">
 
-            <TextView
+                <LinearLayout
+                    android:layout_width="280sp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="5sp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tiết kiệm: Giao hàng từ 7 - 9 ngày"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Miễn phí"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/orange"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Miễn phí"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/orange"
-                />
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/custom_view"
+                android:gravity="center_vertical"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="280sp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="5sp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tiêu chuẩn: Giao hàng từ 2 - 5 ngày"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="100,000đ"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/orange"
+                        />
+                </LinearLayout>
+
+                <!--                <RadioButton-->
+                <!--                    android:id="@+id/radio_standardDelivery"-->
+                <!--                    android:layout_width="50sp"-->
+                <!--                    android:layout_height="50sp"-->
+                <!--                    android:layout_weight="1"/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginTop="15sp"
+                android:background="@drawable/custom_view"
+                android:gravity="center_vertical"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="280sp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="5sp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Siêu tốc: Giao hàng trong 24h"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="300,000đ"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/orange"/>
+                </LinearLayout>
+
+                <!--                <RadioButton-->
+                <!--                    android:id="@+id/radio_fastDelivery"-->
+                <!--                    android:layout_width="50sp"-->
+                <!--                    android:layout_height="50sp"-->
+                <!--                    android:layout_weight="1"/>-->
+            </LinearLayout>
+
+
+
         </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/radio_ecoDelivery"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="15sp"
-        android:background="@drawable/custom_view"
-        android:gravity="center_vertical"
-        android:weightSum="3">
 
         <LinearLayout
-            android:layout_width="280sp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_marginStart="5sp"
-            android:layout_weight="1">
+            android:layout_width="wrap_content"
+            android:layout_height="195dp"
+            android:layout_alignParentEnd="true">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tiêu chuẩn: Giao hàng từ 2 - 5 ngày"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="100,000đ"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/orange"
-                />
+                <RadioButton
+                    android:id="@+id/radio_savingDelivery"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="15sp"/>
+
+                <RadioButton
+                    android:id="@+id/radio_standardDelivery"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+
+                    android:layout_marginTop="15dp"/>
+                <RadioButton
+                    android:id="@+id/radio_fastDelivery"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="15dp"
+                    />
+
+
+            </RadioGroup>
+
+
         </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radio_standardDelivery"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_weight="1"/>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="15sp"
-        android:background="@drawable/custom_view"
-        android:gravity="center_vertical"
-        android:weightSum="3">
+    </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="280sp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_marginStart="5sp"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Siêu tốc: Giao hàng trong 24h"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="300,000đ"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/orange"/>
-        </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/radio_fastDelivery"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_weight="1"/>
-    </LinearLayout>
 
     <Button
         android:id="@+id/btn_confirmDeliMethod"

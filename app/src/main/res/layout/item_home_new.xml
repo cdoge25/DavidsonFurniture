@@ -12,7 +12,8 @@
         android:id="@+id/layoutItem"
         android:layout_width="150dp"
         android:layout_height="200dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/smoke">
 
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"

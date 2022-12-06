@@ -46,8 +46,6 @@ public class OrderStatusActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        goBack();
-
         if(getIntent().getStringExtra("detailName")!= null){
             detailName = getIntent().getStringExtra("detailName");
             dTabLayout = findViewById(R.id.tab_layout);
@@ -112,16 +110,6 @@ public class OrderStatusActivity extends AppCompatActivity {
     }
     public String getDetailName() {
         return detailName;
-    }
-
-    private void goBack(){
-        toolbarOrderStatus = findViewById(R.id.toolbarOrderStatus);
-        toolbarOrderStatus.getChildAt(0).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
     private void navigationClick() {
