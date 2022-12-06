@@ -26,16 +26,26 @@
         android:elevation="5dp"
         android:background="@color/white"
         android:layout_gravity="top">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sửa địa chỉ"
-            android:fontFamily="@font/futura_bold"
-            android:textColor="@color/orange"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_marginEnd="50dp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sửa địa chỉ"
+                android:fontFamily="@font/futura_bold"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                android:gravity="center"/>
+            <ImageButton
+                android:id="@+id/btn_DeleteAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_notifications_delete"
+                android:backgroundTint="@color/white"/>
+        </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
     <!--END HEADER-->
     <LinearLayout

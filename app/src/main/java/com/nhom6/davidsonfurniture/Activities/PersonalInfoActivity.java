@@ -1,10 +1,24 @@
 package com.nhom6.davidsonfurniture.Activities;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Adapter;
@@ -21,12 +35,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.nhom6.davidsonfurniture.Adapters.SexAdapter;
 import com.nhom6.davidsonfurniture.R;
 import com.nhom6.davidsonfurniture.Utils.SexDataUtils;
 import com.nhom6.davidsonfurniture.databinding.ActivityPersonalInfoBinding;
 import com.nhom6.davidsonfurniture.databinding.ActivitySettingAccountBinding;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,9 +51,15 @@ import java.util.Calendar;
 public class PersonalInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ActivityPersonalInfoBinding binding;
     Spinner spinner;
-//    TextView txtSex;
+    ActivityResultLauncher<Intent> launcherImage;
+    ImageButton btnUploadPhoto;
+    Button  btnOpenCamera, btnOpenLibrary;
+    BottomSheetDialog sheetDialogImageResource;
+    ImageView imvAvatar;
+    Toolbar toolbarImageResource;
 
-//    private Spinner spinnerSex;
+    boolean isCamera;
+
     private TextView txtDateOfBirth;
     private LinearLayout llChooseDateOfBirth;
     private int lastSelectedYear;
@@ -63,12 +86,90 @@ public class PersonalInfoActivity extends AppCompatActivity implements AdapterVi
         binding = ActivityPersonalInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        uploadPhoto();
+        createUploadImageDialog();
         spinerSex();
         datePickerDialog();
         toChangeName();
-
         goback();
+
+        imvAvatar = findViewById(R.id.imv_Avatar) ;
+
+        launcherImage = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (isCamera && result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Bitmap bitmap = (Bitmap) result.getData().getExtras().get("data");
+                    imvAvatar.setImageBitmap(bitmap);
+                } else {
+                    Uri uri = result.getData().getData();
+                    if (uri != null) {
+                        try {
+                            InputStream inputStream = getContentResolver().openInputStream(uri);
+                            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                            imvAvatar.setImageBitmap(bitmap);
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    private void createUploadImageDialog() {
+        sheetDialogImageResource = new BottomSheetDialog(this);
+        View view = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_upload_image_review, null);
+
+        sheetDialogImageResource.setContentView(view);
+        sheetDialogImageResource.setCancelable(false);
+        sheetDialogImageResource.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        btnOpenCamera = view.findViewById(R.id.btnOpenCamera);
+        btnOpenCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isCamera = true;
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                launcherImage.launch(intent);
+                sheetDialogImageResource.dismiss();
+            }
+        });
+
+        btnOpenLibrary = view.findViewById(R.id.btnOpenLibrary);
+        btnOpenLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isCamera = false;
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                launcherImage.launch(intent);
+                sheetDialogImageResource.dismiss();
+            }
+        });
+
+        toolbarImageResource = view.findViewById(R.id.toolbarImageResource);
+        toolbarImageResource.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if(item.getItemId() == R.id.menuCancel){
+                    sheetDialogImageResource.dismiss();
+                }
+                return false;
+            }
+        });
+    }
+
+    private void uploadPhoto() {
+        btnUploadPhoto = findViewById(R.id.btn_uploadPhoto);
+        btnUploadPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sheetDialogImageResource.show();
+
+            }
+        });
+
     }
 
     private void toChangeName() {

@@ -2,6 +2,8 @@ package com.nhom6.davidsonfurniture.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -35,7 +37,24 @@ public class ContactActivity extends AppCompatActivity {
         binding = ActivityContactBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        addEvent();
+
         goBack();
+    }
+
+    private void addEvent() {
+        binding.llHotline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Implicit Intent
+                String numPhone = "0898191893";
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                Uri uri = Uri.parse("tel: " + numPhone);
+                intent.setData(uri);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void goBack() {
