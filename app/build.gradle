@@ -8,6 +8,12 @@ android {
     namespace 'com.nhom6.davidsonfurniture'
     compileSdk 33
 
+    signingConfigs {
+        debug{
+            storeFile file ('C:\\Users\\haing\\.android\\debug.keystore')
+        }
+    }
+
     defaultConfig {
         applicationId "com.nhom6.davidsonfurniture"
         minSdk 21
@@ -22,6 +28,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
