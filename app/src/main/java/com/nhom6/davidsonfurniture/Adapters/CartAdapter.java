@@ -127,6 +127,20 @@ public class CartAdapter extends BaseAdapter {
             }
         });
 
+        holder.chkSelect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    total += finalPrice;
+                    activity.EventUltils(total);
+                } else{
+                    total -= finalPrice;
+                    activity.EventUltils(total);
+                }
+            }
+        });
+
+
 //        holder.btnPlus.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

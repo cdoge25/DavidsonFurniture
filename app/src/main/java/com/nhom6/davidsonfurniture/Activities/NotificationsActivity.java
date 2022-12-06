@@ -61,7 +61,7 @@ public class NotificationsActivity extends AppCompatActivity {
                 AlertDialog.Builder builder= new AlertDialog.Builder(NotificationsActivity.this);
                 builder.setTitle("Xác nhận xóa!");
                 builder.setMessage("Bạn chắc chắn xóa tất cả thông báo?");
-                builder.setIcon(R.mipmap.ic_logo_launcher_round);
+                builder.setIcon(R.mipmap.ic_launcher_round);
                 builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -90,7 +90,7 @@ public class NotificationsActivity extends AppCompatActivity {
                 AlertDialog.Builder builder= new AlertDialog.Builder(NotificationsActivity.this);
                 builder.setTitle("Xác nhận xóa!");
                 builder.setMessage("Bạn chắc chắn xóa thông báo này?");
-                builder.setIcon(R.mipmap.ic_logo_launcher_round);
+                builder.setIcon(R.mipmap.ic_launcher_round);
                 builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
