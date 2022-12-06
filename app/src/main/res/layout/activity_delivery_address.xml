@@ -35,108 +35,148 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:layout_marginTop="15sp"
-        android:background="@drawable/custom_view"
-        android:gravity="center_vertical"
-        android:weightSum="3">
-
-        <ImageView
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:src="@drawable/ic_pick_location"
-            android:background="@drawable/custom_view"
-            android:layout_weight="1" />
+        android:layout_marginTop="15sp">
 
         <LinearLayout
-            android:layout_width="265sp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_marginStart="5sp"
-            android:layout_weight="1">
+            android:layout_alignParentStart="true">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nhà"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:background="@drawable/custom_view"
+                android:layout_gravity="left"
+                android:weightSum="3">
 
-            <TextView
-                android:id="@+id/txt_homeaddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phường Linh Xuân, TP.Thủ Đức"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"
-                />
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_view"
+                    android:src="@drawable/ic_pick_location" />
+
+                <LinearLayout
+                    android:layout_width="265sp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="5sp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nhà"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/txt_homeaddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Phường Linh Xuân, TP.Thủ Đức"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"
+                        />
+                </LinearLayout>
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/radio_home"-->
+                <!--            android:layout_width="50sp"-->
+                <!--            android:layout_height="50sp"-->
+                <!--            android:layout_weight="1"/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:background="@drawable/custom_view"
+                android:gravity="center_vertical"
+                android:weightSum="3"
+                android:layout_gravity="left"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:src="@drawable/ic_pick_location"
+                    android:background="@drawable/custom_view"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="265sp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="5sp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Văn phòng"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/txt_officeaddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quận 1, TPHCM"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/futura_book"
+                        android:textColor="@color/black"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/radio_home"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="15sp"
-        android:background="@drawable/custom_view"
-        android:gravity="center_vertical"
-        android:weightSum="3">
-
-        <ImageView
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:src="@drawable/ic_pick_location"
-            android:background="@drawable/custom_view"
-            android:layout_weight="1"/>
 
         <LinearLayout
-            android:layout_width="265sp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
             android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_marginStart="5sp"
-            android:layout_weight="1">
+            android:gravity="center"
+            android:layout_alignParentEnd="true">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Văn phòng"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"/>
+            <RadioGroup
+                android:id="@+id/radgroup_deliveryAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txt_officeaddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Quận 1, TPHCM"
-                android:textSize="14sp"
-                android:fontFamily="@font/futura_book"
-                android:textColor="@color/black"
-                />
+                <RadioButton
+                    android:id="@+id/radio_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:gravity="center"/>
+
+                <RadioButton
+                    android:id="@+id/radio_office"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"/>
+
+
+
+            </RadioGroup>
+
         </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radio_office"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_weight="1"/>
-    </LinearLayout>
-    
+    </RelativeLayout>
+
+
     <Button
         android:id="@+id/btn_confirmAddress"
         android:layout_width="150sp"

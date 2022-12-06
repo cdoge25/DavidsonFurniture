@@ -62,115 +62,168 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginEnd="20sp"
-        android:gravity="center_vertical"
-        android:paddingStart="40sp"
-        android:paddingEnd="20sp"
-        android:weightSum="4"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
-        <ImageView
-            android:layout_width="30sp"
-            android:layout_height="30sp"
-            android:src="@drawable/img_ewallet_momo"
-            android:layout_weight="0.5"/>
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Momo"
-            android:layout_weight="2.78"
-            android:textColor="@color/black"
-            android:fontFamily="@font/futura_book"
-            android:textSize="14sp"
-            />
+            android:orientation="vertical"
+            android:layout_gravity="left">
 
-        <RadioButton
-            android:id="@+id/radio_momo"
-            android:layout_width="0dp"
-            android:layout_height="30sp"
-            android:layout_marginStart="5sp"
-            android:layout_weight="0.5" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:layout_gravity="left"
+                android:paddingStart="40sp"
+                android:paddingEnd="20sp"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/img_ewallet_momo"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Momo"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_book"
+                    android:textSize="14sp"
+                    android:layout_marginStart="20dp" />
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/radio_momo"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="30sp"-->
+                <!--                android:layout_marginStart="5sp"-->
+                <!--                android:layout_weight="0.5" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="20sp"
+                android:layout_gravity="left"
+                android:paddingStart="30sp"
+                android:paddingEnd="20sp"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/img_ewallet_zalo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ZaloPay"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_book"
+                    android:layout_marginStart="10dp"
+                    android:textSize="14sp" />
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/radio_zalopay"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="30sp"-->
+                <!--                android:layout_marginStart="5sp"-->
+                <!--                android:layout_weight="0.5" />-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="10sp"
+                android:gravity="center_vertical"
+                android:paddingEnd="20sp"
+                android:orientation="horizontal"
+                android:layout_gravity="left">
+
+                <ImageView
+                    android:layout_width="55sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/ic_payment_cod" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toán khi nhận hàng"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_book"
+                    android:textSize="16sp"/>
+
+                <!--            <RadioButton-->
+                <!--                android:id="@+id/radio_cod"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="30sp"-->
+                <!--                android:layout_marginStart="5sp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:fontFamily="@font/futura_book"/>-->
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/radgroup_paymentOnline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radio_momo"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/futura_book" />
+
+                <RadioButton
+                    android:id="@+id/radio_zalopay"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/futura_book"/>
+
+                <RadioButton
+                    android:id="@+id/radio_cod"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/futura_book"/>
+
+
+
+
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginEnd="20sp"
-        android:gravity="center_vertical"
-        android:paddingStart="40sp"
-        android:paddingEnd="20sp"
-        android:weightSum="4"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="30sp"
-            android:layout_height="30sp"
-            android:src="@drawable/img_ewallet_zalo"
-            android:layout_weight="0.5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="ZaloPay"
-            android:layout_weight="2.78"
-            android:textColor="@color/black"
-            android:fontFamily="@font/futura_book"
-            android:textSize="14sp"
-            />
-
-        <RadioButton
-            android:id="@+id/radio_zalopay"
-            android:layout_width="0dp"
-            android:layout_height="30sp"
-            android:layout_marginStart="5sp"
-            android:layout_weight="0.5" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginEnd="20sp"
-        android:gravity="center_vertical"
-        android:paddingStart="20sp"
-        android:paddingEnd="20sp"
-        android:weightSum="6"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="30sp"
-            android:layout_height="30sp"
-            android:src="@drawable/ic_payment_cod"
-            android:layout_weight="0.5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Thanh toán khi nhận hàng"
-            android:layout_weight="4.5"
-            android:textColor="@color/black"
-            android:fontFamily="@font/futura_book"
-            android:textSize="16sp"/>
-
-        <RadioButton
-            android:id="@+id/radio_cod"
-            android:layout_width="0dp"
-            android:layout_height="30sp"
-            android:layout_marginStart="5sp"
-            android:layout_weight="1"
-            android:fontFamily="@font/futura_book"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -245,9 +298,6 @@
             android:textSize="14sp" />
 
     </LinearLayout>
-
-
-
 
     <View
         android:layout_width="match_parent"
