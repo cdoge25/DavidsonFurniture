@@ -8,12 +8,16 @@ android {
     namespace 'com.nhom6.davidsonfurniture'
     compileSdk 33
 
+    aaptOptions {
+        cruncherEnabled = false
+    }
+
     signingConfigs {
         release {
             storeFile file('C:\\Users\\haing\\.android\\debug.keystore')
-            storePassword '123456'
-            keyAlias 'key0'
-            keyPassword '111111'
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
         }
     }
 
