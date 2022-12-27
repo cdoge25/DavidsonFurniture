@@ -14,13 +14,13 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('C:\\Users\\haing\\.android\\debug.keystore')
+            storeFile file('.\\debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
         debug {
-            storeFile file('C:\\Users\\haing\\.android\\debug.keystore')
+            storeFile file('.\\debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
