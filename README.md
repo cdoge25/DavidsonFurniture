@@ -20,5 +20,5 @@
 <p float="left">
   <img src="https://github.com/cdoge25/DavidsonFurnitureApp/blob/master/preview/7.%20cart.png" width="32%" />
   <img src="https://github.com/cdoge25/DavidsonFurnitureApp/blob/master/preview/8.%20orders.png" width="32%" /> 
-  <img src="https://github.com/cdoge25/DavidsonFurnitureApp/blob/master/preview/9.%20account.png" />
+  <img src="https://github.com/cdoge25/DavidsonFurnitureApp/blob/master/preview/9.%20account.png" width="32%"/>
 </p>
