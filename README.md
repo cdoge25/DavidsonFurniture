@@ -2,6 +2,7 @@
 
 - User Interface: 20 different screens <br>
 - Main functions: Login, Register, Forget password, Add to cart, Checkout, Account Settings
+- Mockup: https://www.figma.com/file/BgVzUVLZBaqKVUGPs80n9e/Davidson-Furniture?node-id=570-302
 
 ## Preview
 
